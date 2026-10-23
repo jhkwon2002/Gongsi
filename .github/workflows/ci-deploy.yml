@@ -16,6 +16,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Test
         run: python3 -m unittest discover -s tests -v
+      - name: Check PowerShell installer syntax
+        shell: pwsh
+        run: |
+          $failures = @()
+          Get-ChildItem deploy -Filter '*.ps1' | ForEach-Object {
+            $tokens = $null
+            $parseErrors = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$parseErrors)
+            $failures += @($parseErrors)
+          }
+          if ($failures.Count) { $failures | Format-List; exit 1 }
       - name: Check shell syntax
         run: bash -n deploy/bootstrap.sh && bash -n deploy/deploy.sh
   deploy:

@@ -1,7 +1,7 @@
 # Oracle와 GitHub 배포 절차
 
-2026-10-23. 기본 대상: Oracle Cloud Ubuntu 24.04, Python 3.11 이상, systemd.
-저장소는 https://github.com/jhkwon2002/Gongsi 로 확정했다. Oracle 서버 생성은 사용자가 확인했으며 SSH 연결과 실제 배포는 아직이다.
+2026-10-23. 대상: Oracle Linux 9 (현재 확인된 서버는 9.8), Ubuntu 24.04, Python 3.11 이상, systemd.
+저장소는 https://github.com/jhkwon2002/Gongsi 로 확정했다. 사용자 PC에서 SSH 접속 성공과 Oracle Linux Server 9.8을 확인했다. 프로그램 실제 설치·배포는 아직이다.
 
 ## 준비할 정보
 
@@ -133,7 +133,7 @@ bash -n deploy/bootstrap.sh
 bash -n deploy/deploy.sh
 ~~~
 
-로컬 및 GitHub Linux 환경에서 Python 검사 23개가 통과했고 GitHub Linux 셸 문법 검사도 통과했다. 실제 Oracle의 서비스 기동·메뉴 표시·DART 조회·네트워크 검증은 아직이며 서버 접속 후 진행한다.
+이전 GitHub Linux 환경에서 Python 검사 23개가 통과했고 GitHub Linux 셸 문법 검사도 통과했다. 실제 Oracle의 서비스 기동·메뉴 표시·DART 조회·네트워크 검증은 아직이며 서버 접속 후 진행한다.
 
 한 서버·본인 개인 채팅 1개를 위한 초기 구현이다. 모든 DART 보고서 분류, 다중 사용자, 원문 추출·요약은 포함하지 않는다. 새 선택은 새로 발견한 공시부터 적용하며, 첫 실행에 과거 공시를 일괄 전송하지 않는다.
 
@@ -146,3 +146,22 @@ bash -n deploy/deploy.sh
 - [GitHub Actions 트리거](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)
 - [Oracle 인스턴스 접속](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/accessinginstance.htm)
 
+
+## Oracle Linux 9에서 간편 설치
+
+로컬 프로젝트의 deploy/setup-oracle.ps1을 실행하면 Git에서 제외된 .env.oracle 설정으로 SSH 접속한다. 이미 확인한 호스트키만 사용하며, 키·계정·주소를 공개 스크립트에 넣지 않는다.
+
+~~~powershell
+& .\deploy\setup-oracle.ps1
+~~~
+
+1. Oracle Linux 9이면 공식 저장소에서 git과 python3.11을 설치한다. Ubuntu이면 apt로 git과 python3을 설치하며 Python 3.11 이상인지 bootstrap에서 검사한다.
+2. 서버의 전용 저장소를 가져온다. 이미 있는 경로가 다른 저장소이거나 수정된 상태이면 덮어쓰지 않고 중단한다.
+3. bootstrap은 /opt/gongsi/python3을 적절한 Python 실행 파일에 연결한다. 운영체제 기본 /usr/bin/python3은 변경하지 않는다. deploy와 systemd 모두 이 서비스 전용 경로를 쓴다.
+4. SSH 터미널에서 deploy/configure.py가 봇 토큰·DART 키를 가려서 입력받는다. 봇 사용자명·개인 수신자·DART API를 검증한 뒤 서버의 권한 600 환경파일을 원자적으로 저장한다. 기존 값은 Enter로 유지한다. 웹훅은 임의로 삭제하지 않는다.
+5. 내려받은 정확한 커밋으로 배포하고 서비스 준비 상태를 확인한다.
+6. SETUP SUCCESS 후 Telegram /start에서 보고서를 선택하고 /status에서 DART 마지막 조회 성공을 확인한다.
+
+이번 변경의 로컬 Python 검사 29개와 PowerShell 설치 스크립트 문법 검사는 통과했다. Linux 셸 검사와 새 GitHub CI 결과는 해당 커밋에서 확인한다. 실제 패키지 설치·서버 키 입력·기동은 PC에서 위 명령을 실행한 후 검증해야 한다. 이 스크립트는 GitHub Actions용 SSH 키나 Secrets를 생성하지 않으며 자동 배포 연결은 다음 단계다.
+
+공식 Python 설치 안내: https://docs.oracle.com/en/operating-systems/oracle-linux/9/python/python-InstallingPython.html

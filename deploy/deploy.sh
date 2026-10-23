@@ -8,6 +8,8 @@ SHA="$1"
 exec 9>/run/lock/gongsi-deploy.lock
 flock -n 9 || { echo "Another deployment is active."; exit 1; }
 REPO=/opt/gongsi/repository
+PYTHON=/opt/gongsi/python3
+[[ -x "$PYTHON" ]] || { echo "Run the updated bootstrap first."; exit 1; }
 [[ -d "$REPO/.git" && -f /etc/gongsi/gongsi.env ]] || { echo "Complete bootstrap first."; exit 1; }
 if [[ -f /etc/gongsi/github_deploy_key ]]; then
   export GIT_SSH_COMMAND="ssh -i /etc/gongsi/github_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/etc/gongsi/github_known_hosts"
@@ -23,7 +25,7 @@ if [[ ! -d "$RELEASE" ]]; then
   chmod -R a+rX "$STAGE"
   mv "$STAGE" "$RELEASE"
 fi
-runuser -u gongsi -- env PYTHONDONTWRITEBYTECODE=1 bash -c 'cd "$1"; python3 -m unittest discover -s tests -v' bash "$RELEASE"
+runuser -u gongsi -- env PYTHONDONTWRITEBYTECODE=1 bash -c 'cd "$1"; "$2" -m unittest discover -s tests -v' bash "$RELEASE" "$PYTHON"
 PREVIOUS="$(readlink -f /opt/gongsi/current || true)"
 UNIT_BACKUP="$(mktemp /run/gongsi-unit.XXXXXXXX)"
 if [[ -f /etc/systemd/system/gongsi.service ]]; then
@@ -33,7 +35,7 @@ fi
 if [[ -f /var/lib/gongsi/store.db ]]; then
   install -d -o root -g root -m 0700 /var/backups/gongsi
   BACKUP="/var/backups/gongsi/store.$(date -u +%Y%m%dT%H%M%SZ).db"
-  python3 - "$BACKUP" <<'PY'
+  "$PYTHON" - "$BACKUP" <<'PY'
 import sqlite3, sys
 with sqlite3.connect("/var/lib/gongsi/store.db") as source:
     with sqlite3.connect(sys.argv[1]) as destination:
