@@ -1,6 +1,7 @@
 [CmdletBinding()]
-param([string]$Server,[string]$User,[string]$KeyPath)
+param([string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly)
 $ErrorActionPreference = 'Stop'
+Write-Host '[1/5] Installer started. Reading local connection settings.'
 $configFile = Join-Path (Split-Path $PSScriptRoot -Parent) '.env.oracle'
 $settings = @{}
 if (Test-Path -LiteralPath $configFile) {
@@ -16,15 +17,28 @@ if ($Server -notmatch '^[a-zA-Z0-9.-]+$' -or $User -notmatch '^[a-zA-Z0-9_-]+$')
 }
 if (!(Test-Path -LiteralPath $KeyPath -PathType Leaf)) { throw 'SSH private key file not found.' }
 $sshArgs = @('-o','IdentitiesOnly=yes','-o','BatchMode=yes','-o','StrictHostKeyChecking=yes',
-             '-o','ConnectTimeout=15','-i',$KeyPath)
+             '-o','ConnectTimeout=15','-o','ConnectionAttempts=1',
+             '-o','ServerAliveInterval=15','-o','ServerAliveCountMax=2','-i',$KeyPath)
 $destination = $User + '@' + $Server
+Write-Host '[2/5] Checking SSH and sudo. Connection timeout: 15 seconds.'
+& ssh @sshArgs -n -T $destination 'set -e; echo SSH_CONNECTION_OK; id -un; cat /etc/os-release; sudo -n true; echo SUDO_OK'
+if ($LASTEXITCODE -ne 0) { throw 'SSH/sudo preflight failed. No package installation or credential changes were attempted.' }
+if ($DiagnoseOnly) {
+    Write-Host 'DIAGNOSTIC SUCCESS: SSH and passwordless sudo are working. No installation was performed.'
+    return
+}
+Write-Host '[3/5] Installing server packages. Repository downloads may take several minutes.'
+
 $bootstrap = @'
 set -euo pipefail
+echo "[server] Bootstrap shell started"
 . /etc/os-release
+echo "[server] Detected OS: $PRETTY_NAME"
 case "$ID" in
   ol)
     [[ "$VERSION_ID" == 9* ]] || { echo "This installer supports Oracle Linux 9."; exit 1; }
-    sudo -n dnf install -y git python3.11
+    echo "[server] Starting dnf package installation"
+    sudo -n dnf --setopt=timeout=30 --setopt=retries=2 install -y git python3.11
     ;;
   ubuntu)
     sudo -n apt-get update
@@ -32,6 +46,7 @@ case "$ID" in
     ;;
   *) echo "Unsupported OS. Stop and adapt the installation."; exit 1 ;;
 esac
+echo "[server] Packages ready. Preparing project checkout"
 sudo -n install -d -o root -g root -m 0755 /opt/gongsi
 if sudo -n test -d /opt/gongsi/repository/.git; then
   ORIGIN="$(sudo -n git -C /opt/gongsi/repository remote get-url origin)"
@@ -54,11 +69,12 @@ try {
     $OutputEncoding = [Text.UTF8Encoding]::new($false)
     $bootstrap | & ssh @sshArgs -T $destination "tr -d '\r' | bash -s"
     if ($LASTEXITCODE -ne 0) { throw 'Server bootstrap failed. Credentials were not requested.' }
-    Write-Host 'Next: enter the two API credentials in the SSH terminal. Input will be hidden.'
+    Write-Host '[4/5] Enter the two API credentials in the SSH terminal. Input will be hidden.'
     $configure = 'sudo -n /opt/gongsi/python3 /opt/gongsi/repository/deploy/configure.py && TARGET=$(sudo -n git -C /opt/gongsi/repository rev-parse HEAD) && sudo -n /usr/local/sbin/deploy-gongsi "$TARGET"'
     & ssh @sshArgs -t $destination $configure
     if ($LASTEXITCODE -ne 0) { throw 'Configuration or deployment failed. Review the safe error above.' }
-    & ssh @sshArgs -T $destination 'sudo -n systemctl is-active gongsi.service; sudo -n readlink -f /opt/gongsi/current'
+    Write-Host '[5/5] Verifying deployed service.'
+    & ssh @sshArgs -n -T $destination 'sudo -n systemctl is-active gongsi.service; sudo -n readlink -f /opt/gongsi/current'
     if ($LASTEXITCODE -ne 0) { throw 'Post-deployment inspection failed.' }
     Write-Host 'SETUP SUCCESS: Open the Telegram bot and send /start, then select reports.'
     Write-Host 'Use /status to confirm the first DART scan. GitHub automatic deployment is a separate next step.'
