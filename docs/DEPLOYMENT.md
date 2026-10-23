@@ -133,7 +133,7 @@ bash -n deploy/bootstrap.sh
 bash -n deploy/deploy.sh
 ~~~
 
-현재 로컬 Python 검사는 23개 통과했다. Windows의 Git Bash 실행 제한으로 셸 검사는 수행하지 못했다. GitHub CI와 실제 Oracle에서 셸·서비스·네트워크 검증을 마쳐야 한다.
+로컬 및 GitHub Linux 환경에서 Python 검사 23개가 통과했고 GitHub Linux 셸 문법 검사도 통과했다. 실제 Oracle의 서비스 기동·메뉴 표시·DART 조회·네트워크 검증은 아직이며 서버 접속 후 진행한다.
 
 한 서버·본인 개인 채팅 1개를 위한 초기 구현이다. 모든 DART 보고서 분류, 다중 사용자, 원문 추출·요약은 포함하지 않는다. 새 선택은 새로 발견한 공시부터 적용하며, 첫 실행에 과거 공시를 일괄 전송하지 않는다.
 

@@ -26,12 +26,12 @@ Oracle 서버: 사용자 생성 완료 확인. OS·IP·SSH 접속 정보는 미�
 | 선택 저장·알림 일시정지·재개 | 구현 완료 |
 | 중복 방지·정정공시·실패 후 재시도 | 구현 및 로컬 검사 완료 |
 | Oracle systemd 서비스·배포 스크립트 | 작성 완료, 실제 Linux 검증 필요 |
-| GitHub 검사·Oracle 배포 workflow | 작성 완료, 저장소 연결·실행 전 |
-| GitHub 업로드 | jhkwon2002/Gongsi에 첫 소스 반영 대상으로 확정 |
+| GitHub 검사·Oracle 배포 workflow | GitHub Linux 검사 성공, 서버 배포는 설정 전으로 건너뜀 |
+| GitHub 업로드 | 완료: main에 프로그램·구축 파일 19개 반영 |
 | Oracle 실제 배포·DART API 실조회 | 서버 생성 완료, 접속·키 설정·배포는 미실행 |
 | 공시 원문 숫자 추출·요약 | 미구현, 기본 알림 이후 확장 |
 
-Python 자동 검사는 외부 API 호출 없이 23개를 통과했다. 현재 Windows 실행 환경에서 Git Bash가 실행되지 않아 Linux 셸 검사는 수행하지 못했다. GitHub CI에 셸 문법 검사를 포함했다. 서버 기동, 실제 텔레그램 메뉴 표시, 실제 DART 조회는 배포 후 확인한다.
+Python 자동 검사는 외부 API 호출 없이 23개를 통과했다. GitHub의 Linux 환경에서도 Python 검사와 셸 문법 검사를 통과했다. 서버 기동, 실제 텔레그램 메뉴 표시, 실제 DART 조회는 배포 후 확인한다.
 
 ## 메뉴 사용 흐름
 
@@ -84,7 +84,7 @@ Python 3.11 이상이며 외부 패키지가 필요하지 않다. 기본 배포 
 
 ## 다음 순서
 
-1. jhkwon2002/Gongsi에 현재 파일을 반영한다.
+1. GitHub 초기 업로드와 Linux CI 검사 완료. 앞으로 main 변경 후 동일 커밋을 서버에 배포한다.
 2. 생성 완료한 Oracle 인스턴스의 OS·IP·SSH 접속 경로를 확인한다.
 3. docs/DEPLOYMENT.md에 따라 서버 전용 키와 환경 설정을 준비한다.
 4. 첫 배포 후 실제 메뉴·DART 조회·5분 알림을 확인한다.
@@ -93,3 +93,11 @@ Python 3.11 이상이며 외부 패키지가 필요하지 않다. 기본 배포 
 
 저장소 URL은 확정했다. 서버 OS·주소·SSH 접속 정보는 제공받아야 한다. 비밀키는 대화에 붙여넣지 않고 로컬 파일이나 서버에 설정한다.
 
+
+## 첫 GitHub 반영 확인
+
+- 프로그램 커밋: [5718954](https://github.com/jhkwon2002/Gongsi/commit/5718954c09591dc32ca26872301b109313e9efd2)
+- 검사 성공: https://github.com/jhkwon2002/Gongsi/actions/runs/39913454836
+- GitHub Linux: Python 검사 및 셸 문법 검사 성공.
+- Oracle 배포: 접속 설정 전으로 실행하지 않음. 서버 생성은 사용자 확인 완료.
+- 다음 입력: 서버 OS, 공인 IP/DNS, SSH 로그인 사용자, 로컬 SSH 키 파일 경로. 키 내용·봇 토큰·DART 인증키는 대화에 기재하지 않는다.
