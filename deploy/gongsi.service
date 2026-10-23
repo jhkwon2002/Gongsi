@@ -1,0 +1,28 @@
+[Unit]
+Description=DART Telegram report alerts
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=gongsi
+Group=gongsi
+WorkingDirectory=/opt/gongsi/current
+EnvironmentFile=/etc/gongsi/gongsi.env
+ExecStart=/usr/bin/python3 -m gongsi
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=55
+StateDirectory=gongsi
+StateDirectoryMode=0700
+RuntimeDirectory=gongsi
+RuntimeDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
+

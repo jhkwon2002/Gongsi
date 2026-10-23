@@ -1,0 +1,50 @@
+name: Test and deploy Oracle
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: gongsi-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: python3 -m unittest discover -s tests -v
+      - name: Check shell syntax
+        run: bash -n deploy/bootstrap.sh && bash -n deploy/deploy.sh
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.ORACLE_DEPLOY_ENABLED == 'true'
+    environment: oracle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy tested commit
+        env:
+          ORACLE_HOST: ${{ secrets.ORACLE_HOST }}
+          ORACLE_USER: ${{ secrets.ORACLE_USER }}
+          ORACLE_SSH_KEY: ${{ secrets.ORACLE_SSH_KEY }}
+          ORACLE_KNOWN_HOSTS: ${{ secrets.ORACLE_KNOWN_HOSTS }}
+          RELEASE_SHA: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_SHA" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$ORACLE_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
+          [[ "$ORACLE_USER" =~ ^[a-zA-Z0-9_-]+$ ]]
+          KEY="$(mktemp)"
+          HOSTS="$(mktemp)"
+          trap 'rm -f "$KEY" "$HOSTS"' EXIT
+          chmod 600 "$KEY" "$HOSTS"
+          printf '%s\n' "$ORACLE_SSH_KEY" > "$KEY"
+          printf '%s\n' "$ORACLE_KNOWN_HOSTS" > "$HOSTS"
+          ssh -i "$KEY" -o BatchMode=yes -o StrictHostKeyChecking=yes \
+            -o UserKnownHostsFile="$HOSTS" -o ConnectTimeout=20 \
+            "$ORACLE_USER@$ORACLE_HOST" \
+            "sudo /usr/local/sbin/deploy-gongsi $RELEASE_SHA"
+
