@@ -1,5 +1,9 @@
 [CmdletBinding()]
-param([string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly)
+param(
+    [string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly,
+    [ValidateRange(5,120)][int]$ConnectTimeoutSeconds = 60,
+    [string]$DiagnosticLogPath
+)
 $ErrorActionPreference = 'Stop'
 Write-Host '[1/5] Installer started. Reading local connection settings.'
 $configFile = Join-Path (Split-Path $PSScriptRoot -Parent) '.env.oracle'
@@ -17,12 +21,23 @@ if ($Server -notmatch '^[a-zA-Z0-9.-]+$' -or $User -notmatch '^[a-zA-Z0-9_-]+$')
 }
 if (!(Test-Path -LiteralPath $KeyPath -PathType Leaf)) { throw 'SSH private key file not found.' }
 $sshArgs = @('-o','IdentitiesOnly=yes','-o','BatchMode=yes','-o','StrictHostKeyChecking=yes',
-             '-o','ConnectTimeout=15','-o','ConnectionAttempts=1',
+             '-o',('ConnectTimeout=' + $ConnectTimeoutSeconds),'-o','ConnectionAttempts=1',
              '-o','ServerAliveInterval=15','-o','ServerAliveCountMax=2','-i',$KeyPath)
 $destination = $User + '@' + $Server
-Write-Host '[2/5] Checking SSH and sudo. Connection timeout: 15 seconds.'
-& ssh @sshArgs -n -T $destination 'set -e; echo SSH_CONNECTION_OK; id -un; cat /etc/os-release; sudo -n true; echo SUDO_OK'
-if ($LASTEXITCODE -ne 0) { throw 'SSH/sudo preflight failed. No package installation or credential changes were attempted.' }
+if (!$DiagnosticLogPath) {
+    $DiagnosticLogPath = Join-Path (Split-Path $PSScriptRoot -Parent) 'logs\ssh-preflight.log'
+}
+$logDirectory = Split-Path -Parent $DiagnosticLogPath
+if ($logDirectory) { [void][IO.Directory]::CreateDirectory($logDirectory) }
+Add-Content -LiteralPath $DiagnosticLogPath -Encoding UTF8 -Value ('=== SSH preflight ' + (Get-Date -Format o) + ' ===')
+Write-Host ("[2/5] Checking SSH and sudo. Connection timeout: " + $ConnectTimeoutSeconds + " seconds.")
+Write-Host ("SSH diagnostic log (local only): " + $DiagnosticLogPath)
+$probe = 'set -e; echo SSH_CONNECTION_OK; id -un; cat /etc/os-release; echo SERVER_LOAD; uptime; if command -v free >/dev/null; then free -m; fi; sudo -n true; echo SUDO_OK'
+& ssh @sshArgs -v -E $DiagnosticLogPath -n -T $destination $probe
+if ($LASTEXITCODE -ne 0) {
+    Write-Host ("SSH failed. Diagnostic log is available at: " + $DiagnosticLogPath)
+    throw 'SSH/sudo preflight failed. No package installation or credential changes were attempted.'
+}
 if ($DiagnoseOnly) {
     Write-Host 'DIAGNOSTIC SUCCESS: SSH and passwordless sudo are working. No installation was performed.'
     return
