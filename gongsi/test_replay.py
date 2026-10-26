@@ -22,6 +22,9 @@ def process_requests(bot,store,stop,requests=None):
         count=request.get('count')
         if not isinstance(count,int) or isinstance(count,bool) or not 1 <= count <= 5:
             continue
+        target=request.get('company')
+        if target is not None and (not isinstance(target,str) or not target.strip() or len(target)>80):
+            continue
         key='test_replay:'+identifier
         state=store.get(key)
         if state and state.get('done'):
@@ -35,7 +38,8 @@ def process_requests(bot,store,stop,requests=None):
                     report=json.loads(row[0])
                     company=report.get('corp_code') or report.get('corp_name')
                     if (report.get('rcept_dt')==today.replace('-','') and company not in companies
-                            and matches(report.get('report_nm',''),selected)):
+                            and ((target is not None and report.get('corp_name')==target)
+                                 or (target is None and matches(report.get('report_nm',''),selected)))):
                         reports.append(report)
                         companies.add(company)
                         if len(reports)==count:

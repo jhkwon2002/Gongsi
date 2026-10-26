@@ -55,3 +55,19 @@ class ReplayTests(unittest.TestCase):
         self.request[0]['count']=5;self.bot.owner_id=1
         process_requests(self.bot,self.store,Stop(),self.request)
         self.assertFalse(self.bot.calls)
+
+    def test_named_company_replay_is_exact_and_explicit_even_if_unselected(self):
+        self.store.change_settings('clear')
+        self.request[0].update(company='가상3',count=1)
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),1)
+        self.assertIn('가상3',self.bot.calls[0][0])
+        self.assertNotIn('가상6',self.bot.calls[0][0])
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),1)
+
+    def test_unknown_or_invalid_company_cannot_send_other_companies(self):
+        for target in ('없는기업','',[],42):
+            self.request[0]['company']=target
+            process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertFalse(self.bot.calls)
