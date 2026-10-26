@@ -1,6 +1,30 @@
 {
   "delivery_history": [
     {
+      "company": "\ube0c\uc774\ud2f0",
+      "context": "notification",
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026000286",
+      "recorded_at": "2026-10-26T16:51:14+09:00",
+      "release": "1684a35ae7da237b0d089acfd681fc757d3205b8",
+      "status": "telegram_accepted",
+      "title": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\uc218\uacb0\uc815)",
+      "withheld": false
+    },
+    {
+      "company": "\uc5d0\uc774\ub8e8\ud2b8",
+      "context": "notification",
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026000266",
+      "recorded_at": "2026-10-26T16:51:11+09:00",
+      "release": "1684a35ae7da237b0d089acfd681fc757d3205b8",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
+      "withheld": false
+    },
+    {
       "company": "\ub098\ub77c\uc2a4\ud398\uc774\uc2a4\ud14c\ud06c\ub180\ub85c\uc9c0",
       "context": "notification",
       "filing_date": "20261026",
@@ -276,7 +300,7 @@
       "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              "
     }
   ],
-  "last_scan_success": "2026-10-26T16:46:09+09:00",
+  "last_scan_success": "2026-10-26T16:51:10+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "release": "1684a35ae7da237b0d089acfd681fc757d3205b8",
   "schema_version": 1
