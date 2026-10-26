@@ -14,9 +14,9 @@ $destination=$userName+'@'+$server
 $sshArgs=@('-o','BatchMode=yes','-o','IdentitiesOnly=yes','-o','StrictHostKeyChecking=yes',
            '-o','ConnectTimeout=20','-o','ServerAliveInterval=15','-o','ServerAliveCountMax=2','-i',$keyPath)
 $assets=@{
-    '/usr/local/libexec/gongsi-autodeploy.py'=(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'autodeploy.py') -Raw -Encoding UTF8)
-    '/etc/systemd/system/gongsi-update.service'=(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'gongsi-update.service') -Raw -Encoding UTF8)
-    '/etc/systemd/system/gongsi-update.timer'=(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'gongsi-update.timer') -Raw -Encoding UTF8)
+    '/usr/local/libexec/gongsi-autodeploy.py'=([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'autodeploy.py'), [Text.Encoding]::UTF8))
+    '/etc/systemd/system/gongsi-update.service'=([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'gongsi-update.service'), [Text.Encoding]::UTF8))
+    '/etc/systemd/system/gongsi-update.timer'=([IO.File]::ReadAllText((Join-Path $PSScriptRoot 'gongsi-update.timer'), [Text.Encoding]::UTF8))
 }
 $encoded=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(($assets|ConvertTo-Json -Compress)))
 $installer="import base64,json`nASSETS=json.loads(base64.b64decode('$encoded').decode('utf-8'))`n"+(Get-Content -LiteralPath (Join-Path $PSScriptRoot 'install-autodeploy.py') -Raw -Encoding UTF8)
