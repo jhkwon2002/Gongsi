@@ -152,6 +152,80 @@
             "status": "013"
           }
         ],
+        "endpoint": "piicDecsn",
+        "original_error": "ValueError",
+        "original_reason": "no_data",
+        "reason": "no_data"
+      },
+      "company": "\uc81c\ub125\uc2e0",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026900740",
+      "recorded_at": "2026-10-26T17:58:47+09:00",
+      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
+      "status": "telegram_accepted",
+      "title": "\uae30\ud0c0\uc8fc\uc694\uacbd\uc601\uc0ac\ud56d              (\uc720\uc0c1\uc99d\uc790\uacb0\uc815(\uc81c3\uc790\ubc30\uc815-\uc18c\uc561\uacf5\ubaa8) \ucca0\ud68c)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261026",
+            "end_de": "20261026",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260925",
+            "end_de": "20261026",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
+        "endpoint": "piicDecsn",
+        "original_error": "ValueError",
+        "original_reason": "no_data",
+        "reason": "no_data"
+      },
+      "company": "\uc81c\ub125\uc2e0",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026000363",
+      "recorded_at": "2026-10-26T17:58:45+09:00",
+      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261026",
+            "end_de": "20261026",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260925",
+            "end_de": "20261026",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
         "endpoint": "otcprStkInvscrInhDecsn",
         "original_error": "ValueError",
         "original_reason": "no_data",
@@ -3268,7 +3342,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-26T17:53:39+09:00",
+  "last_scan_success": "2026-10-26T17:58:41+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
   "replay_progress": {
