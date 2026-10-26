@@ -219,3 +219,8 @@ Windows PowerShell에서 deploy/setup-autodeploy.ps1 -SendTest를 실행한다. 
 ## 자동 배포 및 실제 수신 점검 확인 (2026-10-26 11:18 KST)
 
 사용자 실행 결과에서 gongsi-update.timer 등록과 AUTO DEPLOY ENABLED를 확인했다. GitHub 검사에 통과한 901f4f2487b39db975424e5725c5b8fb308e7651 커밋이 자동 반영됐으며 current와 target이 일치하고 result=deployed였다. 서비스 active, 조회 주기 300초, 일시정지 해제, 보고서 5개 선택, 최근 DART 조회 성공(11:18:11+09:00), 최근 오류 없음, DART API 정상, Telegram 봇 확인 및 테스트 메시지 발송 성공, health_ok=true, monitoring_ready=true, HEALTH TEST PASS를 확인했다. 실제 신규 공시 이벤트를 통한 전체 알림 흐름은 테스트 메시지와 구분한다. 이 문서 기록 커밋은 위 서버 확인 커밋과 별개이며 이후 타이머가 검사 통과 후 반영한다.
+
+
+## Telegram 계층형 필터 메뉴 (2026-10-26)
+
+기존 선택 키를 유지하며 9개 분류와 세부 체크박스, 분류별 전체 선택/해제, 전체 분류 복귀를 제공한다. /reports 또는 /start로 새 메뉴를 연다. 투자판단 관련 주요경영사항 및 계약·실적·주총 등 필터를 추가하고 자산 취득/처분 제목 변형을 보완한다. 기존 선택을 자동으로 늘리지 않으며 신규 유형은 사용자가 선택한다. 과거 공시는 재발송하지 않는다. 위 커밋은 GitHub 검사 통과 후 기존 Oracle 타이머가 배포하며 실제 서버 반영 여부는 /status의 버전으로 확인한다.

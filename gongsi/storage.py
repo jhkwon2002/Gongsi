@@ -47,6 +47,11 @@ class Store:
                 else:
                     selected.discard(key)
                 prefs["selected"] = sorted(selected)
+            elif action == "set_group":
+                from .catalog import GROUP_BY_KEY
+                group_keys = set(GROUP_BY_KEY[key][2])
+                selected = set(prefs['selected'])
+                prefs['selected'] = sorted(selected | group_keys if enabled else selected - group_keys)
             elif action == "clear":
                 prefs["selected"] = []
             elif action in ("pause", "resume"):

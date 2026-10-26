@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from gongsi.api import ApiError, Dart, request_json
 from gongsi.bot import Bot
-from gongsi.catalog import CATALOG, matches
+from gongsi.catalog import CATALOG, GROUPS, matches
 from gongsi.storage import Store
 from gongsi.__main__ import deliver, scan
 
@@ -64,7 +64,7 @@ class Tests(unittest.TestCase):
             reopened.close()
     def test_buttons_cover_catalog_and_fit_telegram_limit(self):
         ids = set()
-        for page in range((len(CATALOG) + 5) // 6):
+        for page in [index * 100 + offset for index, (_, _, keys) in enumerate(GROUPS) for offset in range((len(keys)+5)//6)]:
             _, markup = self.bot.menu(page)
             for row in markup["inline_keyboard"]:
                 for button in row:
@@ -191,6 +191,32 @@ class Tests(unittest.TestCase):
         self.assertEqual(caught.exception.retry_after, 17)
         self.assertNotIn("sensitive", str(caught.exception))
 
+
+
+    def test_hdc_and_asset_title_variants(self):
+        self.assertTrue(matches('투자판단관련주요경영사항(자회사의 주요경영사항)', ['investment']))
+        self.assertTrue(matches('[기재정정]타법인주식및출자증권취득결정', ['assets']))
+        self.assertTrue(matches('단일판매ㆍ공급계약체결(자율공시)', ['contracts']))
+        self.assertFalse(matches('투자설명서(일괄신고)', ['securities']))
+
+    def test_group_selection_is_atomic_and_preserves_other_groups(self):
+        self.select('assets')
+        revision = self.store.settings()['revision']
+        self.bot.handle(self.callback(f'b:business:1:{revision}:0'))
+        self.assertEqual(set(self.store.settings()['selected']), {'assets', *GROUPS[0][2]})
+        self.bot.handle(self.callback(f'b:business:0:{revision}:0'))
+        self.assertIn('investment', self.store.settings()['selected'])
+        self.assertEqual(self.store.settings()['revision'], revision+1)
+
+    def test_home_groups_cover_every_filter_once_without_mutation(self):
+        self.select('assets', 'major', 'buyback', 'capital_up', 'securities')
+        before = self.store.settings()
+        _, markup = self.bot.menu()
+        self.assertEqual(len(markup['inline_keyboard']), 10)
+        keys = [key for _, _, group in GROUPS for key in group]
+        self.assertEqual(len(keys), len(set(keys)))
+        self.assertEqual(set(keys), {x.key for x in CATALOG})
+        self.assertEqual(before, self.store.settings())
+
 if __name__ == "__main__":
     unittest.main()
-

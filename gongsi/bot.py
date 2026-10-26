@@ -1,5 +1,5 @@
 """Private Telegram command menu and paginated, persistent report buttons."""
-from .catalog import CATALOG, BY_KEY
+from .catalog import CATALOG, BY_KEY, GROUPS, GROUP_BY_KEY
 from .api import ApiError
 
 PAGE_SIZE = 6
@@ -23,33 +23,44 @@ class Bot:
         return self.tg.call("sendMessage", chat_id=self.owner_id, text=text,
                             link_preview_options={"is_disabled": True}, **kwargs)
 
-    def menu(self, page=0):
+    def menu(self, page=-1):
         prefs = self.store.settings()
-        pages = (len(CATALOG) + PAGE_SIZE - 1) // PAGE_SIZE
-        page = max(0, min(page, pages - 1))
-        selected = set(prefs["selected"])
+        selected = set(prefs['selected'])
+        rev = prefs['revision']
         rows = []
-        for item in CATALOG[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
-            checked = item.key in selected
-            rows.append([{"text": ("✅ " if checked else "⬜ ") + item.label,
-                          "callback_data": f"s:{item.key}:{0 if checked else 1}:{prefs['revision']}:{page}"}])
-        nav = []
-        if page:
-            nav.append({"text": "◀ 이전", "callback_data": f"p:{page - 1}"})
-        if page < pages - 1:
-            nav.append({"text": "다음 ▶", "callback_data": f"p:{page + 1}"})
-        if nav:
-            rows.append(nav)
-        rows.append([{"text": "전체 선택 해제", "callback_data": f"c:{prefs['revision']}:{page}"},
-                     {"text": "선택 내역", "callback_data": "status"}])
-        text = (f"받을 보고서 선택 ({page + 1}/{pages})\n"
-                f"선택 {len(selected)}개 · {'일시정지' if prefs['paused'] else '알림 켜짐'}\n"
-                "버튼을 누르면 바로 저장됩니다. 여러 개를 선택할 수 있습니다.\n"
-                "새로 선택한 보고서는 다음 조회에서 새로 발견되는 공시부터 알립니다.\n"
-                "‘전체’ 항목과 세부 항목이 겹쳐도 같은 공시는 한 번만 보냅니다.")
-        return text, {"inline_keyboard": rows}
+        if page < 0:
+            for index, (_, label, keys) in enumerate(GROUPS):
+                count = len(selected.intersection(keys))
+                rows.append([{'text': f'{label} — {count}/{len(keys)}개 선택', 'callback_data': f'p:{index * 100}'}])
+            text = f"보고서 분류를 선택하세요\n총 {len(selected)}개 선택 · " + ('일시정지' if prefs['paused'] else '감시 켜짐')
+        else:
+            group_index, offset = divmod(page, 100)
+            if group_index >= len(GROUPS):
+                return self.menu(-1)
+            group_key, label, keys = GROUPS[group_index]
+            pages = (len(keys) + PAGE_SIZE - 1) // PAGE_SIZE
+            offset = min(offset, pages - 1)
+            page = group_index * 100 + offset
+            for key in keys[offset * PAGE_SIZE:(offset + 1) * PAGE_SIZE]:
+                checked = key in selected
+                rows.append([{'text': ('☑ ' if checked else '☐ ') + BY_KEY[key].label,
+                              'callback_data': f's:{key}:{0 if checked else 1}:{rev}:{page}'}])
+            rows.append([{'text': '분류 전체 선택', 'callback_data': f'b:{group_key}:1:{rev}:{page}'},
+                         {'text': '분류 전체 해제', 'callback_data': f'b:{group_key}:0:{rev}:{page}'}])
+            nav = []
+            if offset:
+                nav.append({'text': '◀ 이전', 'callback_data': f'p:{page-1}'})
+            if offset + 1 < pages:
+                nav.append({'text': '다음 ▶', 'callback_data': f'p:{page+1}'})
+            if nav:
+                rows.append(nav)
+            rows.append([{'text': '↩ 전체 분류', 'callback_data': 'p:-1'}])
+            text = f'{label} ({offset+1}/{pages})\n체크하면 바로 저장됩니다. 중복 공시는 한 번만 보냅니다.\n새 선택은 이후 새로 발견되는 공시부터 적용되며 과거 공시를 재발송하지 않습니다.'
+        rows.append([{'text': '전체 선택 해제', 'callback_data': f'c:{rev}:{page}'},
+                     {'text': '현재 상태', 'callback_data': 'status'}])
+        return text, {'inline_keyboard': rows}
 
-    def show_menu(self, page=0, message_id=None):
+    def show_menu(self, page=-1, message_id=None):
         text, markup = self.menu(page)
         if message_id is None:
             return self.send(text, reply_markup=markup)
@@ -92,6 +103,9 @@ class Bot:
                 if parts[0] == "s" and len(parts) == 5 and parts[1] in BY_KEY and parts[2] in ("0", "1"):
                     page = int(parts[4])
                     changed = self.store.change_settings("set", parts[1], parts[2] == "1", int(parts[3]))
+                elif parts[0] == 'b' and len(parts) == 5 and parts[1] in GROUP_BY_KEY and parts[2] in ('0', '1'):
+                    page = int(parts[4])
+                    changed = self.store.change_settings('set_group', parts[1], parts[2] == '1', int(parts[3]))
                 elif parts[0] == "c" and len(parts) == 3:
                     page = int(parts[2])
                     changed = self.store.change_settings("clear", revision=int(parts[1]))
