@@ -145,6 +145,46 @@
       "field_sources": [],
       "filing_date": "20261026",
       "method": "unavailable",
+      "receipt": "20261026900775",
+      "recorded_at": "2026-10-26T18:44:04+09:00",
+      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
+      "status": "telegram_accepted",
+      "title": "\uc8fc\uad8c\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0\uae30\uac04\ubcc0\uacbd              (\uc0c1\uc7a5\ud3d0\uc9c0 \uc0ac\uc720 \ubc1c\uc0dd)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_error": "ValueError",
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ubaa8\ubc14\uc77c\uc5b4\ud50c\ub77c\uc774\uc5b8\uc2a4",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026900772",
+      "recorded_at": "2026-10-26T18:44:02+09:00",
+      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
+      "status": "telegram_accepted",
+      "title": "\uc8fc\uad8c\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0\uae30\uac04\ubcc0\uacbd              (\uc0c1\uc7a5\ud3d0\uc9c0 \uc0ac\uc720 \ubc1c\uc0dd)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_error": "ValueError",
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\uc544\uc774\ud1a1\uc2dc",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261026",
+      "method": "unavailable",
       "receipt": "20261026900767",
       "recorded_at": "2026-10-26T18:39:02+09:00",
       "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
@@ -3513,7 +3553,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-26T18:38:59+09:00",
+  "last_scan_success": "2026-10-26T18:44:01+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
   "replay_progress": {
