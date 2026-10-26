@@ -165,3 +165,20 @@ bash -n deploy/deploy.sh
 이번 변경의 로컬 Python 검사 29개와 PowerShell 설치 스크립트 문법 검사는 통과했다. Linux 셸 검사와 새 GitHub CI 결과는 해당 커밋에서 확인한다. 실제 패키지 설치·서버 키 입력·기동은 PC에서 위 명령을 실행한 후 검증해야 한다. 이 스크립트는 GitHub Actions용 SSH 키나 Secrets를 생성하지 않으며 자동 배포 연결은 다음 단계다.
 
 공식 Python 설치 안내: https://docs.oracle.com/en/operating-systems/oracle-linux/9/python/python-InstallingPython.html
+
+
+## 작은 인스턴스의 설치 전 메모리 준비 (2026-10-23)
+
+패키지 설치 뒤 SSH가 배너 교환 단계에서 응답하지 않는 현상이 반복됐다. 직전 진단에서 OS가 인식한 RAM은 약 498 MiB, 스왑은 약 497 MiB였다. 메모리 압박이 의심되지만 커널 로그를 읽지 못해 OOM 종료는 아직 확정하지 않았다. 서버 배포 완료도 확인되지 않았다.
+
+서버가 응답하지 않으면 Oracle에서 일반 재부팅 후 SSH가 복구될 때까지 기다린다. 같은 설치를 즉시 반복하지 않는다. Windows PowerShell에서 다음 명령으로 메모리 준비만 먼저 실행한다.
+
+~~~powershell
+& .\deploy\setup-oracle.ps1 -PrepareMemoryOnly
+~~~
+
+이 단계는 패키지를 설치하지 않는다. 실행 중인 패키지 관리자가 있으면 중단한다. RAM 2 GiB 미만이고 스왑 3 GiB 미만이면 xfs/ext4에서 여유 디스크 4 GiB 이상을 확인한 뒤 별도의 3 GiB 스왑을 만든다. 기존 스왑은 유지하고, 알 수 없는 기존 파일은 덮어쓰지 않는다. 파일은 root 전용이며 활성화에 성공한 뒤 fstab을 백업하고 재부팅 후에도 유지하도록 등록한다. 생성 중 실패한 파일은 자동으로 삭제하거나 덮어쓰지 않으므로 확인 후 복구해야 한다.
+
+MEMORY PREPARATION SUCCESS를 확인한 다음 옵션 없이 설치를 실행한다. 전체 설치도 같은 준비를 자동 실행하며, 이미 설치된 git과 python3.11은 다시 설치하지 않는다. dnf는 선택 의존성과 동시 다운로드를 줄인다. 스왑은 RAM보다 느리므로 설치 속도나 서버 안정성을 보장하는 조치는 아니다.
+
+공식 안내: https://docs.oracle.com/en/operating-systems/oracle-linux/9/stordev/stordev-ImplementingSwapSpaces.html

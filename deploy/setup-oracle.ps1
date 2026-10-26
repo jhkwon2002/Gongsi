@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly,
+    [string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly,[switch]$PrepareMemoryOnly,
     [ValidateRange(5,120)][int]$ConnectTimeoutSeconds = 60,
     [string]$DiagnosticLogPath
 )
@@ -42,7 +42,9 @@ if ($DiagnoseOnly) {
     Write-Host 'DIAGNOSTIC SUCCESS: SSH and passwordless sudo are working. No installation was performed.'
     return
 }
-Write-Host '[3/5] Installing server packages. Repository downloads may take several minutes.'
+Write-Host '[3/5] Preparing memory before any package installation.'
+$memoryScript = Join-Path $PSScriptRoot 'prepare-memory.sh'
+if (!(Test-Path -LiteralPath $memoryScript -PathType Leaf)) { throw 'Missing deploy/prepare-memory.sh. No packages were installed.' }
 
 $bootstrap = @'
 set -euo pipefail
@@ -52,8 +54,12 @@ echo "[server] Detected OS: $PRETTY_NAME"
 case "$ID" in
   ol)
     [[ "$VERSION_ID" == 9* ]] || { echo "This installer supports Oracle Linux 9."; exit 1; }
-    echo "[server] Starting dnf package installation"
-    sudo -n dnf --setopt=timeout=30 --setopt=retries=2 install -y git python3.11
+    if command -v git >/dev/null && command -v python3.11 >/dev/null && python3.11 -c 'import sqlite3' 2>/dev/null; then
+      echo "[server] Required packages are already installed; skipping dnf"
+    else
+      echo "[server] Starting dnf package installation with reduced optional downloads"
+      sudo -n dnf --setopt=timeout=30 --setopt=retries=2 --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 install -y git python3.11
+    fi
     ;;
   ubuntu)
     sudo -n apt-get update
@@ -82,6 +88,14 @@ echo "SERVER BOOTSTRAP OK"
 $previousEncoding = $OutputEncoding
 try {
     $OutputEncoding = [Text.UTF8Encoding]::new($false)
+    $memorySource = Get-Content -LiteralPath $memoryScript -Raw -Encoding UTF8
+    $memorySource | & ssh @sshArgs -T $destination "tr -d '\r' | sudo -n bash -s"
+    if ($LASTEXITCODE -ne 0) { throw 'Memory preparation failed. Package installation was not started.' }
+    if ($PrepareMemoryOnly) {
+        Write-Host 'MEMORY PREPARATION SUCCESS: no packages were installed. Run this installer again without -PrepareMemoryOnly to continue.'
+        return
+    }
+    Write-Host '[3/5] Memory prepared. Installing server packages.'
     $bootstrap | & ssh @sshArgs -T $destination "tr -d '\r' | bash -s"
     if ($LASTEXITCODE -ne 0) { throw 'Server bootstrap failed. Credentials were not requested.' }
     Write-Host '[4/5] Enter the two API credentials in the SSH terminal. Input will be hidden.'
