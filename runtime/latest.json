@@ -134,6 +134,50 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261026",
+            "end_de": "20261026",
+            "exact_receipt_rows": 1,
+            "field_count": 4,
+            "reason": "api_fields_available",
+            "status": "000"
+          }
+        ],
+        "endpoint": "cmpMgDecsn",
+        "reason": "api_fields_available"
+      },
+      "company": "\uc560\uacbd\ucf00\ubbf8\uce7c",
+      "context": "test_replay",
+      "field_sources": [
+        {
+          "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ud68c\uc0ac\uba85)",
+          "source": "structured_api"
+        },
+        {
+          "label": "\ud569\ubcd1\ubc29\ubc95",
+          "source": "structured_api"
+        },
+        {
+          "label": "\ud569\ubcd1\ube44\uc728",
+          "source": "structured_api"
+        },
+        {
+          "label": "\ud569\ubcd1\ubaa9\uc801",
+          "source": "structured_api"
+        }
+      ],
+      "filing_date": "20261026",
+      "method": "structured_api",
+      "receipt": "20261026000318",
+      "recorded_at": "2026-10-26T17:36:33+09:00",
+      "release": "40930d478163419b6d8f40acdb80729d7eb08931",
+      "status": "telegram_accepted",
+      "title": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [],
         "endpoint": null,
         "original_error": "ValueError",
@@ -585,8 +629,8 @@
       "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              "
     }
   ],
-  "last_scan_success": "2026-10-26T17:34:32+09:00",
+  "last_scan_success": "2026-10-26T17:36:31+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
-  "release": "b274fa4c4c60c12322de59bbf14cf2f2e2738c43",
+  "release": "40930d478163419b6d8f40acdb80729d7eb08931",
   "schema_version": 1
 }
