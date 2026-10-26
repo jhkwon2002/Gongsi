@@ -1,8 +1,9 @@
 [
   {
-    "id": "owner-latest10-20261026-v4-01",
+    "id": "owner-akchem-20261026-api-v5-01",
     "date": "2026-10-26",
-    "count": 10,
-    "distinct_companies": false
+    "company": "\uc560\uacbd\ucf00\ubbf8\uce7c",
+    "receipt": "20261026000318",
+    "count": 1
   }
 ]

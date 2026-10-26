@@ -86,3 +86,16 @@ class ReplayTests(unittest.TestCase):
         process_requests(self.bot,self.store,Stop(),self.request)
         self.assertEqual(len(self.bot.calls),10)
         self.assertEqual(self.store.get('test_replay_last')['sent'],10)
+
+    def test_exact_receipt_cannot_select_another_company_report(self):
+        self.request[0].update(company='가상3',count=1,receipt='20261026000003')
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),1)
+        self.assertEqual(self.store.get('test_replay:test-one')['reports'][0]['rcept_no'],'20261026000003')
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),1)
+
+    def test_receipt_and_company_mismatch_sends_nothing(self):
+        self.request[0].update(company='가상3',count=1,receipt='20261026000006')
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertFalse(self.bot.calls)
