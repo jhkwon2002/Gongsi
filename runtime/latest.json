@@ -134,6 +134,26 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_error": "ValueError",
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "SBI\uc778\ubca0\uc2a4\ud2b8\uba3c\ud2b8",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261026",
+      "method": "unavailable",
+      "receipt": "20261026900710",
+      "recorded_at": "2026-10-26T17:34:34+09:00",
+      "release": "b274fa4c4c60c12322de59bbf14cf2f2e2738c43",
+      "status": "telegram_accepted",
+      "title": "\uae30\ud0c0\uc2dc\uc7a5\uc548\ub0b4(\uad00\ub9ac\uc885\ubaa9\uc9c0\uc815\uc6b0\ub824\uc885\ubaa9)              (\uc8fc\uac00 1,000\uc6d0 \ubbf8\ub2ec)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261026",
@@ -565,7 +585,7 @@
       "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              "
     }
   ],
-  "last_scan_success": "2026-10-26T17:29:29+09:00",
+  "last_scan_success": "2026-10-26T17:34:32+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "release": "b274fa4c4c60c12322de59bbf14cf2f2e2738c43",
   "schema_version": 1
