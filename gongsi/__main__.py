@@ -45,7 +45,7 @@ def deliver(bot, store, stop):
                 summary = extractor.extract(report)
             except Exception:
                 summary = {'source':'추출 불가 · 원문 확인','fields':[]}
-        bot.send(format_notification(report, summary))
+        bot.send(format_notification(report, summary, html=True), parse_mode="HTML")
         # Telegram has no sendMessage idempotency key: a crash before this commit can repeat a message.
         store.acknowledge(report["rcept_no"])
         if stop.wait(1.1):

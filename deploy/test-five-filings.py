@@ -46,8 +46,8 @@ def main():
             summary=extractor.extract(report)
         except Exception:
             summary={'source':'추출 불가 · 원문 확인','fields':[]}
-        text=f'[테스트 재전송 {index}/{len(reports)}]\n'+format_notification(report,summary)+'\n수신 확인용 재전송입니다.'
-        result=tg.call('sendMessage',chat_id=6766930417,text=text,link_preview_options={'is_disabled':True})
+        text=f'[테스트 재전송 {index}/{len(reports)}]\n'+format_notification(report,summary,html=True)+'\n수신 확인용 재전송입니다.'
+        result=tg.call('sendMessage',chat_id=6766930417,text=text,parse_mode='HTML',link_preview_options={'is_disabled':True})
         print(json.dumps({'sent':index,'company':report['corp_name'],'title':title,'receipt':report['rcept_no'],'message_id':result.get('message_id')},ensure_ascii=True),flush=True)
         time.sleep(1.3)
     summary_store.close()

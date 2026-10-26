@@ -160,3 +160,20 @@ class ExtractionTests(unittest.TestCase):
         row['rcept_no']=RECEIPT
         result=structured_fields({'list':[row]},RECEIPT,schema)
         self.assertTrue(any('양수금액' in label or '양수가액' in label for label,value in result))
+
+    def test_html_notification_highlights_company_and_hides_receipt_in_link(self):
+        from html.parser import HTMLParser
+        class Visible(HTMLParser):
+            def __init__(self):
+                super().__init__(); self.parts=[]
+            def handle_data(self,data):
+                self.parts.append(data)
+        report={**REPORT,'corp_name':'가상A & <B>'}
+        message=format_notification(report,{'source':'원문 표','fields':[('접수번호',RECEIPT),('목적','A < B & C')]},html=True)
+        self.assertTrue(message.startswith('🏢 <b>가상A &amp; &lt;B&gt;</b>'))
+        self.assertIn('📄 원문 보기',message)
+        self.assertIn('A &lt; B &amp; C',message)
+        self.assertIn(RECEIPT,message)
+        parser=Visible(); parser.feed(message)
+        self.assertNotIn(RECEIPT,''.join(parser.parts))
+        self.assertNotIn('접수번호',''.join(parser.parts))

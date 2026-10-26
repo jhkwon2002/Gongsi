@@ -1,5 +1,6 @@
 """Deterministic disclosure extraction. No language model or external Python packages."""
 import io
+from html import escape
 import json
 from pathlib import Path
 import re
@@ -367,16 +368,21 @@ class Extractor:
         return result
 
 
-def format_notification(report, summary=None):
-    # Use one conservative message budget; supplementary text never displaces the source link.
-    lines = [f"[{text(report.get('corp_name',''),80)}] {text(report['report_nm'],220)}",
-             '접수일: '+report['rcept_dt']]
+def format_notification(report, summary=None, html=False):
+    company = text(report.get('corp_name',''),80)
+    title = text(report['report_nm'],220)
+    encode = escape if html else str
+    heading = '🏢 <b>'+escape(company)+'</b>' if html else '🏢 '+company
+    lines = [heading, '', encode(title), '접수일: '+encode(report['rcept_dt'])]
     if summary:
-        lines.append('주요항목 발췌 · '+summary['source'])
+        lines.append('주요항목 발췌 · '+encode(summary['source']))
         for label,value in summary.get('fields',[])[:9]:
-            lines.append('• '+text(label,90)+': '+text(value,230))
+            if '접수번호' in label:
+                continue
+            lines.append('• '+encode(text(label,90))+': '+encode(text(value,230)))
         lines.append('전체 내용·조건·정정 여부는 원문에서 확인하세요.')
-    lines.append('https://dart.fss.or.kr/dsaf001/main.do?rcpNo='+report['rcept_no'])
+    url = 'https://dart.fss.or.kr/dsaf001/main.do?'+urlencode({'rcpNo':report['rcept_no']})
+    lines.append('<a href="'+escape(url,quote=True)+'">📄 원문 보기</a>' if html else url)
     while len('\n'.join(lines).encode('utf-16-le'))//2 > 3800 and len(lines)>5:
         lines.pop(-3)
     return '\n'.join(lines)
