@@ -55,14 +55,7 @@ class Dart:
         self.key, self.store, self.daily_limit = key, store, daily_limit
 
     def page(self, start, end, page):
-        day = now_kst().date().isoformat()
-        quota = self.store.get("dart_quota", {"day": day, "count": 0})
-        if quota["day"] != day:
-            quota = {"day": day, "count": 0}
-        if quota["count"] >= self.daily_limit:
-            raise ApiError("OpenDART", "local_daily_limit")
-        quota["count"] += 1
-        self.store.set("dart_quota", quota)
+        self.store.reserve_dart_request(self.daily_limit)
         params = {"crtfc_key": self.key, "bgn_de": start, "end_de": end,
                   "last_reprt_at": "N", "sort": "date", "sort_mth": "asc",
                   "page_count": 100, "page_no": page}

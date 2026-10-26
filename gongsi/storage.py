@@ -32,6 +32,20 @@ class Store:
         with self.tx() as db:
             db.execute("INSERT OR REPLACE INTO kv VALUES (?,?)", (key, json.dumps(value, ensure_ascii=False)))
 
+    def reserve_dart_request(self, limit):
+        from .api import ApiError, now_kst
+        day = now_kst().date().isoformat()
+        with self.tx() as db:
+            if not db.in_transaction:
+                db.execute('BEGIN IMMEDIATE')
+            quota = self.get('dart_quota', {'day':day,'count':0})
+            if quota['day'] != day:
+                quota = {'day':day,'count':0}
+            if quota['count'] >= limit:
+                raise ApiError('OpenDART','local_daily_limit')
+            quota['count'] += 1
+            db.execute('INSERT OR REPLACE INTO kv VALUES (?,?)',('dart_quota',json.dumps(quota)))
+
     def settings(self):
         return self.get("settings", {"selected": [], "paused": False, "revision": 0})
 

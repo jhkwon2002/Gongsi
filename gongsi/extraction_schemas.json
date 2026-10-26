@@ -1,0 +1,5082 @@
+[
+  {
+    "index": 0,
+    "title": "\uc790\uc0b0\uc591\uc218\ub3c4(\uae30\ud0c0), \ud48b\ubc31\uc635\uc158",
+    "endpoint": "astInhtrfEtcPtbkOpt",
+    "fields": [
+      {
+        "key": "rp_rsn",
+        "label": "\ubcf4\uace0 \uc0ac\uc720"
+      },
+      {
+        "key": "ast_inhtrf_prc",
+        "label": "\uc790\uc0b0\uc591\uc218\u318d\ub3c4 \uac00\uc561"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020018"
+  },
+  {
+    "index": 1,
+    "title": "\ubd80\ub3c4\ubc1c\uc0dd",
+    "endpoint": "dfOcr",
+    "fields": [
+      {
+        "key": "df_cn",
+        "label": "\ubd80\ub3c4\ub0b4\uc6a9"
+      },
+      {
+        "key": "df_amt",
+        "label": "\ubd80\ub3c4\uae08\uc561"
+      },
+      {
+        "key": "df_bnk",
+        "label": "\ubd80\ub3c4\ubc1c\uc0dd\uc740\ud589"
+      },
+      {
+        "key": "dfd",
+        "label": "\ucd5c\uc885\ubd80\ub3c4(\ub2f9\uc88c\uac70\ub798\uc815\uc9c0)\uc77c\uc790"
+      },
+      {
+        "key": "df_rs",
+        "label": "\ubd80\ub3c4\uc0ac\uc720 \ubc0f \uacbd\uc704"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020019"
+  },
+  {
+    "index": 2,
+    "title": "\uc601\uc5c5\uc815\uc9c0",
+    "endpoint": "bsnSp",
+    "fields": [
+      {
+        "key": "bsnsp_rm",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ubd84\uc57c"
+      },
+      {
+        "key": "bsnsp_amt",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc5ed(\uc601\uc5c5\uc815\uc9c0\uae08\uc561)"
+      },
+      {
+        "key": "rsl",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc5ed(\ucd5c\uadfc\ub9e4\ucd9c\ucd1d\uc561)"
+      },
+      {
+        "key": "sl_vs",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc5ed(\ub9e4\ucd9c\uc561 \ub300\ube44)"
+      },
+      {
+        "key": "ls_atn",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc5ed(\ub300\uaddc\ubaa8\ubc95\uc778\uc5ec\ubd80)"
+      },
+      {
+        "key": "krx_stt_atn",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc5ed(\uac70\ub798\uc18c \uc758\ubb34\uacf5\uc2dc \ud574\ub2f9 \uc5ec\ubd80)"
+      },
+      {
+        "key": "bsnsp_cn",
+        "label": "\uc601\uc5c5\uc815\uc9c0 \ub0b4\uc6a9"
+      },
+      {
+        "key": "bsnsp_rs",
+        "label": "\uc601\uc5c5\uc815\uc9c0\uc0ac\uc720"
+      },
+      {
+        "key": "ft_ctp",
+        "label": "\ud5a5\ud6c4\ub300\ucc45"
+      },
+      {
+        "key": "bsnsp_af",
+        "label": "\uc601\uc5c5\uc815\uc9c0\uc601\ud5a5"
+      },
+      {
+        "key": "bsnspd",
+        "label": "\uc601\uc5c5\uc815\uc9c0\uc77c\uc790"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d)"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38)"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020020"
+  },
+  {
+    "index": 3,
+    "title": "\ud68c\uc0dd\uc808\ucc28 \uac1c\uc2dc\uc2e0\uccad",
+    "endpoint": "ctrcvsBgrq",
+    "fields": [
+      {
+        "key": "apcnt",
+        "label": "\uc2e0\uccad\uc778 (\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "cpct",
+        "label": "\uad00\ud560\ubc95\uc6d0"
+      },
+      {
+        "key": "rq_rs",
+        "label": "\uc2e0\uccad\uc0ac\uc720"
+      },
+      {
+        "key": "rqd",
+        "label": "\uc2e0\uccad\uc77c\uc790"
+      },
+      {
+        "key": "ft_ctp_sc",
+        "label": "\ud5a5\ud6c4\ub300\ucc45 \ubc0f \uc77c\uc815"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020021"
+  },
+  {
+    "index": 4,
+    "title": "\ud574\uc0b0\uc0ac\uc720 \ubc1c\uc0dd",
+    "endpoint": "dsRsOcr",
+    "fields": [
+      {
+        "key": "ds_rs",
+        "label": "\ud574\uc0b0\uc0ac\uc720"
+      },
+      {
+        "key": "ds_rsd",
+        "label": "\ud574\uc0b0\uc0ac\uc720\ubc1c\uc0dd\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d)"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38)"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020022"
+  },
+  {
+    "index": 5,
+    "title": "\uc720\uc0c1\uc99d\uc790 \uacb0\uc815",
+    "endpoint": "piicDecsn",
+    "fields": [
+      {
+        "key": "nstk_ostk_cnt",
+        "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "nstk_estk_cnt",
+        "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "fv_ps",
+        "label": "1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0)"
+      },
+      {
+        "key": "bfic_tisstk_ostk",
+        "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "bfic_tisstk_estk",
+        "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "fdpp_fclt",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_bsninh",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_op",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_dtrp",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_ocsa",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_etc",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "ic_mthn",
+        "label": "\uc99d\uc790\ubc29\uc2dd"
+      },
+      {
+        "key": "ssl_at",
+        "label": "\uacf5\ub9e4\ub3c4 \ud574\ub2f9\uc5ec\ubd80"
+      },
+      {
+        "key": "ssl_bgd",
+        "label": "\uacf5\ub9e4\ub3c4 \uc2dc\uc791\uc77c"
+      },
+      {
+        "key": "ssl_edd",
+        "label": "\uacf5\ub9e4\ub3c4 \uc885\ub8cc\uc77c"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020023"
+  },
+  {
+    "index": 6,
+    "title": "\ubb34\uc0c1\uc99d\uc790 \uacb0\uc815",
+    "endpoint": "fricDecsn",
+    "fields": [
+      {
+        "key": "nstk_ostk_cnt",
+        "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "nstk_estk_cnt",
+        "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "fv_ps",
+        "label": "1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0)"
+      },
+      {
+        "key": "bfic_tisstk_ostk",
+        "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "bfic_tisstk_estk",
+        "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "nstk_asstd",
+        "label": "\uc2e0\uc8fc\ubc30\uc815\uae30\uc900\uc77c"
+      },
+      {
+        "key": "nstk_ascnt_ps_ostk",
+        "label": "1\uc8fc\ub2f9 \uc2e0\uc8fc\ubc30\uc815 \uc8fc\uc2dd\uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "nstk_ascnt_ps_estk",
+        "label": "1\uc8fc\ub2f9 \uc2e0\uc8fc\ubc30\uc815 \uc8fc\uc2dd\uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "nstk_dividrk",
+        "label": "\uc2e0\uc8fc\uc758 \ubc30\ub2f9\uae30\uc0b0\uc77c"
+      },
+      {
+        "key": "nstk_dlprd",
+        "label": "\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c"
+      },
+      {
+        "key": "nstk_lstprd",
+        "label": "\uc2e0\uc8fc\uc758 \uc0c1\uc7a5 \uc608\uc815\uc77c"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020024"
+  },
+  {
+    "index": 7,
+    "title": "\uc720\ubb34\uc0c1\uc99d\uc790 \uacb0\uc815",
+    "endpoint": "pifricDecsn",
+    "fields": [
+      {
+        "key": "piic_nstk_ostk_cnt",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "piic_nstk_estk_cnt",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "piic_fv_ps",
+        "label": "\uc720\uc0c1\uc99d\uc790(1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0))"
+      },
+      {
+        "key": "piic_bfic_tisstk_ostk",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "piic_bfic_tisstk_estk",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "piic_fdpp_fclt",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_fdpp_bsninh",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_fdpp_op",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_fdpp_dtrp",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_fdpp_ocsa",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_fdpp_etc",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0)))"
+      },
+      {
+        "key": "piic_ic_mthn",
+        "label": "\uc720\uc0c1\uc99d\uc790(\uc99d\uc790\ubc29\uc2dd)"
+      },
+      {
+        "key": "fric_nstk_ostk_cnt",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_nstk_estk_cnt",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_fv_ps",
+        "label": "\ubb34\uc0c1\uc99d\uc790(1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0))"
+      },
+      {
+        "key": "fric_bfic_tisstk_ostk",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_bfic_tisstk_estk",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_nstk_asstd",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\ubc30\uc815\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "fric_nstk_ascnt_ps_ostk",
+        "label": "\ubb34\uc0c1\uc99d\uc790(1\uc8fc\ub2f9 \uc2e0\uc8fc\ubc30\uc815 \uc8fc\uc2dd\uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_nstk_ascnt_ps_estk",
+        "label": "\ubb34\uc0c1\uc99d\uc790(1\uc8fc\ub2f9 \uc2e0\uc8fc\ubc30\uc815 \uc8fc\uc2dd\uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)))"
+      },
+      {
+        "key": "fric_nstk_dividrk",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \ubc30\ub2f9\uae30\uc0b0\uc77c)"
+      },
+      {
+        "key": "fric_nstk_dlprd",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "fric_nstk_lstprd",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc2e0\uc8fc\uc758 \uc0c1\uc7a5 \uc608\uc815\uc77c)"
+      },
+      {
+        "key": "fric_bddd",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c))"
+      },
+      {
+        "key": "fric_od_a_at_t",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85)))"
+      },
+      {
+        "key": "fric_od_a_at_b",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85)))"
+      },
+      {
+        "key": "fric_adt_a_atn",
+        "label": "\ubb34\uc0c1\uc99d\uc790(\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d \uc5ec\ubd80)"
+      },
+      {
+        "key": "ssl_at",
+        "label": "\uacf5\ub9e4\ub3c4 \ud574\ub2f9\uc5ec\ubd80"
+      },
+      {
+        "key": "ssl_bgd",
+        "label": "\uacf5\ub9e4\ub3c4 \uc2dc\uc791\uc77c"
+      },
+      {
+        "key": "ssl_edd",
+        "label": "\uacf5\ub9e4\ub3c4 \uc885\ub8cc\uc77c"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020025"
+  },
+  {
+    "index": 8,
+    "title": "\uac10\uc790 \uacb0\uc815",
+    "endpoint": "crDecsn",
+    "fields": [
+      {
+        "key": "crstk_ostk_cnt",
+        "label": "\uac10\uc790\uc8fc\uc2dd\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "crstk_estk_cnt",
+        "label": "\uac10\uc790\uc8fc\uc2dd\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc))"
+      },
+      {
+        "key": "fv_ps",
+        "label": "1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0)"
+      },
+      {
+        "key": "bfcr_cpt",
+        "label": "\uac10\uc790\uc804\ud6c4 \uc790\ubcf8\uae08(\uac10\uc790\uc804 (\uc6d0))"
+      },
+      {
+        "key": "atcr_cpt",
+        "label": "\uac10\uc790\uc804\ud6c4 \uc790\ubcf8\uae08(\uac10\uc790\ud6c4 (\uc6d0))"
+      },
+      {
+        "key": "bfcr_tisstk_ostk",
+        "label": "\uac10\uc790\uc804\ud6c4 \ubc1c\ud589\uc8fc\uc2dd\uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)(\uac10\uc790\uc804 (\uc6d0)))"
+      },
+      {
+        "key": "atcr_tisstk_ostk",
+        "label": "\uac10\uc790\uc804\ud6c4 \ubc1c\ud589\uc8fc\uc2dd\uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)(\uac10\uc790\ud6c4 (\uc6d0)))"
+      },
+      {
+        "key": "bfcr_tisstk_estk",
+        "label": "\uac10\uc790\uc804\ud6c4 \ubc1c\ud589\uc8fc\uc2dd\uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)(\uac10\uc790\uc804 (\uc6d0)))"
+      },
+      {
+        "key": "atcr_tisstk_estk",
+        "label": "\uac10\uc790\uc804\ud6c4 \ubc1c\ud589\uc8fc\uc2dd\uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)(\uac10\uc790\ud6c4 (\uc6d0)))"
+      },
+      {
+        "key": "cr_rt_ostk",
+        "label": "\uac10\uc790\ube44\uc728(\ubcf4\ud1b5\uc8fc\uc2dd (%))"
+      },
+      {
+        "key": "cr_rt_estk",
+        "label": "\uac10\uc790\ube44\uc728(\uae30\ud0c0\uc8fc\uc2dd (%))"
+      },
+      {
+        "key": "cr_std",
+        "label": "\uac10\uc790\uae30\uc900\uc77c"
+      },
+      {
+        "key": "cr_mth",
+        "label": "\uac10\uc790\ubc29\ubc95"
+      },
+      {
+        "key": "cr_rs",
+        "label": "\uac10\uc790\uc0ac\uc720"
+      },
+      {
+        "key": "crsc_gmtsck_prd",
+        "label": "\uac10\uc790\uc77c\uc815(\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c)"
+      },
+      {
+        "key": "crsc_trnmsppd",
+        "label": "\uac10\uc790\uc77c\uc815(\uba85\uc758\uac1c\uc11c\uc815\uc9c0\uae30\uac04)"
+      },
+      {
+        "key": "crsc_osprpd",
+        "label": "\uac10\uc790\uc77c\uc815(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04)"
+      },
+      {
+        "key": "crsc_trspprpd",
+        "label": "\uac10\uc790\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798 \uc815\uc9c0\uc608\uc815\uae30\uac04)"
+      },
+      {
+        "key": "crsc_osprpd_bgd",
+        "label": "\uac10\uc790\uc77c\uc815(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "crsc_osprpd_edd",
+        "label": "\uac10\uc790\uc77c\uc815(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "crsc_trspprpd_bgd",
+        "label": "\uac10\uc790\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798 \uc815\uc9c0\uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "crsc_trspprpd_edd",
+        "label": "\uac10\uc790\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798 \uc815\uc9c0\uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "crsc_nstkdlprd",
+        "label": "\uac10\uc790\uc77c\uc815(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "crsc_nstklstprd",
+        "label": "\uac10\uc790\uc77c\uc815(\uc2e0\uc8fc\uc0c1\uc7a5\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "cdobprpd_bgd",
+        "label": "\ucc44\uad8c\uc790 \uc774\uc758\uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "cdobprpd_edd",
+        "label": "\ucc44\uad8c\uc790 \uc774\uc758\uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "ospr_nstkdl_pl",
+        "label": "\uad6c\uc8fc\uad8c\uc81c\ucd9c \ubc0f \uc2e0\uc8fc\uad8c\uad50\ubd80\uc7a5\uc18c"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020026"
+  },
+  {
+    "index": 9,
+    "title": "\ucc44\uad8c\uc740\ud589 \ub4f1\uc758 \uad00\ub9ac\uc808\ucc28 \uac1c\uc2dc",
+    "endpoint": "bnkMngtPcbg",
+    "fields": [
+      {
+        "key": "mngt_pcbg_dd",
+        "label": "\uad00\ub9ac\uc808\ucc28\uac1c\uc2dc \uacb0\uc815\uc77c\uc790"
+      },
+      {
+        "key": "mngt_int",
+        "label": "\uad00\ub9ac\uae30\uad00"
+      },
+      {
+        "key": "mngt_pd",
+        "label": "\uad00\ub9ac\uae30\uac04"
+      },
+      {
+        "key": "mngt_rs",
+        "label": "\uad00\ub9ac\uc0ac\uc720"
+      },
+      {
+        "key": "cfd",
+        "label": "\ud655\uc778\uc77c\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020027"
+  },
+  {
+    "index": 10,
+    "title": "\uc18c\uc1a1 \ub4f1\uc758 \uc81c\uae30",
+    "endpoint": "lwstLg",
+    "fields": [
+      {
+        "key": "icnm",
+        "label": "\uc0ac\uac74\uc758 \uba85\uce6d"
+      },
+      {
+        "key": "ac_ap",
+        "label": "\uc6d0\uace0\u318d\uc2e0\uccad\uc778"
+      },
+      {
+        "key": "rq_cn",
+        "label": "\uccad\uad6c\ub0b4\uc6a9"
+      },
+      {
+        "key": "cpct",
+        "label": "\uad00\ud560\ubc95\uc6d0"
+      },
+      {
+        "key": "ft_ctp",
+        "label": "\ud5a5\ud6c4\ub300\ucc45"
+      },
+      {
+        "key": "lgd",
+        "label": "\uc81c\uae30\uc77c\uc790"
+      },
+      {
+        "key": "cfd",
+        "label": "\ud655\uc778\uc77c\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020028"
+  },
+  {
+    "index": 11,
+    "title": "\ud574\uc678 \uc99d\uad8c\uc2dc\uc7a5 \uc8fc\uad8c\ub4f1 \uc0c1\uc7a5 \uacb0\uc815",
+    "endpoint": "ovLstDecsn",
+    "fields": [
+      {
+        "key": "lstprstk_ostk_cnt",
+        "label": "\uc0c1\uc7a5\uc608\uc815\uc8fc\uc2dd \uc885\ub958\u318d\uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "lstprstk_estk_cnt",
+        "label": "\uc0c1\uc7a5\uc608\uc815\uc8fc\uc2dd \uc885\ub958\u318d\uc218(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "tisstk_ostk",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "tisstk_estk",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "psmth_nstk_sl",
+        "label": "\uacf5\ubaa8\ubc29\ubc95(\uc2e0\uc8fc\ubc1c\ud589 (\uc8fc))"
+      },
+      {
+        "key": "psmth_ostk_sl",
+        "label": "\uacf5\ubaa8\ubc29\ubc95(\uad6c\uc8fc\ub9e4\ucd9c (\uc8fc))"
+      },
+      {
+        "key": "fdpp",
+        "label": "\uc790\uae08\uc870\ub2ec(\uc2e0\uc8fc\ubc1c\ud589) \ubaa9\uc801"
+      },
+      {
+        "key": "lststk_orlst",
+        "label": "\uc0c1\uc7a5\uc99d\uad8c(\uc6d0\uc8fc\uc0c1\uc7a5 (\uc8fc))"
+      },
+      {
+        "key": "lststk_drlst",
+        "label": "\uc0c1\uc7a5\uc99d\uad8c(DR\uc0c1\uc7a5 (\uc8fc))"
+      },
+      {
+        "key": "lstex_nt",
+        "label": "\uc0c1\uc7a5\uac70\ub798\uc18c(\uc18c\uc7ac\uad6d\uac00)"
+      },
+      {
+        "key": "lstpp",
+        "label": "\ud574\uc678\uc0c1\uc7a5\ubaa9\uc801"
+      },
+      {
+        "key": "lstprd",
+        "label": "\uc0c1\uc7a5\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020029"
+  },
+  {
+    "index": 12,
+    "title": "\ud574\uc678 \uc99d\uad8c\uc2dc\uc7a5 \uc8fc\uad8c\ub4f1 \uc0c1\uc7a5\ud3d0\uc9c0 \uacb0\uc815",
+    "endpoint": "ovDlstDecsn",
+    "fields": [
+      {
+        "key": "dlststk_ostk_cnt",
+        "label": "\uc0c1\uc7a5\ud3d0\uc9c0\uc8fc\uc2dd \uc885\ub958\u318d\uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dlststk_estk_cnt",
+        "label": "\uc0c1\uc7a5\ud3d0\uc9c0\uc8fc\uc2dd \uc885\ub958\u318d\uc218(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "lstex_nt",
+        "label": "\uc0c1\uc7a5\uac70\ub798\uc18c(\uc18c\uc7ac\uad6d\uac00)"
+      },
+      {
+        "key": "dlstrq_prd",
+        "label": "\ud3d0\uc9c0\uc2e0\uccad\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "dlst_prd",
+        "label": "\ud3d0\uc9c0(\uc608\uc815)\uc77c\uc790"
+      },
+      {
+        "key": "dlst_rs",
+        "label": "\ud3d0\uc9c0\uc0ac\uc720"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\ud655\uc778\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020030"
+  },
+  {
+    "index": 13,
+    "title": "\ud574\uc678 \uc99d\uad8c\uc2dc\uc7a5 \uc8fc\uad8c\ub4f1 \uc0c1\uc7a5",
+    "endpoint": "ovLst",
+    "fields": [
+      {
+        "key": "lststk_ostk_cnt",
+        "label": "\uc0c1\uc7a5\uc8fc\uc2dd \uc885\ub958 \ubc0f \uc218(\ubcf4\ud1b5\uc8fc\uc2dd(\uc8fc))"
+      },
+      {
+        "key": "lststk_estk_cnt",
+        "label": "\uc0c1\uc7a5\uc8fc\uc2dd \uc885\ub958 \ubc0f \uc218(\uae30\ud0c0\uc8fc\uc2dd(\uc8fc))"
+      },
+      {
+        "key": "lstex_nt",
+        "label": "\uc0c1\uc7a5\uac70\ub798\uc18c(\uc18c\uc7ac\uad6d\uac00)"
+      },
+      {
+        "key": "stk_cd",
+        "label": "\uc885\ubaa9 \uba85 (code)"
+      },
+      {
+        "key": "lstd",
+        "label": "\uc0c1\uc7a5\uc77c\uc790"
+      },
+      {
+        "key": "cfd",
+        "label": "\ud655\uc778\uc77c\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020031"
+  },
+  {
+    "index": 14,
+    "title": "\ud574\uc678 \uc99d\uad8c\uc2dc\uc7a5 \uc8fc\uad8c\ub4f1 \uc0c1\uc7a5\ud3d0\uc9c0",
+    "endpoint": "ovDlst",
+    "fields": [
+      {
+        "key": "lstex_nt",
+        "label": "\uc0c1\uc7a5\uac70\ub798\uc18c \ubc0f \uc18c\uc7ac\uad6d\uac00"
+      },
+      {
+        "key": "dlststk_ostk_cnt",
+        "label": "\uc0c1\uc7a5\ud3d0\uc9c0\uc8fc\uc2dd\uc758 \uc885\ub958(\ubcf4\ud1b5\uc8fc\uc2dd(\uc8fc))"
+      },
+      {
+        "key": "dlststk_estk_cnt",
+        "label": "\uc0c1\uc7a5\ud3d0\uc9c0\uc8fc\uc2dd\uc758 \uc885\ub958(\uae30\ud0c0\uc8fc\uc2dd(\uc8fc))"
+      },
+      {
+        "key": "tredd",
+        "label": "\ub9e4\ub9e4\uac70\ub798\uc885\ub8cc\uc77c"
+      },
+      {
+        "key": "dlst_rs",
+        "label": "\ud3d0\uc9c0\uc0ac\uc720"
+      },
+      {
+        "key": "cfd",
+        "label": "\ud655\uc778\uc77c\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020032"
+  },
+  {
+    "index": 15,
+    "title": "\uc804\ud658\uc0ac\ucc44\uad8c \ubc1c\ud589\uacb0\uc815",
+    "endpoint": "cvbdIsDecsn",
+    "fields": [
+      {
+        "key": "bd_tm",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "bd_knd",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "bd_fta",
+        "label": "\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561 (\uc6d0)"
+      },
+      {
+        "key": "atcsc_rmislmt",
+        "label": "\uc815\uad00\uc0c1 \uc794\uc5ec \ubc1c\ud589\ud55c\ub3c4 (\uc6d0)"
+      },
+      {
+        "key": "ovis_fta",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561)"
+      },
+      {
+        "key": "ovis_fta_crn",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\ud1b5\ud654\ub2e8\uc704))"
+      },
+      {
+        "key": "ovis_ster",
+        "label": "\ud574\uc678\ubc1c\ud589(\uae30\uc900\ud658\uc728\ub4f1)"
+      },
+      {
+        "key": "ovis_isar",
+        "label": "\ud574\uc678\ubc1c\ud589(\ubc1c\ud589\uc9c0\uc5ed)"
+      },
+      {
+        "key": "ovis_mktnm",
+        "label": "\ud574\uc678\ubc1c\ud589(\ud574\uc678\uc0c1\uc7a5\uc2dc \uc2dc\uc7a5\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "fdpp_fclt",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_bsninh",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_op",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_dtrp",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_ocsa",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_etc",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "bd_intr_ex",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ud45c\uba74\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_intr_sf",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ub9cc\uae30\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_mtd",
+        "label": "\uc0ac\ucc44\ub9cc\uae30\uc77c"
+      },
+      {
+        "key": "bdis_mthn",
+        "label": "\uc0ac\ucc44\ubc1c\ud589\ubc29\ubc95"
+      },
+      {
+        "key": "cv_rt",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\ube44\uc728 (%))"
+      },
+      {
+        "key": "cv_prc",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uac00\uc561 (\uc6d0/\uc8fc))"
+      },
+      {
+        "key": "cvisstk_knd",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc885\ub958))"
+      },
+      {
+        "key": "cvisstk_cnt",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc8fc\uc2dd\uc218))"
+      },
+      {
+        "key": "cvisstk_tisstk_vs",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc8fc\uc2dd\ucd1d\uc218 \ub300\ube44 \ube44\uc728(%)))"
+      },
+      {
+        "key": "cvrqpd_bgd",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uccad\uad6c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "cvrqpd_edd",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc804\ud658\uccad\uad6c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "act_mktprcfl_cvprc_lwtrsprc",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \uc804\ud658\uac00\uc561 \uc870\uc815(\ucd5c\uc800 \uc870\uc815\uac00\uc561 (\uc6d0)))"
+      },
+      {
+        "key": "act_mktprcfl_cvprc_lwtrsprc_bs",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \uc804\ud658\uac00\uc561 \uc870\uc815(\ucd5c\uc800 \uc870\uc815\uac00\uc561 \uadfc\uac70))"
+      },
+      {
+        "key": "rmislmt_lt70p",
+        "label": "\uc804\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \uc804\ud658\uac00\uc561 \uc870\uc815(\ubc1c\ud589\ub2f9\uc2dc \uc804\ud658\uac00\uc561\uc758 70% \ubbf8\ub9cc\uc73c\ub85c \uc870\uc815\uac00\ub2a5\ud55c \uc794\uc5ec \ubc1c\ud589\ud55c\ub3c4 (\uc6d0)))"
+      },
+      {
+        "key": "abmg",
+        "label": "\ud569\ubcd1 \uad00\ub828 \uc0ac\ud56d"
+      },
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uc77c"
+      },
+      {
+        "key": "rpmcmp",
+        "label": "\ub300\ud45c\uc8fc\uad00\ud68c\uc0ac"
+      },
+      {
+        "key": "grint",
+        "label": "\ubcf4\uc99d\uae30\uad00"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d (\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38 (\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      },
+      {
+        "key": "ovis_ltdtl",
+        "label": "\ub2f9\ud574 \uc0ac\ucc44\uc758 \ud574\uc678\ubc1c\ud589\uacfc \uc5f0\uacc4\ub41c \ub300\ucc28\uac70\ub798 \ub0b4\uc5ed"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020033"
+  },
+  {
+    "index": 16,
+    "title": "\uc2e0\uc8fc\uc778\uc218\uad8c\ubd80\uc0ac\ucc44\uad8c \ubc1c\ud589\uacb0\uc815",
+    "endpoint": "bdwtIsDecsn",
+    "fields": [
+      {
+        "key": "bd_tm",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "bd_knd",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "bd_fta",
+        "label": "\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561 (\uc6d0)"
+      },
+      {
+        "key": "atcsc_rmislmt",
+        "label": "\uc815\uad00\uc0c1 \uc794\uc5ec \ubc1c\ud589\ud55c\ub3c4 (\uc6d0)"
+      },
+      {
+        "key": "ovis_fta",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561)"
+      },
+      {
+        "key": "ovis_fta_crn",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\ud1b5\ud654\ub2e8\uc704))"
+      },
+      {
+        "key": "ovis_ster",
+        "label": "\ud574\uc678\ubc1c\ud589(\uae30\uc900\ud658\uc728\ub4f1)"
+      },
+      {
+        "key": "ovis_isar",
+        "label": "\ud574\uc678\ubc1c\ud589(\ubc1c\ud589\uc9c0\uc5ed)"
+      },
+      {
+        "key": "ovis_mktnm",
+        "label": "\ud574\uc678\ubc1c\ud589(\ud574\uc678\uc0c1\uc7a5\uc2dc \uc2dc\uc7a5\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "fdpp_fclt",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_bsninh",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_op",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_dtrp",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_ocsa",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_etc",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "bd_intr_ex",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ud45c\uba74\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_intr_sf",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ub9cc\uae30\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_mtd",
+        "label": "\uc0ac\ucc44\ub9cc\uae30\uc77c"
+      },
+      {
+        "key": "bdis_mthn",
+        "label": "\uc0ac\ucc44\ubc1c\ud589\ubc29\ubc95"
+      },
+      {
+        "key": "ex_rt",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\ube44\uc728 (%))"
+      },
+      {
+        "key": "ex_prc",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uac00\uc561 (\uc6d0/\uc8fc))"
+      },
+      {
+        "key": "ex_prc_dmth",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uac00\uc561 \uacb0\uc815\ubc29\ubc95)"
+      },
+      {
+        "key": "bdwt_div_atn",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc0ac\ucc44\uc640 \uc778\uc218\uad8c\uc758 \ubd84\ub9ac\uc5ec\ubd80)"
+      },
+      {
+        "key": "nstk_pym_mth",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\ub300\uae08 \ub0a9\uc785\ubc29\ubc95)"
+      },
+      {
+        "key": "nstk_isstk_knd",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uc778\uc218\uad8c \ud589\uc0ac\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc885\ub958))"
+      },
+      {
+        "key": "nstk_isstk_cnt",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uc778\uc218\uad8c \ud589\uc0ac\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc8fc\uc2dd\uc218))"
+      },
+      {
+        "key": "nstk_isstk_tisstk_vs",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uc778\uc218\uad8c \ud589\uc0ac\uc5d0 \ub530\ub77c \ubc1c\ud589\ud560 \uc8fc\uc2dd(\uc8fc\uc2dd\ucd1d\uc218 \ub300\ube44 \ube44\uc728(%)))"
+      },
+      {
+        "key": "expd_bgd",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad8c\ub9ac\ud589\uc0ac\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "expd_edd",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad8c\ub9ac\ud589\uc0ac\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "act_mktprcfl_cvprc_lwtrsprc",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \ud589\uc0ac\uac00\uc561 \uc870\uc815(\ucd5c\uc800 \uc870\uc815\uac00\uc561 (\uc6d0)))"
+      },
+      {
+        "key": "act_mktprcfl_cvprc_lwtrsprc_bs",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \ud589\uc0ac\uac00\uc561 \uc870\uc815(\ucd5c\uc800 \uc870\uc815\uac00\uc561 \uadfc\uac70))"
+      },
+      {
+        "key": "rmislmt_lt70p",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2dc\uac00\ud558\ub77d\uc5d0 \ub530\ub978 \ud589\uc0ac\uac00\uc561 \uc870\uc815(\ubc1c\ud589\ub2f9\uc2dc \ud589\uc0ac\uac00\uc561\uc758 70% \ubbf8\ub9cc\uc73c\ub85c \uc870\uc815\uac00\ub2a5\ud55c \uc794\uc5ec \ubc1c\ud589\ud55c\ub3c4 (\uc6d0)))"
+      },
+      {
+        "key": "abmg",
+        "label": "\ud569\ubcd1 \uad00\ub828 \uc0ac\ud56d"
+      },
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uc77c"
+      },
+      {
+        "key": "rpmcmp",
+        "label": "\ub300\ud45c\uc8fc\uad00\ud68c\uc0ac"
+      },
+      {
+        "key": "grint",
+        "label": "\ubcf4\uc99d\uae30\uad00"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d (\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38 (\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      },
+      {
+        "key": "ovis_ltdtl",
+        "label": "\ub2f9\ud574 \uc0ac\ucc44\uc758 \ud574\uc678\ubc1c\ud589\uacfc \uc5f0\uacc4\ub41c \ub300\ucc28\uac70\ub798 \ub0b4\uc5ed"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020034"
+  },
+  {
+    "index": 17,
+    "title": "\uad50\ud658\uc0ac\ucc44\uad8c \ubc1c\ud589\uacb0\uc815",
+    "endpoint": "exbdIsDecsn",
+    "fields": [
+      {
+        "key": "bd_tm",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "bd_knd",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "bd_fta",
+        "label": "\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561 (\uc6d0)"
+      },
+      {
+        "key": "ovis_fta",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561)"
+      },
+      {
+        "key": "ovis_fta_crn",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\ud1b5\ud654\ub2e8\uc704))"
+      },
+      {
+        "key": "ovis_ster",
+        "label": "\ud574\uc678\ubc1c\ud589(\uae30\uc900\ud658\uc728\ub4f1)"
+      },
+      {
+        "key": "ovis_isar",
+        "label": "\ud574\uc678\ubc1c\ud589(\ubc1c\ud589\uc9c0\uc5ed)"
+      },
+      {
+        "key": "ovis_mktnm",
+        "label": "\ud574\uc678\ubc1c\ud589(\ud574\uc678\uc0c1\uc7a5\uc2dc \uc2dc\uc7a5\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "fdpp_fclt",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_bsninh",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_op",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_dtrp",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_ocsa",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_etc",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "bd_intr_ex",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ud45c\uba74\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_intr_sf",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ub9cc\uae30\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_mtd",
+        "label": "\uc0ac\ucc44\ub9cc\uae30\uc77c"
+      },
+      {
+        "key": "bdis_mthn",
+        "label": "\uc0ac\ucc44\ubc1c\ud589\ubc29\ubc95"
+      },
+      {
+        "key": "ex_rt",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\ube44\uc728 (%))"
+      },
+      {
+        "key": "ex_prc",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\uac00\uc561 (\uc6d0/\uc8fc))"
+      },
+      {
+        "key": "ex_prc_dmth",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\uac00\uc561 \uacb0\uc815\ubc29\ubc95)"
+      },
+      {
+        "key": "extg",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\ub300\uc0c1(\uc885\ub958))"
+      },
+      {
+        "key": "extg_stkcnt",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\ub300\uc0c1(\uc8fc\uc2dd\uc218))"
+      },
+      {
+        "key": "extg_tisstk_vs",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\ub300\uc0c1(\uc8fc\uc2dd\ucd1d\uc218 \ub300\ube44 \ube44\uc728(%)))"
+      },
+      {
+        "key": "exrqpd_bgd",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\uccad\uad6c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "exrqpd_edd",
+        "label": "\uad50\ud658\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad50\ud658\uccad\uad6c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uc77c"
+      },
+      {
+        "key": "rpmcmp",
+        "label": "\ub300\ud45c\uc8fc\uad00\ud68c\uc0ac"
+      },
+      {
+        "key": "grint",
+        "label": "\ubcf4\uc99d\uae30\uad00"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d (\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38 (\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      },
+      {
+        "key": "ovis_ltdtl",
+        "label": "\ub2f9\ud574 \uc0ac\ucc44\uc758 \ud574\uc678\ubc1c\ud589\uacfc \uc5f0\uacc4\ub41c \ub300\ucc28\uac70\ub798 \ub0b4\uc5ed"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020035"
+  },
+  {
+    "index": 18,
+    "title": "\ucc44\uad8c\uc740\ud589 \ub4f1\uc758 \uad00\ub9ac\uc808\ucc28 \uc911\ub2e8",
+    "endpoint": "bnkMngtPcsp",
+    "fields": [
+      {
+        "key": "mngt_pcsp_dd",
+        "label": "\uad00\ub9ac\uc808\ucc28\uc911\ub2e8 \uacb0\uc815\uc77c\uc790"
+      },
+      {
+        "key": "mngt_int",
+        "label": "\uad00\ub9ac\uae30\uad00"
+      },
+      {
+        "key": "sp_rs",
+        "label": "\uc911\ub2e8\uc0ac\uc720"
+      },
+      {
+        "key": "ft_ctp",
+        "label": "\ud5a5\ud6c4\ub300\ucc45"
+      },
+      {
+        "key": "cfd",
+        "label": "\ud655\uc778\uc77c\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020036"
+  },
+  {
+    "index": 19,
+    "title": "\uc0c1\uac01\ud615 \uc870\uac74\ubd80\uc790\ubcf8\uc99d\uad8c \ubc1c\ud589\uacb0\uc815",
+    "endpoint": "wdCocobdIsDecsn",
+    "fields": [
+      {
+        "key": "bd_tm",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "bd_knd",
+        "label": "\uc0ac\ucc44\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "bd_fta",
+        "label": "\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561 (\uc6d0)"
+      },
+      {
+        "key": "ovis_fta",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561)"
+      },
+      {
+        "key": "ovis_fta_crn",
+        "label": "\ud574\uc678\ubc1c\ud589(\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\ud1b5\ud654\ub2e8\uc704))"
+      },
+      {
+        "key": "ovis_ster",
+        "label": "\ud574\uc678\ubc1c\ud589(\uae30\uc900\ud658\uc728\ub4f1)"
+      },
+      {
+        "key": "ovis_isar",
+        "label": "\ud574\uc678\ubc1c\ud589(\ubc1c\ud589\uc9c0\uc5ed)"
+      },
+      {
+        "key": "ovis_mktnm",
+        "label": "\ud574\uc678\ubc1c\ud589(\ud574\uc678\uc0c1\uc7a5\uc2dc \uc2dc\uc7a5\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "fdpp_fclt",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_bsninh",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_op",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_dtrp",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_ocsa",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "fdpp_etc",
+        "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0))"
+      },
+      {
+        "key": "bd_intr_sf",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ud45c\uba74\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_intr_ex",
+        "label": "\uc0ac\ucc44\uc758 \uc774\uc728(\ub9cc\uae30\uc774\uc790\uc728 (%))"
+      },
+      {
+        "key": "bd_mtd",
+        "label": "\uc0ac\ucc44\ub9cc\uae30\uc77c"
+      },
+      {
+        "key": "dbtrs_sc",
+        "label": "\ucc44\ubb34\uc7ac\uc870\uc815\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ucc44\ubb34\uc7ac\uc870\uc815\uc758 \ubc94\uc704)"
+      },
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uc77c"
+      },
+      {
+        "key": "rpmcmp",
+        "label": "\ub300\ud45c\uc8fc\uad00\ud68c\uc0ac"
+      },
+      {
+        "key": "grint",
+        "label": "\ubcf4\uc99d\uae30\uad00"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d (\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38 (\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      },
+      {
+        "key": "ovis_ltdtl",
+        "label": "\ub2f9\ud574 \uc0ac\ucc44\uc758 \ud574\uc678\ubc1c\ud589\uacfc \uc5f0\uacc4\ub41c \ub300\ucc28\uac70\ub798 \ub0b4\uc5ed"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020037"
+  },
+  {
+    "index": 20,
+    "title": "\uc790\uae30\uc8fc\uc2dd \ucde8\ub4dd \uacb0\uc815",
+    "endpoint": "tsstkAqDecsn",
+    "fields": [
+      {
+        "key": "aqpln_stk_ostk",
+        "label": "\ucde8\ub4dd\uc608\uc815\uc8fc\uc2dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "aqpln_stk_estk",
+        "label": "\ucde8\ub4dd\uc608\uc815\uc8fc\uc2dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "aqpln_prc_ostk",
+        "label": "\ucde8\ub4dd\uc608\uc815\uae08\uc561(\uc6d0)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "aqpln_prc_estk",
+        "label": "\ucde8\ub4dd\uc608\uc815\uae08\uc561(\uc6d0)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "aqexpd_bgd",
+        "label": "\ucde8\ub4dd\uc608\uc0c1\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "aqexpd_edd",
+        "label": "\ucde8\ub4dd\uc608\uc0c1\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "hdexpd_bgd",
+        "label": "\ubcf4\uc720\uc608\uc0c1\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "hdexpd_edd",
+        "label": "\ubcf4\uc720\uc608\uc0c1\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "aq_pp",
+        "label": "\ucde8\ub4dd\ubaa9\uc801"
+      },
+      {
+        "key": "aq_mth",
+        "label": "\ucde8\ub4dd\ubc29\ubc95"
+      },
+      {
+        "key": "cs_iv_bk",
+        "label": "\uc704\ud0c1\ud22c\uc790\uc911\uac1c\uc5c5\uc790"
+      },
+      {
+        "key": "aq_wtn_div_ostk",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_ostk_rt",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "aq_wtn_div_estk",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_estk_rt",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_ostk",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_ostk_rt",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_estk",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_estk_rt",
+        "label": "\ucde8\ub4dd \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "aq_dd",
+        "label": "\ucde8\ub4dd\uacb0\uc815\uc77c"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "d1_prodlm_ostk",
+        "label": "1\uc77c \ub9e4\uc218 \uc8fc\ubb38\uc218\ub7c9 \ud55c\ub3c4(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "d1_prodlm_estk",
+        "label": "1\uc77c \ub9e4\uc218 \uc8fc\ubb38\uc218\ub7c9 \ud55c\ub3c4(\uae30\ud0c0\uc8fc\uc2dd)"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020038"
+  },
+  {
+    "index": 21,
+    "title": "\uc790\uae30\uc8fc\uc2dd \ucc98\ubd84 \uacb0\uc815",
+    "endpoint": "tsstkDpDecsn",
+    "fields": [
+      {
+        "key": "dppln_stk_ostk",
+        "label": "\ucc98\ubd84\uc608\uc815\uc8fc\uc2dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dppln_stk_estk",
+        "label": "\ucc98\ubd84\uc608\uc815\uc8fc\uc2dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dpstk_prc_ostk",
+        "label": "\ucc98\ubd84 \ub300\uc0c1 \uc8fc\uc2dd\uac00\uaca9(\uc6d0)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dpstk_prc_estk",
+        "label": "\ucc98\ubd84 \ub300\uc0c1 \uc8fc\uc2dd\uac00\uaca9(\uc6d0)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dppln_prc_ostk",
+        "label": "\ucc98\ubd84\uc608\uc815\uae08\uc561(\uc6d0)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dppln_prc_estk",
+        "label": "\ucc98\ubd84\uc608\uc815\uae08\uc561(\uc6d0)(\uae30\ud0c0\uc8fc\uc2dd)"
+      },
+      {
+        "key": "dpprpd_bgd",
+        "label": "\ucc98\ubd84\uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "dpprpd_edd",
+        "label": "\ucc98\ubd84\uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "dp_pp",
+        "label": "\ucc98\ubd84\ubaa9\uc801"
+      },
+      {
+        "key": "dp_m_mkt",
+        "label": "\ucc98\ubd84\ubc29\ubc95(\uc2dc\uc7a5\uc744 \ud1b5\ud55c \ub9e4\ub3c4(\uc8fc))"
+      },
+      {
+        "key": "dp_m_ovtm",
+        "label": "\ucc98\ubd84\ubc29\ubc95(\uc2dc\uac04\uc678\ub300\ub7c9\ub9e4\ub9e4(\uc8fc))"
+      },
+      {
+        "key": "dp_m_otc",
+        "label": "\ucc98\ubd84\ubc29\ubc95(\uc7a5\uc678\ucc98\ubd84(\uc8fc))"
+      },
+      {
+        "key": "dp_m_etc",
+        "label": "\ucc98\ubd84\ubc29\ubc95(\uae30\ud0c0(\uc8fc))"
+      },
+      {
+        "key": "cs_iv_bk",
+        "label": "\uc704\ud0c1\ud22c\uc790\uc911\uac1c\uc5c5\uc790"
+      },
+      {
+        "key": "aq_wtn_div_ostk",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_ostk_rt",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "aq_wtn_div_estk",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_estk_rt",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\uc774\uc775 \ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_ostk",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_ostk_rt",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_estk",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_estk_rt",
+        "label": "\ucc98\ubd84 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "dp_dd",
+        "label": "\ucc98\ubd84\uacb0\uc815\uc77c"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "d1_slodlm_ostk",
+        "label": "1\uc77c \ub9e4\ub3c4 \uc8fc\ubb38\uc218\ub7c9 \ud55c\ub3c4(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "d1_slodlm_estk",
+        "label": "1\uc77c \ub9e4\ub3c4 \uc8fc\ubb38\uc218\ub7c9 \ud55c\ub3c4(\uae30\ud0c0\uc8fc\uc2dd)"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020039"
+  },
+  {
+    "index": 22,
+    "title": "\uc790\uae30\uc8fc\uc2dd\ucde8\ub4dd \uc2e0\ud0c1\uacc4\uc57d \uccb4\uacb0 \uacb0\uc815",
+    "endpoint": "tsstkAqTrctrCnsDecsn",
+    "fields": [
+      {
+        "key": "ctr_prc",
+        "label": "\uacc4\uc57d\uae08\uc561(\uc6d0)"
+      },
+      {
+        "key": "ctr_pd_bgd",
+        "label": "\uacc4\uc57d\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "ctr_pd_edd",
+        "label": "\uacc4\uc57d\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "ctr_pp",
+        "label": "\uacc4\uc57d\ubaa9\uc801"
+      },
+      {
+        "key": "ctr_cns_int",
+        "label": "\uacc4\uc57d\uccb4\uacb0\uae30\uad00"
+      },
+      {
+        "key": "ctr_cns_prd",
+        "label": "\uacc4\uc57d\uccb4\uacb0 \uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "aq_wtn_div_ostk",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_ostk_rt",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "aq_wtn_div_estk",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_estk_rt",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_ostk",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_ostk_rt",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_estk",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_estk_rt",
+        "label": "\uacc4\uc57d \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "cs_iv_bk",
+        "label": "\uc704\ud0c1\ud22c\uc790\uc911\uac1c\uc5c5\uc790"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020040"
+  },
+  {
+    "index": 23,
+    "title": "\uc790\uae30\uc8fc\uc2dd\ucde8\ub4dd \uc2e0\ud0c1\uacc4\uc57d \ud574\uc9c0 \uacb0\uc815",
+    "endpoint": "tsstkAqTrctrCcDecsn",
+    "fields": [
+      {
+        "key": "ctr_prc_bfcc",
+        "label": "\uacc4\uc57d\uae08\uc561(\uc6d0)(\ud574\uc9c0 \uc804)"
+      },
+      {
+        "key": "ctr_prc_atcc",
+        "label": "\uacc4\uc57d\uae08\uc561(\uc6d0)(\ud574\uc9c0 \ud6c4)"
+      },
+      {
+        "key": "ctr_pd_bfcc_bgd",
+        "label": "\ud574\uc9c0 \uc804 \uacc4\uc57d\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "ctr_pd_bfcc_edd",
+        "label": "\ud574\uc9c0 \uc804 \uacc4\uc57d\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "cc_pp",
+        "label": "\ud574\uc9c0\ubaa9\uc801"
+      },
+      {
+        "key": "cc_int",
+        "label": "\ud574\uc9c0\uae30\uad00"
+      },
+      {
+        "key": "cc_prd",
+        "label": "\ud574\uc9c0\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "tp_rm_atcc",
+        "label": "\ud574\uc9c0\ud6c4 \uc2e0\ud0c1\uc7ac\uc0b0\uc758 \ubc18\ud658\ubc29\ubc95"
+      },
+      {
+        "key": "aq_wtn_div_ostk",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_ostk_rt",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "aq_wtn_div_estk",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "aq_wtn_div_estk_rt",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\ubc30\ub2f9\uac00\ub2a5\ubc94\uc704 \ub0b4 \ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_ostk",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_ostk_rt",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "eaq_estk",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd))"
+      },
+      {
+        "key": "eaq_estk_rt",
+        "label": "\ud574\uc9c0 \uc804 \uc790\uae30\uc8fc\uc2dd \ubcf4\uc720\ud604\ud669(\uae30\ud0c0\ucde8\ub4dd(\uc8fc)(\ube44\uc728(%)))"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0)\ucc38\uc11d\uc5ec\ubd80"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020041"
+  },
+  {
+    "index": 24,
+    "title": "\uc601\uc5c5\uc591\uc218 \uacb0\uc815",
+    "endpoint": "bsnInhDecsn",
+    "fields": [
+      {
+        "key": "inh_bsn",
+        "label": "\uc591\uc218\uc601\uc5c5"
+      },
+      {
+        "key": "inh_bsn_mc",
+        "label": "\uc591\uc218\uc601\uc5c5 \uc8fc\uc694\ub0b4\uc6a9"
+      },
+      {
+        "key": "inh_prc",
+        "label": "\uc591\uc218\uac00\uc561(\uc6d0)"
+      },
+      {
+        "key": "absn_inh_atn",
+        "label": "\uc601\uc5c5\uc804\ubd80\uc758 \uc591\uc218 \uc5ec\ubd80"
+      },
+      {
+        "key": "ast_inh_bsn",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\uc591\uc218\ub300\uc0c1 \uc601\uc5c5\ubd80\ubb38(A)))"
+      },
+      {
+        "key": "ast_cmp_all",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\ub2f9\uc0ac\uc804\uccb4(B)))"
+      },
+      {
+        "key": "ast_rt",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\ube44\uc911(%)(A/B)))"
+      },
+      {
+        "key": "sl_inh_bsn",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\uc591\uc218\ub300\uc0c1 \uc601\uc5c5\ubd80\ubb38(A)))"
+      },
+      {
+        "key": "sl_cmp_all",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\ub2f9\uc0ac\uc804\uccb4(B)))"
+      },
+      {
+        "key": "sl_rt",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\ube44\uc911(%)(A/B)))"
+      },
+      {
+        "key": "dbt_inh_bsn",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\uc561(\uc591\uc218\ub300\uc0c1 \uc601\uc5c5\ubd80\ubb38(A)))"
+      },
+      {
+        "key": "dbt_cmp_all",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\uc561(\ub2f9\uc0ac\uc804\uccb4(B)))"
+      },
+      {
+        "key": "dbt_rt",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\uc561(\ube44\uc911(%)(A/B)))"
+      },
+      {
+        "key": "inh_pp",
+        "label": "\uc591\uc218\ubaa9\uc801"
+      },
+      {
+        "key": "inh_af",
+        "label": "\uc591\uc218\uc601\ud5a5"
+      },
+      {
+        "key": "inh_prd_ctr_cnsd",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uacc4\uc57d\uccb4\uacb0\uc77c)"
+      },
+      {
+        "key": "inh_prd_inh_std",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uc591\uc218\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "inh_pym",
+        "label": "\uc591\uc218\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "gmtsck_spd_atn",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \ud2b9\ubcc4\uacb0\uc758 \uc5ec\ubd80"
+      },
+      {
+        "key": "gmtsck_prd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "bdlst_atn",
+        "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80"
+      },
+      {
+        "key": "n6m_tpai_plann",
+        "label": "\ud5a5\ud6c4 6\uc6d4\uc774\ub0b4 \uc81c3\uc790\ubc30\uc815 \uc99d\uc790 \ub4f1 \uacc4\ud68d"
+      },
+      {
+        "key": "otcpr_bdlst_sf_atn",
+        "label": "\ud0c0\ubc95\uc778\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020042"
+  },
+  {
+    "index": 25,
+    "title": "\uc601\uc5c5\uc591\ub3c4 \uacb0\uc815",
+    "endpoint": "bsnTrfDecsn",
+    "fields": [
+      {
+        "key": "trf_bsn",
+        "label": "\uc591\ub3c4\uc601\uc5c5"
+      },
+      {
+        "key": "trf_bsn_mc",
+        "label": "\uc591\ub3c4\uc601\uc5c5 \uc8fc\uc694\ub0b4\uc6a9"
+      },
+      {
+        "key": "trf_prc",
+        "label": "\uc591\ub3c4\uac00\uc561(\uc6d0)"
+      },
+      {
+        "key": "ast_trf_bsn",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\uc591\ub3c4\ub300\uc0c1 \uc601\uc5c5\ubd80\ubb38(A)))"
+      },
+      {
+        "key": "ast_cmp_all",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\ub2f9\uc0ac\uc804\uccb4(B)))"
+      },
+      {
+        "key": "ast_rt",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\uc561(\ube44\uc911(%)(A/B)))"
+      },
+      {
+        "key": "sl_trf_bsn",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\uc591\ub3c4\ub300\uc0c1 \uc601\uc5c5\ubd80\ubb38(A)))"
+      },
+      {
+        "key": "sl_cmp_all",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\ub2f9\uc0ac\uc804\uccb4(B)))"
+      },
+      {
+        "key": "sl_rt",
+        "label": "\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561(\ube44\uc911(%)(A/B)))"
+      },
+      {
+        "key": "trf_pp",
+        "label": "\uc591\ub3c4\ubaa9\uc801"
+      },
+      {
+        "key": "trf_af",
+        "label": "\uc591\ub3c4\uc601\ud5a5"
+      },
+      {
+        "key": "trf_prd_ctr_cnsd",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790(\uacc4\uc57d\uccb4\uacb0\uc77c)"
+      },
+      {
+        "key": "trf_prd_trf_std",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790(\uc591\ub3c4\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "trf_pym",
+        "label": "\uc591\ub3c4\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "gmtsck_spd_atn",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \ud2b9\ubcc4\uacb0\uc758 \uc5ec\ubd80"
+      },
+      {
+        "key": "gmtsck_prd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020043"
+  },
+  {
+    "index": 26,
+    "title": "\uc720\ud615\uc790\uc0b0 \uc591\uc218 \uacb0\uc815",
+    "endpoint": "tgastInhDecsn",
+    "fields": [
+      {
+        "key": "ast_sen",
+        "label": "\uc790\uc0b0\uad6c\ubd84"
+      },
+      {
+        "key": "ast_nm",
+        "label": "\uc790\uc0b0\uba85"
+      },
+      {
+        "key": "inhdtl_inhprc",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uae08\uc561(\uc6d0))"
+      },
+      {
+        "key": "inhdtl_tast",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561(\uc6d0))"
+      },
+      {
+        "key": "inhdtl_tast_vs",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561\ub300\ube44(%))"
+      },
+      {
+        "key": "inh_pp",
+        "label": "\uc591\uc218\ubaa9\uc801"
+      },
+      {
+        "key": "inh_af",
+        "label": "\uc591\uc218\uc601\ud5a5"
+      },
+      {
+        "key": "inh_prd_ctr_cnsd",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uacc4\uc57d\uccb4\uacb0\uc77c)"
+      },
+      {
+        "key": "inh_prd_inh_std",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uc591\uc218\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "inh_prd_rgs_prd",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\ub4f1\uae30\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "gmtsck_spd_atn",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \ud2b9\ubcc4\uacb0\uc758 \uc5ec\ubd80"
+      },
+      {
+        "key": "gmtsck_prd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "aprskh_exrq",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc694\uac74)"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_ex_pc_mth_pd_pl",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc808\ucc28, \ubc29\ubc95, \uae30\uac04, \uc7a5\uc18c)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020044"
+  },
+  {
+    "index": 27,
+    "title": "\uc720\ud615\uc790\uc0b0 \uc591\ub3c4 \uacb0\uc815",
+    "endpoint": "tgastTrfDecsn",
+    "fields": [
+      {
+        "key": "ast_sen",
+        "label": "\uc790\uc0b0\uad6c\ubd84"
+      },
+      {
+        "key": "ast_nm",
+        "label": "\uc790\uc0b0\uba85"
+      },
+      {
+        "key": "trfdtl_trfprc",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uae08\uc561(\uc6d0))"
+      },
+      {
+        "key": "trfdtl_tast",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561(\uc6d0))"
+      },
+      {
+        "key": "trfdtl_tast_vs",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561\ub300\ube44(%))"
+      },
+      {
+        "key": "trf_pp",
+        "label": "\uc591\ub3c4\ubaa9\uc801"
+      },
+      {
+        "key": "trf_af",
+        "label": "\uc591\ub3c4\uc601\ud5a5"
+      },
+      {
+        "key": "trf_prd_ctr_cnsd",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790(\uacc4\uc57d\uccb4\uacb0\uc77c)"
+      },
+      {
+        "key": "trf_prd_trf_std",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790(\uc591\ub3c4\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "trf_prd_rgs_prd",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790(\ub4f1\uae30\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "gmtsck_spd_atn",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \ud2b9\ubcc4\uacb0\uc758 \uc5ec\ubd80"
+      },
+      {
+        "key": "gmtsck_prd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "aprskh_exrq",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc694\uac74)"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_ex_pc_mth_pd_pl",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc808\ucc28, \ubc29\ubc95, \uae30\uac04, \uc7a5\uc18c)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020045"
+  },
+  {
+    "index": 28,
+    "title": "\ud0c0\ubc95\uc778 \uc8fc\uc2dd \ubc0f \ucd9c\uc790\uc99d\uad8c \uc591\uc218\uacb0\uc815",
+    "endpoint": "otcprStkInvscrInhDecsn",
+    "fields": [
+      {
+        "key": "iscmp_cmpnm",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "iscmp_nt",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uad6d\uc801)"
+      },
+      {
+        "key": "iscmp_rp",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ub300\ud45c\uc790)"
+      },
+      {
+        "key": "iscmp_cpt",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "iscmp_rl_cmpn",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uc640 \uad00\uacc4)"
+      },
+      {
+        "key": "iscmp_tisstk",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc))"
+      },
+      {
+        "key": "iscmp_mbsn",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "l6m_tpa_nstkaq_atn",
+        "label": "\ucd5c\uadfc 6\uc6d4 \uc774\ub0b4 \uc81c3\uc790 \ubc30\uc815\uc5d0 \uc758\ud55c \uc2e0\uc8fc\ucde8\ub4dd \uc5ec\ubd80"
+      },
+      {
+        "key": "inhdtl_stkcnt",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uc8fc\uc2dd\uc218(\uc8fc))"
+      },
+      {
+        "key": "inhdtl_inhprc",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uae08\uc561(\uc6d0)(A))"
+      },
+      {
+        "key": "inhdtl_tast",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0(\uc6d0)(B))"
+      },
+      {
+        "key": "inhdtl_tast_vs",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0\ub300\ube44(%)(A/B))"
+      },
+      {
+        "key": "inhdtl_ecpt",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C))"
+      },
+      {
+        "key": "inhdtl_ecpt_vs",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C))"
+      },
+      {
+        "key": "atinh_owstkcnt",
+        "label": "\uc591\uc218\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc18c\uc720\uc8fc\uc2dd\uc218(\uc8fc))"
+      },
+      {
+        "key": "atinh_eqrt",
+        "label": "\uc591\uc218\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc9c0\ubd84\ube44\uc728(%))"
+      },
+      {
+        "key": "inh_pp",
+        "label": "\uc591\uc218\ubaa9\uc801"
+      },
+      {
+        "key": "inh_prd",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "bdlst_atn",
+        "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80"
+      },
+      {
+        "key": "n6m_tpai_plann",
+        "label": "\ud5a5\ud6c4 6\uc6d4\uc774\ub0b4 \uc81c3\uc790\ubc30\uc815 \uc99d\uc790 \ub4f1 \uacc4\ud68d"
+      },
+      {
+        "key": "iscmp_bdlst_sf_atn",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ud0c0\ubc95\uc778)\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020046"
+  },
+  {
+    "index": 29,
+    "title": "\ud0c0\ubc95\uc778 \uc8fc\uc2dd \ubc0f \ucd9c\uc790\uc99d\uad8c \uc591\ub3c4\uacb0\uc815",
+    "endpoint": "otcprStkInvscrTrfDecsn",
+    "fields": [
+      {
+        "key": "iscmp_cmpnm",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "iscmp_nt",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uad6d\uc801)"
+      },
+      {
+        "key": "iscmp_rp",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ub300\ud45c\uc790)"
+      },
+      {
+        "key": "iscmp_cpt",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "iscmp_rl_cmpn",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uc640 \uad00\uacc4)"
+      },
+      {
+        "key": "iscmp_tisstk",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc))"
+      },
+      {
+        "key": "iscmp_mbsn",
+        "label": "\ubc1c\ud589\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "trfdtl_stkcnt",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uc8fc\uc2dd\uc218(\uc8fc))"
+      },
+      {
+        "key": "trfdtl_trfprc",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uae08\uc561(\uc6d0)(A))"
+      },
+      {
+        "key": "trfdtl_tast",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\ucd1d\uc790\uc0b0(\uc6d0)(B))"
+      },
+      {
+        "key": "trfdtl_tast_vs",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\ucd1d\uc790\uc0b0\ub300\ube44(%)(A/B))"
+      },
+      {
+        "key": "trfdtl_ecpt",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C))"
+      },
+      {
+        "key": "trfdtl_ecpt_vs",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C))"
+      },
+      {
+        "key": "attrf_owstkcnt",
+        "label": "\uc591\ub3c4\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc18c\uc720\uc8fc\uc2dd\uc218(\uc8fc))"
+      },
+      {
+        "key": "attrf_eqrt",
+        "label": "\uc591\ub3c4\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc9c0\ubd84\ube44\uc728(%))"
+      },
+      {
+        "key": "trf_pp",
+        "label": "\uc591\ub3c4\ubaa9\uc801"
+      },
+      {
+        "key": "trf_prd",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020047"
+  },
+  {
+    "index": 30,
+    "title": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c \uc591\uc218 \uacb0\uc815",
+    "endpoint": "stkrtbdInhDecsn",
+    "fields": [
+      {
+        "key": "stkrtbd_kndn",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958"
+      },
+      {
+        "key": "tm",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "knd",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "bdiscmp_cmpnm",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "bdiscmp_nt",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uad6d\uc801)"
+      },
+      {
+        "key": "bdiscmp_rp",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ub300\ud45c\uc790)"
+      },
+      {
+        "key": "bdiscmp_cpt",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "bdiscmp_rl_cmpn",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uc640 \uad00\uacc4)"
+      },
+      {
+        "key": "bdiscmp_tisstk",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc))"
+      },
+      {
+        "key": "bdiscmp_mbsn",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "l6m_tpa_nstkaq_atn",
+        "label": "\ucd5c\uadfc 6\uc6d4 \uc774\ub0b4 \uc81c3\uc790 \ubc30\uc815\uc5d0 \uc758\ud55c \uc2e0\uc8fc\ucde8\ub4dd \uc5ec\ubd80"
+      },
+      {
+        "key": "inhdtl_bd_fta",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\uc6d0))"
+      },
+      {
+        "key": "inhdtl_inhprc",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uae08\uc561(\uc6d0)(A))"
+      },
+      {
+        "key": "inhdtl_tast",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0(\uc6d0)(B))"
+      },
+      {
+        "key": "inhdtl_tast_vs",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0\ub300\ube44(%)(A/B))"
+      },
+      {
+        "key": "inhdtl_ecpt",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C))"
+      },
+      {
+        "key": "inhdtl_ecpt_vs",
+        "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C))"
+      },
+      {
+        "key": "inh_pp",
+        "label": "\uc591\uc218\ubaa9\uc801"
+      },
+      {
+        "key": "inh_prd",
+        "label": "\uc591\uc218\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020048"
+  },
+  {
+    "index": 31,
+    "title": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c \uc591\ub3c4 \uacb0\uc815",
+    "endpoint": "stkrtbdTrfDecsn",
+    "fields": [
+      {
+        "key": "stkrtbd_kndn",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958"
+      },
+      {
+        "key": "tm",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958(\ud68c\ucc28)"
+      },
+      {
+        "key": "knd",
+        "label": "\uc8fc\uad8c \uad00\ub828 \uc0ac\ucc44\uad8c\uc758 \uc885\ub958(\uc885\ub958)"
+      },
+      {
+        "key": "aqd",
+        "label": "\ucde8\ub4dd\uc77c\uc790"
+      },
+      {
+        "key": "bdiscmp_cmpnm",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "bdiscmp_nt",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uad6d\uc801)"
+      },
+      {
+        "key": "bdiscmp_rp",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ub300\ud45c\uc790)"
+      },
+      {
+        "key": "bdiscmp_cpt",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "bdiscmp_rl_cmpn",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uc640 \uad00\uacc4)"
+      },
+      {
+        "key": "bdiscmp_tisstk",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc))"
+      },
+      {
+        "key": "bdiscmp_mbsn",
+        "label": "\uc0ac\ucc44\uad8c \ubc1c\ud589\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "trfdtl_bd_fta",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc0ac\ucc44\uc758 \uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561(\uc6d0))"
+      },
+      {
+        "key": "trfdtl_trfprc",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uae08\uc561(\uc6d0)(A))"
+      },
+      {
+        "key": "trfdtl_tast",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\ucd1d\uc790\uc0b0(\uc6d0)(B))"
+      },
+      {
+        "key": "trfdtl_tast_vs",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\ucd1d\uc790\uc0b0\ub300\ube44(%)(A/B))"
+      },
+      {
+        "key": "trfdtl_ecpt",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C))"
+      },
+      {
+        "key": "trfdtl_ecpt_vs",
+        "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C))"
+      },
+      {
+        "key": "trf_pp",
+        "label": "\uc591\ub3c4\ubaa9\uc801"
+      },
+      {
+        "key": "trf_prd",
+        "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790"
+      },
+      {
+        "key": "dlptn_cmpnm",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85))"
+      },
+      {
+        "key": "dlptn_cpt",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0))"
+      },
+      {
+        "key": "dlptn_mbsn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dlptn_hoadd",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c))"
+      },
+      {
+        "key": "dlptn_rl_cmpn",
+        "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "dl_pym",
+        "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac \ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "ftc_stt_atn",
+        "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020049"
+  },
+  {
+    "index": 32,
+    "title": "\ud68c\uc0ac\ud569\ubcd1 \uacb0\uc815",
+    "endpoint": "cmpMgDecsn",
+    "fields": [
+      {
+        "key": "mg_mth",
+        "label": "\ud569\ubcd1\ubc29\ubc95"
+      },
+      {
+        "key": "mg_stn",
+        "label": "\ud569\ubcd1\ud615\ud0dc"
+      },
+      {
+        "key": "mg_pp",
+        "label": "\ud569\ubcd1\ubaa9\uc801"
+      },
+      {
+        "key": "mg_rt",
+        "label": "\ud569\ubcd1\ube44\uc728"
+      },
+      {
+        "key": "mg_rt_bs",
+        "label": "\ud569\ubcd1\ube44\uc728 \uc0b0\ucd9c\uadfc\uac70"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "mgnstk_ostk_cnt",
+        "label": "\ud569\ubcd1\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd)"
+      },
+      {
+        "key": "mgnstk_cstk_cnt",
+        "label": "\ud569\ubcd1\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uc8fc)(\uc885\ub958\uc8fc\uc2dd)"
+      },
+      {
+        "key": "mgptncmp_cmpnm",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "mgptncmp_mbsn",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "mgptncmp_rl_cmpn",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "rbsnfdtl_tast",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_tdbt",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_teqt",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_cpt",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08))"
+      },
+      {
+        "key": "rbsnfdtl_sl",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561))"
+      },
+      {
+        "key": "rbsnfdtl_nic",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub2f9\uae30\uc21c\uc774\uc775))"
+      },
+      {
+        "key": "eadtat_intn",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\uc678\ubd80\uac10\uc0ac \uc5ec\ubd80(\uae30\uad00\uba85))"
+      },
+      {
+        "key": "eadtat_op",
+        "label": "\ud569\ubcd1\uc0c1\ub300\ud68c\uc0ac(\uc678\ubd80\uac10\uc0ac \uc5ec\ubd80(\uac10\uc0ac\uc758\uacac))"
+      },
+      {
+        "key": "nmgcmp_cmpnm",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "ffdtl_tast",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_tdbt",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_teqt",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_cpt",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08))"
+      },
+      {
+        "key": "ffdtl_std",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ud604\uc7ac\uae30\uc900))"
+      },
+      {
+        "key": "nmgcmp_nbsn_rsl",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc2e0\uc124\uc0ac\uc5c5\ubd80\ubb38 \ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \ub9e4\ucd9c\uc561(\uc6d0))"
+      },
+      {
+        "key": "nmgcmp_mbsn",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "nmgcmp_rlst_atn",
+        "label": "\uc2e0\uc124\ud569\ubcd1\ud68c\uc0ac(\uc7ac\uc0c1\uc7a5\uc2e0\uccad \uc5ec\ubd80)"
+      },
+      {
+        "key": "mgsc_mgctrd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ud569\ubcd1\uacc4\uc57d\uc77c)"
+      },
+      {
+        "key": "mgsc_shddstd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\ud655\uc815\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "mgsc_shclspd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_shclspd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_mgop_rcpd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ud569\ubcd1\ubc18\ub300\uc758\uc0ac\ud1b5\uc9c0 \uc811\uc218\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_mgop_rcpd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ud569\ubcd1\ubc18\ub300\uc758\uc0ac\ud1b5\uc9c0 \uc811\uc218\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_gmtsck_prd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\ucd1d\ud68c\uc608\uc815\uc77c\uc790)"
+      },
+      {
+        "key": "mgsc_aprskh_expd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_aprskh_expd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_osprpd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_osprpd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_trspprpd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798 \uc815\uc9c0\uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_trspprpd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798 \uc815\uc9c0\uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_cdobprpd_bgd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ucc44\uad8c\uc790\uc774\uc758 \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "mgsc_cdobprpd_edd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ucc44\uad8c\uc790\uc774\uc758 \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "mgsc_mgdt",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ud569\ubcd1\uae30\uc77c)"
+      },
+      {
+        "key": "mgsc_ergmd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc885\ub8cc\ubcf4\uace0 \ucd1d\ud68c\uc77c)"
+      },
+      {
+        "key": "mgsc_mgrgsprd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\ud569\ubcd1\ub4f1\uae30\uc608\uc815\uc77c\uc790)"
+      },
+      {
+        "key": "mgsc_nstkdlprd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "mgsc_nstklstprd",
+        "label": "\ud569\ubcd1\uc77c\uc815(\uc2e0\uc8fc\uc758 \uc0c1\uc7a5\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "bdlst_atn",
+        "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80"
+      },
+      {
+        "key": "otcpr_bdlst_sf_atn",
+        "label": "\ud0c0\ubc95\uc778\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871\uc5ec\ubd80"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020050"
+  },
+  {
+    "index": 33,
+    "title": "\ud68c\uc0ac\ubd84\ud560 \uacb0\uc815",
+    "endpoint": "cmpDvDecsn",
+    "fields": [
+      {
+        "key": "dv_mth",
+        "label": "\ubd84\ud560\ubc29\ubc95"
+      },
+      {
+        "key": "dv_impef",
+        "label": "\ubd84\ud560\uc758 \uc911\uc694\uc601\ud5a5 \ubc0f \ud6a8\uacfc"
+      },
+      {
+        "key": "dv_rt",
+        "label": "\ubd84\ud560\ube44\uc728"
+      },
+      {
+        "key": "dv_trfbsnprt_cn",
+        "label": "\ubd84\ud560\ub85c \uc774\uc804\ud560 \uc0ac\uc5c5 \ubc0f \uc7ac\uc0b0\uc758 \ub0b4\uc6a9"
+      },
+      {
+        "key": "atdv_excmp_cmpnm",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "atdvfdtl_tast",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4))"
+      },
+      {
+        "key": "atdvfdtl_tdbt",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4))"
+      },
+      {
+        "key": "atdvfdtl_teqt",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4))"
+      },
+      {
+        "key": "atdvfdtl_cpt",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08))"
+      },
+      {
+        "key": "atdvfdtl_std",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ud604\uc7ac\uae30\uc900))"
+      },
+      {
+        "key": "atdv_excmp_exbsn_rsl",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\uc874\uc18d\uc0ac\uc5c5\ubd80\ubb38 \ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4\ub9e4\ucd9c\uc561(\uc6d0))"
+      },
+      {
+        "key": "atdv_excmp_mbsn",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "atdv_excmp_atdv_lstmn_atn",
+        "label": "\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560 \ud6c4 \uc0c1\uc7a5\uc720\uc9c0 \uc5ec\ubd80)"
+      },
+      {
+        "key": "dvfcmp_cmpnm",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "ffdtl_tast",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_tdbt",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_teqt",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4))"
+      },
+      {
+        "key": "ffdtl_cpt",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08))"
+      },
+      {
+        "key": "ffdtl_std",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ud604\uc7ac\uae30\uc900))"
+      },
+      {
+        "key": "dvfcmp_nbsn_rsl",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc2e0\uc124\uc0ac\uc5c5\ubd80\ubb38 \ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \ub9e4\ucd9c\uc561(\uc6d0))"
+      },
+      {
+        "key": "dvfcmp_mbsn",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "dvfcmp_rlst_atn",
+        "label": "\ubd84\ud560\uc124\ub9bd\ud68c\uc0ac(\uc7ac\uc0c1\uc7a5\uc2e0\uccad \uc5ec\ubd80)"
+      },
+      {
+        "key": "abcr_crrt",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\ube44\uc728(%))"
+      },
+      {
+        "key": "abcr_osprpd_bgd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "abcr_osprpd_edd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "abcr_trspprpd_bgd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0 \uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "abcr_trspprpd_edd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0 \uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "abcr_nstkascnd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\ubc30\uc815\uc870\uac74)"
+      },
+      {
+        "key": "abcr_shstkcnt_rt_at_rs",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc8fc \uc8fc\uc2dd\uc218 \ube44\ub840\uc5ec\ubd80 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "abcr_nstkasstd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\ubc30\uc815\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "abcr_nstkdlprd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "abcr_nstklstprd",
+        "label": "\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uc758 \uc0c1\uc7a5\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "gmtsck_prd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c"
+      },
+      {
+        "key": "cdobprpd_bgd",
+        "label": "\ucc44\uad8c\uc790 \uc774\uc758\uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "cdobprpd_edd",
+        "label": "\ucc44\uad8c\uc790 \uc774\uc758\uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "dvdt",
+        "label": "\ubd84\ud560\uae30\uc77c"
+      },
+      {
+        "key": "dvrgsprd",
+        "label": "\ubd84\ud560\ub4f1\uae30 \uc608\uc815\uc77c"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020051"
+  },
+  {
+    "index": 34,
+    "title": "\ud68c\uc0ac\ubd84\ud560\ud569\ubcd1 \uacb0\uc815",
+    "endpoint": "cmpDvmgDecsn",
+    "fields": [
+      {
+        "key": "dvmg_mth",
+        "label": "\ubd84\ud560\ud569\ubcd1 \ubc29\ubc95"
+      },
+      {
+        "key": "dvmg_impef",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc758 \uc911\uc694\uc601\ud5a5 \ubc0f \ud6a8\uacfc"
+      },
+      {
+        "key": "dv_trfbsnprt_cn",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\ub85c \uc774\uc804\ud560 \uc0ac\uc5c5 \ubc0f \uc7ac\uc0b0\uc758 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "atdv_excmp_cmpnm",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ud68c\uc0ac\uba85))"
+      },
+      {
+        "key": "atdvfdtl_tast",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4)))"
+      },
+      {
+        "key": "atdvfdtl_tdbt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4)))"
+      },
+      {
+        "key": "atdvfdtl_teqt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4)))"
+      },
+      {
+        "key": "atdvfdtl_cpt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08)))"
+      },
+      {
+        "key": "atdvfdtl_std",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ud604\uc7ac\uae30\uc900)))"
+      },
+      {
+        "key": "atdv_excmp_exbsn_rsl",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\uc874\uc18d\uc0ac\uc5c5\ubd80\ubb38 \ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4\ub9e4\ucd9c\uc561(\uc6d0)))"
+      },
+      {
+        "key": "atdv_excmp_mbsn",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5))"
+      },
+      {
+        "key": "atdv_excmp_atdv_lstmn_atn",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560 \ud6c4 \uc874\uc18d\ud68c\uc0ac(\ubd84\ud560 \ud6c4 \uc0c1\uc7a5\uc720\uc9c0 \uc5ec\ubd80))"
+      },
+      {
+        "key": "dvfcmp_cmpnm",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\ud68c\uc0ac\uba85))"
+      },
+      {
+        "key": "ffdtl_tast",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4)))"
+      },
+      {
+        "key": "ffdtl_tdbt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4)))"
+      },
+      {
+        "key": "ffdtl_teqt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4)))"
+      },
+      {
+        "key": "ffdtl_cpt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08)))"
+      },
+      {
+        "key": "ffdtl_std",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc124\ub9bd\uc2dc \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ud604\uc7ac\uae30\uc900)))"
+      },
+      {
+        "key": "dvfcmp_nbsn_rsl",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc2e0\uc124\uc0ac\uc5c5\ubd80\ubb38 \ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \ub9e4\ucd9c\uc561(\uc6d0)))"
+      },
+      {
+        "key": "dvfcmp_mbsn",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5))"
+      },
+      {
+        "key": "dvfcmp_atdv_lstmn_at",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\uc124\ub9bd \ud68c\uc0ac(\ubd84\ud560\ud6c4 \uc0c1\uc7a5\uc720\uc9c0\uc5ec\ubd80))"
+      },
+      {
+        "key": "abcr_crrt",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\ube44\uc728(%)))"
+      },
+      {
+        "key": "abcr_osprpd_bgd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c)))"
+      },
+      {
+        "key": "abcr_osprpd_edd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uad6c\uc8fc\uad8c \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c)))"
+      },
+      {
+        "key": "abcr_trspprpd_bgd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0 \uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c)))"
+      },
+      {
+        "key": "abcr_trspprpd_edd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0 \uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c)))"
+      },
+      {
+        "key": "abcr_nstkascnd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\ubc30\uc815\uc870\uac74))"
+      },
+      {
+        "key": "abcr_shstkcnt_rt_at_rs",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc8fc \uc8fc\uc2dd\uc218 \ube44\ub840\uc5ec\ubd80 \ubc0f \uc0ac\uc720))"
+      },
+      {
+        "key": "abcr_nstkasstd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\ubc30\uc815\uae30\uc900\uc77c))"
+      },
+      {
+        "key": "abcr_nstkdlprd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c))"
+      },
+      {
+        "key": "abcr_nstklstprd",
+        "label": "\ubd84\ud560\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uac10\uc790\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc2e0\uc8fc\uc758 \uc0c1\uc7a5\uc608\uc815\uc77c))"
+      },
+      {
+        "key": "mg_stn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\ud615\ud0dc)"
+      },
+      {
+        "key": "mgptncmp_cmpnm",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ud68c\uc0ac\uba85))"
+      },
+      {
+        "key": "mgptncmp_mbsn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5))"
+      },
+      {
+        "key": "mgptncmp_rl_cmpn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_tast",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4)))"
+      },
+      {
+        "key": "rbsnfdtl_tdbt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4)))"
+      },
+      {
+        "key": "rbsnfdtl_teqt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4)))"
+      },
+      {
+        "key": "rbsnfdtl_cpt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08)))"
+      },
+      {
+        "key": "rbsnfdtl_sl",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub9e4\ucd9c\uc561)))"
+      },
+      {
+        "key": "rbsnfdtl_nic",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ub2f9\uae30\uc21c\uc774\uc775)))"
+      },
+      {
+        "key": "eadtat_intn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\uc678\ubd80\uac10\uc0ac \uc5ec\ubd80(\uae30\uad00\uba85)))"
+      },
+      {
+        "key": "eadtat_op",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc0c1\ub300 \ud68c\uc0ac(\uc678\ubd80\uac10\uc0ac \uc5ec\ubd80(\uac10\uc0ac\uc758\uacac)))"
+      },
+      {
+        "key": "dvmgnstk_ostk_cnt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\ud569\ubcd1\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "dvmgnstk_cstk_cnt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ubd84\ud560\ud569\ubcd1\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uc8fc)(\uc885\ub958\uc8fc\uc2dd))"
+      },
+      {
+        "key": "nmgcmp_cmpnm",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc2e0\uc124 \ud68c\uc0ac(\ud68c\uc0ac\uba85))"
+      },
+      {
+        "key": "nmgcmp_cpt",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc2e0\uc124 \ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0)))"
+      },
+      {
+        "key": "nmgcmp_mbsn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc2e0\uc124 \ud68c\uc0ac(\uc8fc\uc694\uc0ac\uc5c5))"
+      },
+      {
+        "key": "nmgcmp_rlst_atn",
+        "label": "\ud569\ubcd1\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud569\ubcd1\uc2e0\uc124 \ud68c\uc0ac(\uc7ac\uc0c1\uc7a5\uc2e0\uccad \uc5ec\ubd80))"
+      },
+      {
+        "key": "dvmg_rt",
+        "label": "\ubd84\ud560\ud569\ubcd1\ube44\uc728"
+      },
+      {
+        "key": "dvmg_rt_bs",
+        "label": "\ubd84\ud560\ud569\ubcd1\ube44\uc728 \uc0b0\ucd9c\uadfc\uac70"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "dvmgsc_dvmgctrd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ubd84\ud560\ud569\ubcd1\uacc4\uc57d\uc77c)"
+      },
+      {
+        "key": "dvmgsc_shddstd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\ud655\uc815\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "dvmgsc_shclspd_bgd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "dvmgsc_shclspd_edd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "dvmgsc_dvmgop_rcpd_bgd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ubd84\ud560\ud569\ubcd1\ubc18\ub300\uc758\uc0ac\ud1b5\uc9c0 \uc811\uc218\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "dvmgsc_dvmgop_rcpd_edd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ubd84\ud560\ud569\ubcd1\ubc18\ub300\uc758\uc0ac\ud1b5\uc9c0 \uc811\uc218\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "dvmgsc_gmtsck_prd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc8fc\ucd1d\ud68c\uc608\uc815\uc77c\uc790)"
+      },
+      {
+        "key": "dvmgsc_aprskh_expd_bgd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "dvmgsc_aprskh_expd_edd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "dvmgsc_cdobprpd_bgd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ucc44\uad8c\uc790 \uc774\uc758 \uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "dvmgsc_cdobprpd_edd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ucc44\uad8c\uc790 \uc774\uc758 \uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "dvmgsc_dvmgdt",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ubd84\ud560\ud569\ubcd1\uae30\uc77c)"
+      },
+      {
+        "key": "dvmgsc_ergmd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\uc885\ub8cc\ubcf4\uace0 \ucd1d\ud68c\uc77c)"
+      },
+      {
+        "key": "dvmgsc_dvmgrgsprd",
+        "label": "\ubd84\ud560\ud569\ubcd1\uc77c\uc815(\ubd84\ud560\ud569\ubcd1\ub4f1\uae30\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "bdlst_atn",
+        "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80"
+      },
+      {
+        "key": "otcpr_bdlst_sf_atn",
+        "label": "\ud0c0\ubc95\uc778\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871\uc5ec\ubd80"
+      },
+      {
+        "key": "aprskh_exrq",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc694\uac74)"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_ex_pc_mth_pd_pl",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc808\ucc28, \ubc29\ubc95, \uae30\uac04, \uc7a5\uc18c)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020052"
+  },
+  {
+    "index": 35,
+    "title": "\uc8fc\uc2dd\uad50\ud658\u00b7\uc774\uc804 \uacb0\uc815",
+    "endpoint": "stkExtrDecsn",
+    "fields": [
+      {
+        "key": "extr_sen",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "extr_stn",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ud615\ud0dc"
+      },
+      {
+        "key": "extr_tgcmp_cmpnm",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ud68c\uc0ac\uba85)"
+      },
+      {
+        "key": "extr_tgcmp_rp",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ub300\ud45c\uc790)"
+      },
+      {
+        "key": "extr_tgcmp_mbsn",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\uc8fc\uc694\uc0ac\uc5c5)"
+      },
+      {
+        "key": "extr_tgcmp_rl_cmpn",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4)"
+      },
+      {
+        "key": "extr_tgcmp_tisstk_ostk",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218(\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd))"
+      },
+      {
+        "key": "extr_tgcmp_tisstk_cstk",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218(\uc8fc)(\uc885\ub958\uc8fc\uc2dd))"
+      },
+      {
+        "key": "rbsnfdtl_tast",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc694\uc57d\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\uc0b0\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_tdbt",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc694\uc57d\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\ubd80\ucc44\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_teqt",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc694\uc57d\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\ucd1d\uacc4))"
+      },
+      {
+        "key": "rbsnfdtl_cpt",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ub300\uc0c1\ubc95\uc778(\ucd5c\uadfc \uc0ac\uc5c5\uc5f0\ub3c4 \uc694\uc57d\uc7ac\ubb34\ub0b4\uc6a9(\uc6d0)(\uc790\ubcf8\uae08))"
+      },
+      {
+        "key": "extr_rt",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ube44\uc728"
+      },
+      {
+        "key": "extr_rt_bs",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ube44\uc728 \uc0b0\ucd9c\uadfc\uac70"
+      },
+      {
+        "key": "exevl_atn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80)"
+      },
+      {
+        "key": "exevl_bs_rs",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720)"
+      },
+      {
+        "key": "exevl_intn",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d)"
+      },
+      {
+        "key": "exevl_pd",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04)"
+      },
+      {
+        "key": "exevl_op",
+        "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac)"
+      },
+      {
+        "key": "extr_pp",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ubaa9\uc801"
+      },
+      {
+        "key": "extrsc_extrctrd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uad50\ud658\u318d\uc774\uc804\uacc4\uc57d\uc77c)"
+      },
+      {
+        "key": "extrsc_shddstd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc8fc\ud655\uc815\uae30\uc900\uc77c)"
+      },
+      {
+        "key": "extrsc_shclspd_bgd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "extrsc_shclspd_edd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc8fc\uba85\ubd80 \ud3d0\uc1c4\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "extrsc_extrop_rcpd_bgd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc2dd\uad50\ud658\u318d\uc774\uc804 \ubc18\ub300\uc758\uc0ac \ud1b5\uc9c0\uc811\uc218\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "extrsc_extrop_rcpd_edd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc2dd\uad50\ud658\u318d\uc774\uc804 \ubc18\ub300\uc758\uc0ac \ud1b5\uc9c0\uc811\uc218\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "extrsc_gmtsck_prd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790)"
+      },
+      {
+        "key": "extrsc_aprskh_expd_bgd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "extrsc_aprskh_expd_edd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "extrsc_osprpd_bgd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uad6c\uc8fc\uad8c\uc81c\ucd9c\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "extrsc_osprpd_edd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uad6c\uc8fc\uad8c\uc81c\ucd9c\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "extrsc_trspprpd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0\uc608\uc815\uae30\uac04)"
+      },
+      {
+        "key": "extrsc_trspprpd_bgd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0\uc608\uc815\uae30\uac04(\uc2dc\uc791\uc77c))"
+      },
+      {
+        "key": "extrsc_trspprpd_edd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\ub9e4\ub9e4\uac70\ub798\uc815\uc9c0\uc608\uc815\uae30\uac04(\uc885\ub8cc\uc77c))"
+      },
+      {
+        "key": "extrsc_extrdt",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uad50\ud658\u318d\uc774\uc804\uc77c\uc790)"
+      },
+      {
+        "key": "extrsc_nstkdlprd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc2e0\uc8fc\uad8c\uad50\ubd80\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "extrsc_nstklstprd",
+        "label": "\uad50\ud658\u318d\uc774\uc804\uc77c\uc815(\uc2e0\uc8fc\uc758 \uc0c1\uc7a5\uc608\uc815\uc77c)"
+      },
+      {
+        "key": "atextr_cpcmpnm",
+        "label": "\uad50\ud658\u318d\uc774\uc804 \ud6c4 \uc644\uc804\ubaa8\ud68c\uc0ac\uba85"
+      },
+      {
+        "key": "aprskh_plnprc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9)"
+      },
+      {
+        "key": "aprskh_pym_plpd_mth",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95)"
+      },
+      {
+        "key": "aprskh_lmt",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9)"
+      },
+      {
+        "key": "aprskh_ctref",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825)"
+      },
+      {
+        "key": "bdlst_atn",
+        "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80"
+      },
+      {
+        "key": "otcpr_bdlst_sf_atn",
+        "label": "\ud0c0\ubc95\uc778\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871 \uc5ec\ubd80"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c)"
+      },
+      {
+        "key": "od_a_at_t",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ucc38\uc11d(\uba85))"
+      },
+      {
+        "key": "od_a_at_b",
+        "label": "\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\ucc38\uc11d\uc5ec\ubd80(\ubd88\ucc38(\uba85))"
+      },
+      {
+        "key": "adt_a_atn",
+        "label": "\uac10\uc0ac(\ub3c5\ub9bd(\uc0ac\uc678)\uc774\uc0ac\uac00 \uc544\ub2cc \uac10\uc0ac\uc704\uc6d0) \ucc38\uc11d\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_atn",
+        "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80"
+      },
+      {
+        "key": "popt_ctr_cn",
+        "label": "\uacc4\uc57d\ub0b4\uc6a9"
+      },
+      {
+        "key": "rs_sm_atn",
+        "label": "\uc99d\uad8c\uc2e0\uace0\uc11c \uc81c\ucd9c\ub300\uc0c1 \uc5ec\ubd80"
+      },
+      {
+        "key": "ex_sm_r",
+        "label": "\uc81c\ucd9c\uc744 \uba74\uc81c\ubc1b\uc740 \uacbd\uc6b0 \uadf8 \uc0ac\uc720"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS005&apiId=2020053"
+  },
+  {
+    "title": "\uc9c0\ubd84\uc99d\uad8c",
+    "kind": "securities",
+    "endpoint": "estkRs",
+    "fields": [
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uae30\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uae30\uc77c"
+      },
+      {
+        "key": "sband",
+        "label": "\uccad\uc57d\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asand",
+        "label": "\ubc30\uc815\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asstd",
+        "label": "\ubc30\uc815\uae30\uc900\uc77c"
+      },
+      {
+        "key": "exstk",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\ub300\uc0c1\uc99d\uad8c)"
+      },
+      {
+        "key": "exprc",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uac00\uaca9)"
+      },
+      {
+        "key": "expd",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uae30\uac04)"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "stksen",
+        "label": "\uc99d\uad8c\uc758\uc885\ub958"
+      },
+      {
+        "key": "stkcnt",
+        "label": "\uc99d\uad8c\uc218\ub7c9"
+      },
+      {
+        "key": "fv",
+        "label": "\uc561\uba74\uac00\uc561"
+      },
+      {
+        "key": "slprc",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\uac00\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "slmthn",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ubc29\ubc95"
+      },
+      {
+        "key": "actsen",
+        "label": "\uc778\uc218\uc778\uad6c\ubd84"
+      },
+      {
+        "key": "actnmn",
+        "label": "\uc778\uc218\uc778\uba85"
+      },
+      {
+        "key": "stksen",
+        "label": "\uc99d\uad8c\uc758\uc885\ub958"
+      },
+      {
+        "key": "udtcnt",
+        "label": "\uc778\uc218\uc218\ub7c9"
+      },
+      {
+        "key": "udtamt",
+        "label": "\uc778\uc218\uae08\uc561"
+      },
+      {
+        "key": "udtprc",
+        "label": "\uc778\uc218\ub300\uac00"
+      },
+      {
+        "key": "udtmth",
+        "label": "\uc778\uc218\ubc29\ubc95"
+      },
+      {
+        "key": "se",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "amt",
+        "label": "\uae08\uc561"
+      },
+      {
+        "key": "hdr",
+        "label": "\ubcf4\uc720\uc790"
+      },
+      {
+        "key": "rl_cmp",
+        "label": "\ud68c\uc0ac\uc640\uc758\uad00\uacc4"
+      },
+      {
+        "key": "bfsl_hdstk",
+        "label": "\ub9e4\ucd9c\uc804\ubcf4\uc720\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "slstk",
+        "label": "\ub9e4\ucd9c\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "atsl_hdstk",
+        "label": "\ub9e4\ucd9c\ud6c4\ubcf4\uc720\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "grtrs",
+        "label": "\ubd80\uc5ec\uc0ac\uc720"
+      },
+      {
+        "key": "exavivr",
+        "label": "\ud589\uc0ac\uac00\ub2a5 \ud22c\uc790\uc790"
+      },
+      {
+        "key": "grtcnt",
+        "label": "\ubd80\uc5ec\uc218\ub7c9"
+      },
+      {
+        "key": "expd",
+        "label": "\ud589\uc0ac\uae30\uac04"
+      },
+      {
+        "key": "exprc",
+        "label": "\ud589\uc0ac\uac00\uaca9"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020054"
+  },
+  {
+    "title": "\ucc44\ubb34\uc99d\uad8c",
+    "endpoint": "bdRs",
+    "kind": "securities",
+    "fields": [
+      {
+        "key": "tm",
+        "label": "\ud68c\ucc28"
+      },
+      {
+        "key": "bdnmn",
+        "label": "\ucc44\ubb34\uc99d\uad8c \uba85\uce6d"
+      },
+      {
+        "key": "slmth",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ubc29\ubc95"
+      },
+      {
+        "key": "fta",
+        "label": "\uad8c\uba74(\uc804\uc790\ub4f1\ub85d)\ucd1d\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "isprc",
+        "label": "\ubc1c\ud589\uac00\uc561"
+      },
+      {
+        "key": "intr",
+        "label": "\uc774\uc790\uc728"
+      },
+      {
+        "key": "isrr",
+        "label": "\ubc1c\ud589\uc218\uc775\ub960"
+      },
+      {
+        "key": "rpd",
+        "label": "\uc0c1\ud658\uae30\uc77c"
+      },
+      {
+        "key": "print_pymint",
+        "label": "\uc6d0\ub9ac\uae08\uc9c0\uae09\ub300\ud589\uae30\uad00"
+      },
+      {
+        "key": "mngt_cmp",
+        "label": "(\uc0ac\ucc44)\uad00\ub9ac\ud68c\uc0ac"
+      },
+      {
+        "key": "cdrt_int",
+        "label": "\uc2e0\uc6a9\ub4f1\uae09(\uc2e0\uc6a9\ud3c9\uac00\uae30\uad00)"
+      },
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uae30\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uae30\uc77c"
+      },
+      {
+        "key": "sband",
+        "label": "\uccad\uc57d\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asand",
+        "label": "\ubc30\uc815\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asstd",
+        "label": "\ubc30\uc815\uae30\uc900\uc77c"
+      },
+      {
+        "key": "dpcrn",
+        "label": "\ud45c\uc2dc\ud1b5\ud654"
+      },
+      {
+        "key": "dpcr_amt",
+        "label": "\ud45c\uc2dc\ud1b5\ud654\uae30\uc900\ubc1c\ud589\uaddc\ubaa8"
+      },
+      {
+        "key": "usarn",
+        "label": "\uc0ac\uc6a9\uc9c0\uc5ed"
+      },
+      {
+        "key": "usntn",
+        "label": "\uc0ac\uc6a9\uad6d\uac00"
+      },
+      {
+        "key": "wnexpl_at",
+        "label": "\uc6d0\ud654 \uad50\ud658 \uc608\uc815 \uc5ec\ubd80"
+      },
+      {
+        "key": "udtintnm",
+        "label": "\uc778\uc218\uae30\uad00\uba85"
+      },
+      {
+        "key": "grt_int",
+        "label": "\ubcf4\uc99d\uc744 \ubc1b\uc740 \uacbd\uc6b0(\ubcf4\uc99d\uae30\uad00)"
+      },
+      {
+        "key": "grt_amt",
+        "label": "\ubcf4\uc99d\uc744 \ubc1b\uc740 \uacbd\uc6b0(\ubcf4\uc99d\uae08\uc561)"
+      },
+      {
+        "key": "icmg_mgknd",
+        "label": "\ub2f4\ubcf4 \uc81c\uacf5\uc758 \uacbd\uc6b0(\ub2f4\ubcf4\uc758 \uc885\ub958)"
+      },
+      {
+        "key": "icmg_mgamt",
+        "label": "\ub2f4\ubcf4 \uc81c\uacf5\uc758 \uacbd\uc6b0(\ub2f4\ubcf4\uae08\uc561)"
+      },
+      {
+        "key": "estk_exstk",
+        "label": "\uc9c0\ubd84\uc99d\uad8c\uacfc \uc5f0\uacc4\ub41c \uacbd\uc6b0(\ud589\uc0ac\ub300\uc0c1\uc99d\uad8c)"
+      },
+      {
+        "key": "estk_exrt",
+        "label": "\uc9c0\ubd84\uc99d\uad8c\uacfc \uc5f0\uacc4\ub41c \uacbd\uc6b0(\uad8c\ub9ac\ud589\uc0ac\ube44\uc728)"
+      },
+      {
+        "key": "estk_exprc",
+        "label": "\uc9c0\ubd84\uc99d\uad8c\uacfc \uc5f0\uacc4\ub41c \uacbd\uc6b0(\uad8c\ub9ac\ud589\uc0ac\uac00\uaca9)"
+      },
+      {
+        "key": "estk_expd",
+        "label": "\uc9c0\ubd84\uc99d\uad8c\uacfc \uc5f0\uacc4\ub41c \uacbd\uc6b0(\uad8c\ub9ac\ud589\uc0ac\uae30\uac04)"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "drcb_at",
+        "label": "\ud30c\uc0dd\uacb0\ud569\uc0ac\ucc44\ud574\ub2f9\uc5ec\ubd80"
+      },
+      {
+        "key": "drcb_uast",
+        "label": "\ud30c\uc0dd\uacb0\ud569\uc0ac\ucc44(\uae30\ucd08\uc790\uc0b0)"
+      },
+      {
+        "key": "drcb_optknd",
+        "label": "\ud30c\uc0dd\uacb0\ud569\uc0ac\ucc44(\uc635\uc158\uc885\ub958)"
+      },
+      {
+        "key": "drcb_mtd",
+        "label": "\ud30c\uc0dd\uacb0\ud569\uc0ac\ucc44(\ub9cc\uae30\uc77c)"
+      },
+      {
+        "key": "tm",
+        "label": "\ud68c\ucc28"
+      },
+      {
+        "key": "actsen",
+        "label": "\uc778\uc218\uc778\uad6c\ubd84"
+      },
+      {
+        "key": "actnmn",
+        "label": "\uc778\uc218\uc778\uba85"
+      },
+      {
+        "key": "stksen",
+        "label": "\uc99d\uad8c\uc758\uc885\ub958"
+      },
+      {
+        "key": "udtcnt",
+        "label": "\uc778\uc218\uc218\ub7c9"
+      },
+      {
+        "key": "udtamt",
+        "label": "\uc778\uc218\uae08\uc561"
+      },
+      {
+        "key": "udtprc",
+        "label": "\uc778\uc218\ub300\uac00"
+      },
+      {
+        "key": "udtmth",
+        "label": "\uc778\uc218\ubc29\ubc95"
+      },
+      {
+        "key": "tm",
+        "label": "\ud68c\ucc28"
+      },
+      {
+        "key": "se",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "amt",
+        "label": "\uae08\uc561"
+      },
+      {
+        "key": "tm",
+        "label": "\ud68c\ucc28"
+      },
+      {
+        "key": "hdr",
+        "label": "\ubcf4\uc720\uc790"
+      },
+      {
+        "key": "rl_cmp",
+        "label": "\ud68c\uc0ac\uc640\uc758\uad00\uacc4"
+      },
+      {
+        "key": "bfsl_hdstk",
+        "label": "\ub9e4\ucd9c\uc804\ubcf4\uc720\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "slstk",
+        "label": "\ub9e4\ucd9c\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "atsl_hdstk",
+        "label": "\ub9e4\ucd9c\ud6c4\ubcf4\uc720\uc99d\uad8c\uc218"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020055"
+  },
+  {
+    "title": "\uc99d\uad8c\uc608\ud0c1\uc99d\uad8c",
+    "endpoint": "stkdpRs",
+    "kind": "securities",
+    "fields": [
+      {
+        "key": "sbd",
+        "label": "\uccad\uc57d\uae30\uc77c"
+      },
+      {
+        "key": "pymd",
+        "label": "\ub0a9\uc785\uae30\uc77c"
+      },
+      {
+        "key": "sband",
+        "label": "\uccad\uc57d\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asand",
+        "label": "\ubc30\uc815\uacf5\uace0\uc77c"
+      },
+      {
+        "key": "asstd",
+        "label": "\ubc30\uc815\uae30\uc900\uc77c"
+      },
+      {
+        "key": "exstk",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\ub300\uc0c1\uc99d\uad8c)"
+      },
+      {
+        "key": "exprc",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uac00\uaca9)"
+      },
+      {
+        "key": "expd",
+        "label": "\uc2e0\uc8fc\uc778\uc218\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uae30\uac04)"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "stksen",
+        "label": "\uc99d\uad8c\uc758\uc885\ub958"
+      },
+      {
+        "key": "stkcnt",
+        "label": "\uc99d\uad8c\uc218\ub7c9"
+      },
+      {
+        "key": "fv",
+        "label": "\uc561\uba74\uac00\uc561"
+      },
+      {
+        "key": "slprc",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\uac00\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "slmthn",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ubc29\ubc95"
+      },
+      {
+        "key": "actsen",
+        "label": "\uc778\uc218\uc778\uad6c\ubd84"
+      },
+      {
+        "key": "actnmn",
+        "label": "\uc778\uc218\uc778\uba85"
+      },
+      {
+        "key": "stksen",
+        "label": "\uc99d\uad8c\uc758\uc885\ub958"
+      },
+      {
+        "key": "udtcnt",
+        "label": "\uc778\uc218\uc218\ub7c9"
+      },
+      {
+        "key": "udtamt",
+        "label": "\uc778\uc218\uae08\uc561"
+      },
+      {
+        "key": "udtprc",
+        "label": "\uc778\uc218\ub300\uac00"
+      },
+      {
+        "key": "udtmth",
+        "label": "\uc778\uc218\ubc29\ubc95"
+      },
+      {
+        "key": "se",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "amt",
+        "label": "\uae08\uc561"
+      },
+      {
+        "key": "hdr",
+        "label": "\ubcf4\uc720\uc790"
+      },
+      {
+        "key": "rl_cmp",
+        "label": "\ud68c\uc0ac\uc640\uc758\uad00\uacc4"
+      },
+      {
+        "key": "bfsl_hdstk",
+        "label": "\ub9e4\ucd9c\uc804\ubcf4\uc720\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "slstk",
+        "label": "\ub9e4\ucd9c\uc99d\uad8c\uc218"
+      },
+      {
+        "key": "atsl_hdstk",
+        "label": "\ub9e4\ucd9c\ud6c4\ubcf4\uc720\uc99d\uad8c\uc218"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020056"
+  },
+  {
+    "title": "\ud569\ubcd1",
+    "endpoint": "mgRs",
+    "kind": "securities",
+    "fields": [
+      {
+        "key": "stn",
+        "label": "\ud615\ud0dc"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c \uacb0\uc758\uc77c"
+      },
+      {
+        "key": "ctrd",
+        "label": "\uacc4\uc57d\uc77c"
+      },
+      {
+        "key": "gmtsck_shddstd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c\ub97c \uc704\ud55c \uc8fc\uc8fc\ud655\uc815\uc77c"
+      },
+      {
+        "key": "ap_gmtsck",
+        "label": "\uc2b9\uc778\uc744 \uc704\ud55c \uc8fc\uc8fc\ucd1d\ud68c\uc77c"
+      },
+      {
+        "key": "aprskh_pd_bgd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "aprskh_pd_edd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "aprskh_prc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9((\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uac00\uaca9-\ud68c\uc0ac\uc81c\uc2dc))"
+      },
+      {
+        "key": "mgdt_etc",
+        "label": "\ud569\ubcd1\uae30\uc77c\ub4f1"
+      },
+      {
+        "key": "rt_vl",
+        "label": "\ube44\uc728 \ub610\ub294 \uac00\uc561"
+      },
+      {
+        "key": "exevl_int",
+        "label": "\uc678\ubd80\ud3c9\uac00\uae30\uad00"
+      },
+      {
+        "key": "grtmn_etc",
+        "label": "\uc9c0\uae09 \uad50\ubd80\uae08 \ub4f1"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "kndn",
+        "label": "\uc885\ub958"
+      },
+      {
+        "key": "cnt",
+        "label": "\uc218\ub7c9"
+      },
+      {
+        "key": "fv",
+        "label": "\uc561\uba74\uac00\uc561"
+      },
+      {
+        "key": "slprc",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\uac00\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "cmpnm",
+        "label": "\ud68c\uc0ac\uba85"
+      },
+      {
+        "key": "sen",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "tast",
+        "label": "\ucd1d\uc790\uc0b0"
+      },
+      {
+        "key": "cpt",
+        "label": "\uc790\ubcf8\uae08"
+      },
+      {
+        "key": "isstk_knd",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc758\uc885\ub958)"
+      },
+      {
+        "key": "isstk_cnt",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc218)"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020057"
+  },
+  {
+    "title": "\uc8fc\uc2dd\uc758\ud3ec\uad04\uc801\uad50\ud658\u00b7\uc774\uc804",
+    "endpoint": "extrRs",
+    "kind": "securities",
+    "fields": [
+      {
+        "key": "stn",
+        "label": "\ud615\ud0dc"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c \uacb0\uc758\uc77c"
+      },
+      {
+        "key": "ctrd",
+        "label": "\uacc4\uc57d\uc77c"
+      },
+      {
+        "key": "gmtsck_shddstd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c\ub97c \uc704\ud55c \uc8fc\uc8fc\ud655\uc815\uc77c"
+      },
+      {
+        "key": "ap_gmtsck",
+        "label": "\uc2b9\uc778\uc744 \uc704\ud55c \uc8fc\uc8fc\ucd1d\ud68c\uc77c"
+      },
+      {
+        "key": "aprskh_pd_bgd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "aprskh_pd_edd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "aprskh_prc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9((\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uac00\uaca9-\ud68c\uc0ac\uc81c\uc2dc))"
+      },
+      {
+        "key": "mgdt_etc",
+        "label": "\ud569\ubcd1\uae30\uc77c\ub4f1"
+      },
+      {
+        "key": "rt_vl",
+        "label": "\ube44\uc728 \ub610\ub294 \uac00\uc561"
+      },
+      {
+        "key": "exevl_int",
+        "label": "\uc678\ubd80\ud3c9\uac00\uae30\uad00"
+      },
+      {
+        "key": "grtmn_etc",
+        "label": "\uc9c0\uae09 \uad50\ubd80\uae08 \ub4f1"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "kndn",
+        "label": "\uc885\ub958"
+      },
+      {
+        "key": "cnt",
+        "label": "\uc218\ub7c9"
+      },
+      {
+        "key": "fv",
+        "label": "\uc561\uba74\uac00\uc561"
+      },
+      {
+        "key": "slprc",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\uac00\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "cmpnm",
+        "label": "\ud68c\uc0ac\uba85"
+      },
+      {
+        "key": "sen",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "tast",
+        "label": "\ucd1d\uc790\uc0b0"
+      },
+      {
+        "key": "cpt",
+        "label": "\uc790\ubcf8\uae08"
+      },
+      {
+        "key": "isstk_knd",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc758\uc885\ub958)"
+      },
+      {
+        "key": "isstk_cnt",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc218)"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020058"
+  },
+  {
+    "title": "\ubd84\ud560",
+    "endpoint": "dvRs",
+    "kind": "securities",
+    "fields": [
+      {
+        "key": "stn",
+        "label": "\ud615\ud0dc"
+      },
+      {
+        "key": "bddd",
+        "label": "\uc774\uc0ac\ud68c \uacb0\uc758\uc77c"
+      },
+      {
+        "key": "ctrd",
+        "label": "\uacc4\uc57d\uc77c"
+      },
+      {
+        "key": "gmtsck_shddstd",
+        "label": "\uc8fc\uc8fc\ucd1d\ud68c\ub97c \uc704\ud55c \uc8fc\uc8fc\ud655\uc815\uc77c"
+      },
+      {
+        "key": "ap_gmtsck",
+        "label": "\uc2b9\uc778\uc744 \uc704\ud55c \uc8fc\uc8fc\ucd1d\ud68c\uc77c"
+      },
+      {
+        "key": "aprskh_pd_bgd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc2dc\uc791\uc77c)"
+      },
+      {
+        "key": "aprskh_pd_edd",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9(\uc885\ub8cc\uc77c)"
+      },
+      {
+        "key": "aprskh_prc",
+        "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \ud589\uc0ac \uae30\uac04 \ubc0f \uac00\uaca9((\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uac00\uaca9-\ud68c\uc0ac\uc81c\uc2dc))"
+      },
+      {
+        "key": "mgdt_etc",
+        "label": "\ud569\ubcd1\uae30\uc77c\ub4f1"
+      },
+      {
+        "key": "rt_vl",
+        "label": "\ube44\uc728 \ub610\ub294 \uac00\uc561"
+      },
+      {
+        "key": "exevl_int",
+        "label": "\uc678\ubd80\ud3c9\uac00\uae30\uad00"
+      },
+      {
+        "key": "grtmn_etc",
+        "label": "\uc9c0\uae09 \uad50\ubd80\uae08 \ub4f1"
+      },
+      {
+        "key": "rpt_rcpn",
+        "label": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc811\uc218\ubc88\ud638)"
+      },
+      {
+        "key": "kndn",
+        "label": "\uc885\ub958"
+      },
+      {
+        "key": "cnt",
+        "label": "\uc218\ub7c9"
+      },
+      {
+        "key": "fv",
+        "label": "\uc561\uba74\uac00\uc561"
+      },
+      {
+        "key": "slprc",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\uac00\uc561"
+      },
+      {
+        "key": "slta",
+        "label": "\ubaa8\uc9d1(\ub9e4\ucd9c)\ucd1d\uc561"
+      },
+      {
+        "key": "cmpnm",
+        "label": "\ud68c\uc0ac\uba85"
+      },
+      {
+        "key": "sen",
+        "label": "\uad6c\ubd84"
+      },
+      {
+        "key": "tast",
+        "label": "\ucd1d\uc790\uc0b0"
+      },
+      {
+        "key": "cpt",
+        "label": "\uc790\ubcf8\uae08"
+      },
+      {
+        "key": "isstk_knd",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc758\uc885\ub958)"
+      },
+      {
+        "key": "isstk_cnt",
+        "label": "\ubc1c\ud589\uc8fc\uc2dd\uc218(\uc8fc\uc2dd\uc218)"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS006&apiId=2020059"
+  },
+  {
+    "title": "\ub300\ub7c9\ubcf4\uc720 \uc0c1\ud669\ubcf4\uace0",
+    "endpoint": "majorstock",
+    "kind": "holdings",
+    "fields": [
+      {
+        "key": "rcept_dt",
+        "label": "\uc811\uc218\uc77c\uc790"
+      },
+      {
+        "key": "report_tp",
+        "label": "\ubcf4\uace0\uad6c\ubd84"
+      },
+      {
+        "key": "repror",
+        "label": "\ub300\ud45c\ubcf4\uace0\uc790"
+      },
+      {
+        "key": "stkqy",
+        "label": "\ubcf4\uc720\uc8fc\uc2dd\ub4f1\uc758 \uc218"
+      },
+      {
+        "key": "stkqy_irds",
+        "label": "\ubcf4\uc720\uc8fc\uc2dd\ub4f1\uc758 \uc99d\uac10"
+      },
+      {
+        "key": "stkrt",
+        "label": "\ubcf4\uc720\ube44\uc728"
+      },
+      {
+        "key": "stkrt_irds",
+        "label": "\ubcf4\uc720\ube44\uc728 \uc99d\uac10"
+      },
+      {
+        "key": "ctr_stkqy",
+        "label": "\uc8fc\uc694\uccb4\uacb0 \uc8fc\uc2dd\ub4f1\uc758 \uc218"
+      },
+      {
+        "key": "ctr_stkrt",
+        "label": "\uc8fc\uc694\uccb4\uacb0 \ubcf4\uc720\ube44\uc728"
+      },
+      {
+        "key": "report_resn",
+        "label": "\ubcf4\uace0\uc0ac\uc720"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS004&apiId=2019021"
+  },
+  {
+    "title": "\uc784\uc6d0\u318d\uc8fc\uc694\uc8fc\uc8fc \uc18c\uc720\ubcf4\uace0",
+    "endpoint": "elestock",
+    "kind": "insider",
+    "fields": [
+      {
+        "key": "rcept_dt",
+        "label": "\uc811\uc218\uc77c\uc790"
+      },
+      {
+        "key": "repror",
+        "label": "\ubcf4\uace0\uc790"
+      },
+      {
+        "key": "isu_exctv_rgist_at",
+        "label": "\ubc1c\ud589 \ud68c\uc0ac \uad00\uacc4 \uc784\uc6d0(\ub4f1\uae30\uc5ec\ubd80)"
+      },
+      {
+        "key": "isu_exctv_ofcps",
+        "label": "\ubc1c\ud589 \ud68c\uc0ac \uad00\uacc4 \uc784\uc6d0 \uc9c1\uc704"
+      },
+      {
+        "key": "isu_main_shrholdr",
+        "label": "\ubc1c\ud589 \ud68c\uc0ac \uad00\uacc4 \uc8fc\uc694 \uc8fc\uc8fc"
+      },
+      {
+        "key": "sp_stock_lmp_cnt",
+        "label": "\ud2b9\uc815 \uc99d\uad8c \ub4f1 \uc18c\uc720 \uc218"
+      },
+      {
+        "key": "sp_stock_lmp_irds_cnt",
+        "label": "\ud2b9\uc815 \uc99d\uad8c \ub4f1 \uc18c\uc720 \uc99d\uac10 \uc218"
+      },
+      {
+        "key": "sp_stock_lmp_rate",
+        "label": "\ud2b9\uc815 \uc99d\uad8c \ub4f1 \uc18c\uc720 \ube44\uc728"
+      },
+      {
+        "key": "sp_stock_lmp_irds_rate",
+        "label": "\ud2b9\uc815 \uc99d\uad8c \ub4f1 \uc18c\uc720 \uc99d\uac10 \ube44\uc728"
+      }
+    ],
+    "source": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS004&apiId=2019022"
+  }
+]

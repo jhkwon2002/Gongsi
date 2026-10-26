@@ -11,6 +11,7 @@ from .api import ApiError, Dart, Telegram, now_kst
 from .bot import Bot
 from .catalog import matches
 from .storage import Store
+from .extraction import Extractor, format_notification
 
 LOG = logging.getLogger("gongsi")
 
@@ -28,7 +29,7 @@ def scan(dart, store):
     return baseline
 
 def deliver(bot, store, stop):
-    for report in store.pending():
+    for report in store.pending(limit=5):
         if stop.is_set():
             return
         prefs = store.settings()
@@ -37,9 +38,14 @@ def deliver(bot, store, stop):
         if not matches(report["report_nm"], prefs["selected"]):
             store.acknowledge(report["rcept_no"])
             continue
-        bot.send(f"[{report.get('corp_name', '')}] {report['report_nm']}\n"
-                 f"접수일: {report['rcept_dt']}\n접수번호: {report['rcept_no']}\n"
-                 f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={report['rcept_no']}")
+        summary = None
+        extractor = getattr(bot, 'extractor', None)
+        if extractor is not None:
+            try:
+                summary = extractor.extract(report)
+            except Exception:
+                summary = {'source':'추출 불가 · 원문 확인','fields':[]}
+        bot.send(format_notification(report, summary))
         # Telegram has no sendMessage idempotency key: a crash before this commit can repeat a message.
         store.acknowledge(report["rcept_no"])
         if stop.wait(1.1):
@@ -105,6 +111,7 @@ def main():
     if tg.call("getWebhookInfo").get("url"):
         raise RuntimeError("Existing webhook detected; remove it before using this long-polling service")
     bot = Bot(tg, store, owner)
+    bot.extractor = Extractor(key, store, int(os.environ.get("DART_DAILY_LIMIT", "18000")))
     bot.register_menu()
     stop = threading.Event()
     for sig in (signal.SIGTERM, signal.SIGINT):
