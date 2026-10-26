@@ -18,12 +18,14 @@ API='https://api.github.com/repos/'+REPO
 
 def record(store, report, summary, status, context):
     source=str((summary or {}).get('source',''))
-    method=('structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
+    method=('structured_api_with_original' if '원문 표 보완' in source else 'structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
     row={'receipt':report['rcept_no'],'company':str(report.get('corp_name',''))[:80],
          'title':str(report.get('report_nm',''))[:220], 'filing_date':report.get('rcept_dt',''),
          'method':method,'status':status,'context':context,
          'release':store.get('release','unknown'),'recorded_at':now_kst().isoformat(timespec='seconds'),
-         'withheld':bool((summary or {}).get('withheld'))}
+         'withheld':bool((summary or {}).get('withheld')),
+         'api_evidence':(summary or {}).get('evidence'),
+         'field_sources':(summary or {}).get('field_sources',[])}
     # No token, preferences, Telegram chat/message IDs, paths, raw exceptions or raw document data.
     with store.tx() as db:
         db.execute('CREATE TABLE IF NOT EXISTS delivery_history (seq INTEGER PRIMARY KEY AUTOINCREMENT, data TEXT NOT NULL)')
@@ -58,7 +60,7 @@ def snapshot(store):
             context='test_replay'
             if (report.get('rcept_no'),context) in receipts:
                 continue
-            cached=next((value for value in (store.get(prefix+report['rcept_no']) for prefix in ('extract_v4:','extract_v3:','extract_v2:','extract_v1:')) if value),None)
+            cached=next((value for value in (store.get(prefix+report['rcept_no']) for prefix in ('extract_v5:','extract_v4:','extract_v3:','extract_v2:','extract_v1:')) if value),None)
             source=str((cached or {}).get('source',''))
             legacy.append({'receipt':report['rcept_no'],'company':str(report.get('corp_name',''))[:80],
                            'title':str(report.get('report_nm',''))[:220],
@@ -68,7 +70,7 @@ def snapshot(store):
     return {'schema_version':1,'release':store.get('release','unknown'),
             'last_scan_success':store.get('last_scan_success'),
             'delivery_history':history,'historical_replays':legacy[:100],
-            'api_diagnostics':store.get('api_probe_20261026_v1'),
+            'api_diagnostics':store.get('api_probe_20261026_v2',store.get('api_probe_20261026_v1')),
             'note':'telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.'}
 
 

@@ -389,62 +389,16 @@ class Extractor:
             raise ValueError('Document exceeds download budget')
         return document_text(data,receipt)
     def extract(self, report):
-        receipt = report['rcept_no']
-        cache_key = 'extract_v4:'+receipt
+        from .acquisition import acquire
+        cache_key = 'extract_v5:'+report['rcept_no']
         cached = self.store.get(cache_key)
         if cached:
             return cached
-        schema = schema_for(report['report_nm'])
-        fields = []
-        if schema:
-            try:
-                params = {'corp_code':report['corp_code']}
-                if schema.get('kind') == 'financial':
-                    period = re.search(r'\((\d{4})\.(\d{2})\)',report['report_nm'])
-                    if period:
-                        year, month = period.groups()
-                        code = {'사업보고서':'11011','반기보고서':'11012'}.get(schema['title'])
-                        if schema['title']=='분기보고서':
-                            code = {'03':'11013','09':'11014'}.get(month)
-                        if code:
-                            for basis in ('CFS','OFS'):
-                                payload = self.json(schema['endpoint'],{**params,'bsns_year':year,'reprt_code':code,'fs_div':basis})
-                                for row in payload.get('list',[]):
-                                    if isinstance(row,dict):
-                                        row.setdefault('fs_div',basis)
-                                fields = financial_fields(payload,receipt)
-                                if fields:
-                                    break
-                else:
-                    if schema.get('kind') not in ('holdings','insider'):
-                        params.update(bgn_de=report['rcept_dt'],end_de=report['rcept_dt'])
-                    payload = self.json(schema['endpoint'],params)
-                    if payload.get('status')=='000':
-                        fields = structured_fields(payload,receipt,schema)
-            except Exception:
-                fields = []
-        if fields:
-            result = {'source':'OpenDART 구조화 정보','fields':fields}
-        else:
-            name = normalize(report['report_nm'])
-            profiles = [p for p in RAW_PROFILES if any(normalize(term) in name for term in p[1])]
-            aliases = [f['label'] for f in schema['fields']] if schema else []
-            if profiles:
-                aliases += list(profiles[0][2])
-            if schema and schema.get('kind')=='financial':
-                aliases += ['매출액','영업이익','당기순이익','자산총계','부채총계','자본총계']
-            if not aliases:
-                aliases = ['제목','주요내용','발생일자','결정내용','금액','기간']
-            try:
-                fields = raw_fields(self.original(receipt),aliases)
-            except Exception:
-                fields = []
-            result = {'source':'원문 표' if fields else '추출 불가 · 원문 확인','fields':fields}
-            if getattr(fields,'withheld',0):
-                result['withheld'] = fields.withheld
+        result = acquire(self,report)
         if result['fields']:
             self.store.set(cache_key,result)
         return result
+
 
 
 def format_notification(report, summary=None, html=False):

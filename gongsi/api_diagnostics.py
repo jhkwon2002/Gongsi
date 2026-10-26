@@ -3,8 +3,8 @@ import json
 from .api import now_kst,ApiError
 from .extraction import schema_for,exact_rows,structured_fields
 
-TARGETS=('20261026800210','20261026800116')
-KEY='api_probe_20261026_v1'
+TARGETS=('20261026800210','20261026800116','20261026000318')
+KEY='api_probe_20261026_v2'
 
 
 def run_probe(bot,store):
@@ -40,6 +40,10 @@ def run_probe(bot,store):
                 rows=exact_rows(payload,receipt)
                 fields=structured_fields(payload,receipt,schema) if status=='000' else []
                 candidates=payload.get('list',[])
+                from .presentation import CONTRACTS
+                labels={f['key']:f['label'] for f in schema['fields']}
+                allowed={labels[k] for k,n in CONTRACTS[schema['endpoint']]}
+                query['public_api_fields']=[{'label':l,'value':v} for l,v in fields if l in allowed][:10]
                 query.update(status=status,matching_receipt_rows=len(rows),extracted_field_count=len(fields),
                              returned_receipts=sorted(set(str(r['rcept_no']) for r in candidates if isinstance(r,dict) and str(r.get('rcept_no','')).isdigit() and len(str(r['rcept_no']))==14))[:20])
                 query['reason']=('structured_fields_available' if fields else 'receipt_not_returned' if status=='000' and not rows else 'matching_row_has_no_fields' if status=='000' else 'no_data' if status=='013' else 'api_status_error')

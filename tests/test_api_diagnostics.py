@@ -20,17 +20,17 @@ class ProbeTests(unittest.TestCase):
         clock=patch('gongsi.api_diagnostics.now_kst',return_value=datetime(2026,10,26,17,tzinfo=timezone(timedelta(hours=9))))
         clock.start();self.addCleanup(clock.stop)
 
-    def test_no_data_records_four_exact_queries_and_no_telegram(self):
+    def test_no_data_records_exact_queries_and_no_telegram(self):
         self.bot.extractor.json.return_value={'status':'013','message':'SECRET_SENTINEL'}
         run_probe(self.bot,self.store)
         out=self.store.get(KEY)
         self.assertTrue(out['complete'])
-        self.assertEqual(self.bot.extractor.json.call_count,4)
+        self.assertEqual(self.bot.extractor.json.call_count,len(TARGETS)*2)
         self.bot.send.assert_not_called()
         self.assertTrue(all(q['reason']=='no_data' for r in out['results'] for q in r['queries']))
         self.assertNotIn('SECRET_SENTINEL',json.dumps(snapshot(self.store)))
         run_probe(self.bot,self.store)
-        self.assertEqual(self.bot.extractor.json.call_count,4)
+        self.assertEqual(self.bot.extractor.json.call_count,len(TARGETS)*2)
 
     def test_receipt_mismatch_distinguished_from_match_and_fields(self):
         self.bot.extractor.json.side_effect=[{'status':'000','list':[{'rcept_no':'20261026000000','inh_pp':'Other'}]},
@@ -48,4 +48,4 @@ class ProbeTests(unittest.TestCase):
         self.assertFalse(out['complete'])
         self.assertNotIn('SECRET_SENTINEL',json.dumps(out))
         run_probe(self.bot,self.store)
-        self.assertEqual(self.bot.extractor.json.call_count,4)
+        self.assertEqual(self.bot.extractor.json.call_count,len(TARGETS)*2)

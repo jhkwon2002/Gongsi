@@ -31,7 +31,7 @@ class ExtractionTests(unittest.TestCase):
                 self.assertEqual(schema_for(title)['endpoint'],schema['endpoint'])
 
     def test_structured_first_and_cache_without_original_fetch(self):
-        payload={'status':'000','list':[{'rcept_no':RECEIPT,'bd_fta':'10,000,000,000','cv_prc':'5,000'}]}
+        payload={'status':'000','list':[{'rcept_no':RECEIPT,'bd_fta':'10,000,000,000','cv_prc':'5,000','bd_intr_ex':'0','bd_intr_sf':'2','bd_mtd':'2029-11-30'}]}
         with patch.object(self.extractor,'json',return_value=payload) as api,patch.object(self.extractor,'original') as raw:
             result=self.extractor.extract(REPORT)
             self.assertEqual(result['source'],'OpenDART 구조화 정보')
