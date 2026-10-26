@@ -33,6 +33,17 @@ RAW_PROFILES = (
     ('임원·주요주주 거래계획', ('거래계획',), ('보고자','거래목적','거래금액','거래수량','거래기간','예정거래기간')),
     ('소송 판결·진행', ('소송',), ('사건명칭','원고신청인','청구내용','판결결정내용','관할법원','판결결정일자','확인일자')),
 )
+# Ordered original-table contracts, with period aliases used by actual DART tables.
+_RAW_EXTRA = {
+    '시설투자·증설': ('투자금액','자기자본대비','투자목적','시작일','종료일','투자기간'),
+    '판매·공급계약': ('체결계약명','계약금액','매출액대비','계약상대방','계약상대','계약기간','시작일','종료일'),
+    '채무보증': ('채무자','채권자','채무보증금액','자기자본대비','채무보증기간','시작일','종료일'),
+    '담보제공': ('채무자','담보제공재산','담보설정금액','자기자본대비','채권자'),
+    '투자판단·기타경영사항': ('제목','사실발생일','주요내용'),
+    '기업가치 제고계획': ('제목','계획기간','목표','주요내용'),
+    '임원·주요주주 거래계획': ('보고자','거래수량','거래목적','예정거래기간','거래기간','거래금액'),
+}
+RAW_PROFILES=tuple((name,terms,_RAW_EXTRA.get(name,aliases)) for name,terms,aliases in RAW_PROFILES)
 PREFERRED = {
  'piicDecsn': ('nstk_ostk_cnt','ic_mthn','fdpp_fclt','fdpp_op','fdpp_dtrp','fdpp_ocsa'),
  'fricDecsn': ('nstk_ostk_cnt','nstk_ascnt_ps_ostk','nstk_asstd','nstk_lstprd'),
@@ -112,7 +123,8 @@ def field_priority(label):
 def structured_fields(payload, receipt, schema):
     rows = exact_rows(payload, receipt)
     labels = {f['key']:f['label'] for f in reversed(schema['fields'])}
-    keys = list(dict.fromkeys(PREFERRED.get(schema['endpoint'], ()) + tuple(sorted(labels,key=lambda key:field_priority(labels[key])))))
+    from .presentation import CONTRACTS
+    keys = list(dict.fromkeys(tuple(k for k,n in CONTRACTS[schema['endpoint']]) + tuple(labels)))
     result = []
     seen = set()
     data_rows = [row for row in rows if any(key in row for key in labels)]
@@ -130,7 +142,7 @@ def structured_fields(payload, receipt, schema):
             if pair not in seen:
                 result.append(pair)
                 seen.add(pair)
-    return result[:9]
+    return result
 
 
 def label_key(value):
@@ -254,7 +266,7 @@ def raw_fields(document, aliases):
                 if pair not in seen:
                     result.append(pair)
                     seen.add(pair)
-    return result[:9]
+    return result[:100]
 
 
 def document_text(data, receipt):
@@ -313,7 +325,7 @@ class Extractor:
         return document_text(data,receipt)
     def extract(self, report):
         receipt = report['rcept_no']
-        cache_key = 'extract_v1:'+receipt
+        cache_key = 'extract_v2:'+receipt
         cached = self.store.get(cache_key)
         if cached:
             return cached
@@ -376,7 +388,11 @@ def format_notification(report, summary=None, html=False):
     lines = [heading, '', encode(title), '접수일: '+encode(report['rcept_dt'])]
     if summary:
         lines.append('주요항목 발췌 · '+encode(summary['source']))
-        for label,value in summary.get('fields',[])[:9]:
+        from .presentation import present
+        display_fields = present(report, summary)
+        if not display_fields:
+            lines.append('핵심 항목을 확보하지 못했습니다. 원문을 확인해 주세요.')
+        for label,value in display_fields:
             if '접수번호' in label:
                 continue
             lines.append('• '+encode(text(label,90))+': '+encode(text(value,230)))

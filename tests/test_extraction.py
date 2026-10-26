@@ -169,7 +169,7 @@ class ExtractionTests(unittest.TestCase):
             def handle_data(self,data):
                 self.parts.append(data)
         report={**REPORT,'corp_name':'가상A & <B>'}
-        message=format_notification(report,{'source':'원문 표','fields':[('접수번호',RECEIPT),('목적','A < B & C')]},html=True)
+        message=format_notification(report,{'source':'원문 표','fields':[('접수번호',RECEIPT),('사채의 권면(전자등록)총액 (원)','A < B & C')]},html=True)
         self.assertTrue(message.startswith('🏢 <b>가상A &amp; &lt;B&gt;</b>'))
         self.assertIn('📄 원문 보기',message)
         self.assertIn('A &lt; B &amp; C',message)
