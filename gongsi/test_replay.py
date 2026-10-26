@@ -23,7 +23,10 @@ def process_requests(bot,store,stop,requests=None):
         count=request.get('count')
         if not isinstance(count,int) or isinstance(count,bool) or not 1 <= count <= 10:
             continue
-        distinct=request.get('distinct_companies',True)
+        all_today=request.get('all_today',False)
+        if not isinstance(all_today,bool):
+            continue
+        distinct=request.get('distinct_companies',not all_today)
         if not isinstance(distinct,bool):
             continue
         target=request.get('company')
@@ -51,14 +54,17 @@ def process_requests(bot,store,stop,requests=None):
                                  or (target is None and matches(report.get('report_nm',''),selected)))):
                         reports.append(report)
                         companies.add(company)
-                        if len(reports)==count:
+                        if not all_today and len(reports)==count:
                             break
             if not reports:
                 store.set('test_replay_last',{'id':identifier,'sent':0,'requested':count,'status':'waiting_for_filings'})
                 continue
             state={'reports':reports,'next':0,'message_ids':[],'done':False}
             store.set(key,state)
-        for index in range(state['next'],len(state['reports'])):
+        total=len(state['reports'])
+        end=min(state['next']+3,total) if all_today else total
+        store.set('test_replay_last',{'id':identifier,'sent':state['next'],'requested':total if all_today else count,'status':'sending'})
+        for index in range(state['next'],end):
             if stop.is_set():
                 return
             report=state['reports'][index]
@@ -76,7 +82,7 @@ def process_requests(bot,store,stop,requests=None):
             state['message_ids'].append(response.get('message_id'))
             state['done']=state['next']==len(state['reports'])
             store.set(key,state)
-            store.set('test_replay_last',{'id':identifier,'sent':state['next'],'requested':count,
+            store.set('test_replay_last',{'id':identifier,'sent':state['next'],'requested':total if all_today else count,
                                          'status':'completed' if state['done'] else 'sending'})
             if stop.wait(1.3):
                 return

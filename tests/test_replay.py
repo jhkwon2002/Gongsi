@@ -99,3 +99,16 @@ class ReplayTests(unittest.TestCase):
         self.request[0].update(company='가상3',count=1,receipt='20261026000006')
         process_requests(self.bot,self.store,Stop(),self.request)
         self.assertFalse(self.bot.calls)
+
+    def test_all_today_is_chunked_and_resumes_without_duplicates(self):
+        self.request[0].update(all_today=True,distinct_companies=False,count=1)
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),3)
+        self.assertEqual(self.store.get('test_replay_last')['requested'],7)
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),6)
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),7)
+        self.assertTrue(self.store.get('test_replay:test-one')['done'])
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),7)
