@@ -47,6 +47,11 @@ jobs:
           if ($failures.Count) { $failures | Format-List; exit 1 }
       - name: Check shell syntax
         run: bash -n deploy/bootstrap.sh && bash -n deploy/deploy.sh && bash -n deploy/prepare-memory.sh
+      - name: Check automatic deployment systemd units
+        run: |
+          sudo install -d -m 0755 /opt/gongsi
+          sudo ln -s "$(command -v python3)" /opt/gongsi/python3
+          systemd-analyze verify --man=no deploy/gongsi-update.service deploy/gongsi-update.timer
   deploy:
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.ORACLE_DEPLOY_ENABLED == 'true'

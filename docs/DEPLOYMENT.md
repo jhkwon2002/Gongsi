@@ -209,3 +209,8 @@ bootstrap.sh --archive는 /etc/gongsi/source-mode를 archive로 설정한다. /u
 사용자의 배포 결과 화면에서 커밋 e19ccf849da85000703686f4df5c8ddab35bcaa7이 서버에 배포된 것을 확인했다. 서버 검사 47개가 성공했고, 자격정보 설정 단계를 통과했으며, systemd 자동 시작과 active 상태, 메뉴 준비 신호, SETUP SUCCESS가 확인됐다. Python 3.9.25를 사용하고 Git 없는 압축파일 방식으로 진행했다.
 
 이 확인은 실제 신규 공시 알림 수신이나 첫 DART 전체 조회 성공까지 증명하지는 않는다. Telegram에서 /start로 원하는 보고서를 선택하고 /status의 최근 성공 시각을 확인한다. GitHub Actions SSH Secrets 및 ORACLE_DEPLOY_ENABLED 설정은 여전히 후속 작업이다. 문서 갱신만으로 운영 서버가 갱신된 것으로 기록하지 않는다.
+
+
+## 서버에서 GitHub 자동 반영 (2026-10-26)
+
+Windows PowerShell에서 deploy/setup-autodeploy.ps1 -SendTest를 실행한다. 기존 API 키를 유지하고 추가 패키지는 설치하지 않는다. 서버에 gongsi-update.timer를 등록해 약 3분 간격으로 main을 확인한다. 정확한 커밋의 push 검사 워크플로 성공을 확인한 뒤 기존 배포 도우미로 반영한다. 실패·진행 중 검사, 메모리 부족은 보류한다. 서비스 준비 실패 시 기존 코드 복구 절차를 사용한다. CPU와 메모리 사용량을 제한한다. -SendTest는 서비스 상태와 DART 연결을 확인하고 소유자에게 수신 확인 메시지를 한 번 보낸다. SSH 비밀키를 GitHub에 등록할 필요는 없다. 기존 Actions SSH 배포 변수는 켜지 않는다. 현재는 코드 준비 단계이며 실제 타이머 등록과 메시지 수신은 사용자 실행 결과로 확인해야 한다.

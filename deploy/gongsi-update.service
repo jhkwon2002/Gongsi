@@ -1,0 +1,21 @@
+# Managed by Gongsi
+[Unit]
+Description=Deploy tested Gongsi GitHub commits
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=/etc/gongsi/autodeploy-enabled
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/opt/gongsi/python3 /usr/local/libexec/gongsi-autodeploy.py
+TimeoutStartSec=8min
+Nice=10
+CPUQuota=25%
+MemoryHigh=96M
+MemoryMax=192M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/gongsi /etc/gongsi /etc/systemd/system /usr/local/sbin /usr/local/libexec /var/lib/gongsi /var/lib/gongsi-updates /var/backups/gongsi /run

@@ -1,0 +1,13 @@
+# Managed by Gongsi
+[Unit]
+Description=Check Gongsi GitHub updates every three minutes
+
+[Timer]
+OnBootSec=45s
+OnUnitInactiveSec=3min
+RandomizedDelaySec=20s
+AccuracySec=10s
+Unit=gongsi-update.service
+
+[Install]
+WantedBy=timers.target
