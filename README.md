@@ -81,7 +81,7 @@ Python 자동 검사는 외부 API 호출 없이 29개를 통과했다. GitHub�
 | docs/HISTORY_2026-10-23.md | 이전 Windows 기반 진행 기록, 과거 시점의 자료 |
 | dart_alert.ps1 | 이전 Windows 실행본 보존용, 현재 운영 경로가 아님 |
 
-Python 3.11 이상이며 외부 패키지가 필요하지 않다. 현재 서버는 Oracle Linux 9.8이다. Oracle Linux 9와 Ubuntu 24.04 설치 경로를 지원한다.
+Python 3.9 이상이며 외부 패키지가 필요하지 않다. 현재 서버는 Oracle Linux 9.8이다. Oracle Linux 9와 Ubuntu 24.04 설치 경로를 지원한다.
 
 ## 다음 순서
 
@@ -116,3 +116,4 @@ Python 3.11 이상이며 외부 패키지가 필요하지 않다. 현재 서버�
 서버 주소·로그인 사용자·개인키 경로는 Git에서 제외된 .env.oracle에서 읽는다. 설치 스크립트는 Oracle Linux 9에 git과 python3.11을 설치하고, 운영체제 기본 Python을 바꾸지 않고 서비스 전용 /opt/gongsi/python3 경로를 사용한다. 서버의 숨김 입력란에서 봇 토큰과 DART 키를 입력하면 인증을 검증하고 환경파일을 저장한 뒤 배포한다. 재실행 시 기존 키는 Enter로 유지할 수 있다.
 
 SETUP SUCCESS 후 텔레그램 /start와 /status로 실제 메뉴·조회 성공을 확인한다. GitHub에서 Oracle로 자동 배포하는 연결은 이후 별도 설정한다.
+

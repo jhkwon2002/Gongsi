@@ -1,10 +1,11 @@
 [CmdletBinding()]
 param(
-    [string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly,[switch]$PrepareMemoryOnly,
+    [string]$Server,[string]$User,[string]$KeyPath,[switch]$DiagnoseOnly,[switch]$PrepareMemoryOnly,[switch]$NoInstall,
     [ValidateRange(5,120)][int]$ConnectTimeoutSeconds = 60,
     [string]$DiagnosticLogPath
 )
 $ErrorActionPreference = 'Stop'
+if ($NoInstall -and $PrepareMemoryOnly) { throw 'Choose -NoInstall or -PrepareMemoryOnly, not both.' }
 Write-Host '[1/5] Installer started. Reading local connection settings.'
 $configFile = Join-Path (Split-Path $PSScriptRoot -Parent) '.env.oracle'
 $settings = @{}
@@ -42,31 +43,43 @@ if ($DiagnoseOnly) {
     Write-Host 'DIAGNOSTIC SUCCESS: SSH and passwordless sudo are working. No installation was performed.'
     return
 }
-Write-Host '[3/5] Preparing memory before any package installation.'
+if ($NoInstall) { Write-Host '[3/5] Using existing packages. No package installation or swap changes.' }
+else { Write-Host '[3/5] Preparing memory before any package installation.' }
 $memoryScript = Join-Path $PSScriptRoot 'prepare-memory.sh'
-if (!(Test-Path -LiteralPath $memoryScript -PathType Leaf)) { throw 'Missing deploy/prepare-memory.sh. No packages were installed.' }
+if (!$NoInstall -and !(Test-Path -LiteralPath $memoryScript -PathType Leaf)) { throw 'Missing deploy/prepare-memory.sh. No packages were installed.' }
 
 $bootstrap = @'
 set -euo pipefail
 echo "[server] Bootstrap shell started"
 . /etc/os-release
 echo "[server] Detected OS: $PRETTY_NAME"
-case "$ID" in
-  ol)
-    [[ "$VERSION_ID" == 9* ]] || { echo "This installer supports Oracle Linux 9."; exit 1; }
-    if command -v git >/dev/null && command -v python3.11 >/dev/null && python3.11 -c 'import sqlite3' 2>/dev/null; then
-      echo "[server] Required packages are already installed; skipping dnf"
-    else
+PYTHON_READY=0
+for candidate in python3 python3.9 python3.11 python3.12 python3.13; do
+  if command -v "$candidate" >/dev/null && "$candidate" -c 'import sys, sqlite3, ssl, fcntl; assert sys.version_info >= (3,9)' 2>/dev/null; then
+    PYTHON_READY=1
+    echo "[server] Existing runtime: $($candidate --version)"
+    break
+  fi
+done
+if command -v git >/dev/null && [[ "$PYTHON_READY" == 1 ]]; then
+  echo "[server] Existing packages are sufficient; skipping package manager"
+elif [[ "${GONGSI_NO_INSTALL:-0}" == 1 ]]; then
+  echo "NO-INSTALL STOP: git and Python 3.9+ (sqlite3, ssl, fcntl) must already exist. No packages were installed."
+  exit 1
+else
+  case "$ID" in
+    ol)
+      [[ "$VERSION_ID" == 9* ]] || { echo "This installer supports Oracle Linux 9."; exit 1; }
       echo "[server] Starting dnf package installation with reduced optional downloads"
-      sudo -n dnf --setopt=timeout=30 --setopt=retries=2 --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 install -y git python3.11
-    fi
-    ;;
-  ubuntu)
-    sudo -n apt-get update
-    sudo -n apt-get install -y git python3
-    ;;
-  *) echo "Unsupported OS. Stop and adapt the installation."; exit 1 ;;
-esac
+      sudo -n dnf --setopt=timeout=30 --setopt=retries=2 --setopt=install_weak_deps=False --setopt=max_parallel_downloads=1 install -y git python3
+      ;;
+    ubuntu)
+      sudo -n apt-get update
+      sudo -n apt-get install -y git python3
+      ;;
+    *) echo "Unsupported OS. Stop and adapt the installation."; exit 1 ;;
+  esac
+fi
 echo "[server] Packages ready. Preparing project checkout"
 sudo -n install -d -o root -g root -m 0755 /opt/gongsi
 if sudo -n test -d /opt/gongsi/repository/.git; then
@@ -88,15 +101,19 @@ echo "SERVER BOOTSTRAP OK"
 $previousEncoding = $OutputEncoding
 try {
     $OutputEncoding = [Text.UTF8Encoding]::new($false)
-    $memorySource = Get-Content -LiteralPath $memoryScript -Raw -Encoding UTF8
-    $memorySource | & ssh @sshArgs -T $destination "tr -d '\r' | sudo -n bash -s"
-    if ($LASTEXITCODE -ne 0) { throw 'Memory preparation failed. Package installation was not started.' }
-    if ($PrepareMemoryOnly) {
-        Write-Host 'MEMORY PREPARATION SUCCESS: no packages were installed. Run this installer again without -PrepareMemoryOnly to continue.'
-        return
+    if (!$NoInstall) {
+        $memorySource = Get-Content -LiteralPath $memoryScript -Raw -Encoding UTF8
+        $memorySource | & ssh @sshArgs -T $destination "tr -d '\r' | sudo -n bash -s"
+        if ($LASTEXITCODE -ne 0) { throw 'Memory preparation failed. Package installation was not started.' }
+        if ($PrepareMemoryOnly) {
+            Write-Host 'MEMORY PREPARATION SUCCESS: no packages were installed. Run this installer again without -PrepareMemoryOnly to continue.'
+            return
+        }
+        Write-Host '[3/5] Memory prepared. Checking server packages.'
     }
-    Write-Host '[3/5] Memory prepared. Installing server packages.'
-    $bootstrap | & ssh @sshArgs -T $destination "tr -d '\r' | bash -s"
+    $remoteBootstrap = "tr -d '\r' | bash -s"
+    if ($NoInstall) { $remoteBootstrap = "tr -d '\r' | GONGSI_NO_INSTALL=1 bash -s" }
+    $bootstrap | & ssh @sshArgs -T $destination $remoteBootstrap
     if ($LASTEXITCODE -ne 0) { throw 'Server bootstrap failed. Credentials were not requested.' }
     Write-Host '[4/5] Enter the two API credentials in the SSH terminal. Input will be hidden.'
     $configure = 'sudo -n /opt/gongsi/python3 /opt/gongsi/repository/deploy/configure.py && TARGET=$(sudo -n git -C /opt/gongsi/repository rev-parse HEAD) && sudo -n /usr/local/sbin/deploy-gongsi "$TARGET"'

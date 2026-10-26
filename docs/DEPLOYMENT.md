@@ -1,6 +1,6 @@
 # Oracle와 GitHub 배포 절차
 
-2026-10-23. 대상: Oracle Linux 9 (현재 확인된 서버는 9.8), Ubuntu 24.04, Python 3.11 이상, systemd.
+2026-10-23. 대상: Oracle Linux 9 (현재 확인된 서버는 9.8), Ubuntu 24.04, Python 3.9 이상, systemd.
 저장소는 https://github.com/jhkwon2002/Gongsi 로 확정했다. 사용자 PC에서 SSH 접속 성공과 Oracle Linux Server 9.8을 확인했다. 프로그램 실제 설치·배포는 아직이다.
 
 ## 준비할 정보
@@ -155,7 +155,7 @@ bash -n deploy/deploy.sh
 & .\deploy\setup-oracle.ps1
 ~~~
 
-1. Oracle Linux 9이면 공식 저장소에서 git과 python3.11을 설치한다. Ubuntu이면 apt로 git과 python3을 설치하며 Python 3.11 이상인지 bootstrap에서 검사한다.
+1. Oracle Linux 9이면 공식 저장소에서 git과 Python 3.9 이상을 설치한다. Ubuntu이면 apt로 git과 python3을 설치하며 Python 3.9 이상인지 bootstrap에서 검사한다.
 2. 서버의 전용 저장소를 가져온다. 이미 있는 경로가 다른 저장소이거나 수정된 상태이면 덮어쓰지 않고 중단한다.
 3. bootstrap은 /opt/gongsi/python3을 적절한 Python 실행 파일에 연결한다. 운영체제 기본 /usr/bin/python3은 변경하지 않는다. deploy와 systemd 모두 이 서비스 전용 경로를 쓴다.
 4. SSH 터미널에서 deploy/configure.py가 봇 토큰·DART 키를 가려서 입력받는다. 봇 사용자명·개인 수신자·DART API를 검증한 뒤 서버의 권한 600 환경파일을 원자적으로 저장한다. 기존 값은 Enter로 유지한다. 웹훅은 임의로 삭제하지 않는다.
@@ -179,6 +179,19 @@ bash -n deploy/deploy.sh
 
 이 단계는 패키지를 설치하지 않는다. 실행 중인 패키지 관리자가 있으면 중단한다. RAM 2 GiB 미만이고 스왑 3 GiB 미만이면 xfs/ext4에서 여유 디스크 4 GiB 이상을 확인한 뒤 별도의 3 GiB 스왑을 만든다. 기존 스왑은 유지하고, 알 수 없는 기존 파일은 덮어쓰지 않는다. 파일은 root 전용이며 활성화에 성공한 뒤 fstab을 백업하고 재부팅 후에도 유지하도록 등록한다. 생성 중 실패한 파일은 자동으로 삭제하거나 덮어쓰지 않으므로 확인 후 복구해야 한다.
 
-MEMORY PREPARATION SUCCESS를 확인한 다음 옵션 없이 설치를 실행한다. 전체 설치도 같은 준비를 자동 실행하며, 이미 설치된 git과 python3.11은 다시 설치하지 않는다. dnf는 선택 의존성과 동시 다운로드를 줄인다. 스왑은 RAM보다 느리므로 설치 속도나 서버 안정성을 보장하는 조치는 아니다.
+MEMORY PREPARATION SUCCESS를 확인한 다음 옵션 없이 설치를 실행한다. 전체 설치도 같은 준비를 자동 실행하며, 이미 설치된 git과 Python 3.9 이상은 다시 설치하지 않는다. dnf는 선택 의존성과 동시 다운로드를 줄인다. 스왑은 RAM보다 느리므로 설치 속도나 서버 안정성을 보장하는 조치는 아니다.
 
 공식 안내: https://docs.oracle.com/en/operating-systems/oracle-linux/9/stordev/stordev-ImplementingSwapSpaces.html
+
+
+## 새 패키지 없이 배포하기 (2026-10-26)
+
+Oracle Linux 9의 기본 python3는 3.9 계열이다. 이 프로젝트는 외부 Python 패키지를 사용하지 않는다. 기존 Python 3.9 이상과 sqlite3/ssl/fcntl 및 git이 있으면 Windows PowerShell에서 다음과 같이 실행한다.
+
+~~~powershell
+& .\deploy\setup-oracle.ps1 -NoInstall
+~~~
+
+이 옵션은 dnf/apt, Python 설치, pip, 메모리 준비 및 스왑 변경을 실행하지 않는다. 필요한 실행 환경이 없으면 NO-INSTALL STOP으로 중단한다. SSH 연결 확인 뒤 기존 도구로 소스를 내려받고 봇 전용 계정과 환경파일, systemd 서비스를 설정하므로 서버에 봇 파일은 배치된다. API 키는 SSH 터미널에서 숨김 입력한다. 실제 서버의 Python 및 git 존재 여부와 봇 가동은 아직 확인되지 않았다.
+
+GitHub 검사는 Python 3.9와 3.11에서 실행한다. 운영체제가 제공하는 Python을 유지하며 기본 Python 경로를 바꾸지 않는다.

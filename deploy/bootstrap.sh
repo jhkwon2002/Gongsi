@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# Run once as root on Oracle Linux 9 or Ubuntu 24.04 after installing git and Python 3.11+.
+# Run once as root on Oracle Linux 9 or Ubuntu 24.04 with existing git and Python 3.9+.
 set -euo pipefail
 [[ $EUID == 0 ]] || { echo "Run with sudo."; exit 1; }
 PYTHON=""
-for candidate in python3.11 python3.12 python3.13 python3; do
-  if command -v "$candidate" >/dev/null && "$candidate" -c 'import sys, sqlite3; assert sys.version_info >= (3,11)' 2>/dev/null; then
+for candidate in python3 python3.9 python3.11 python3.12 python3.13; do
+  if command -v "$candidate" >/dev/null && "$candidate" -c 'import sys, sqlite3; assert sys.version_info >= (3,9)' 2>/dev/null; then
     PYTHON="$(command -v "$candidate")"
     break
   fi
 done
-[[ -n "$PYTHON" ]] || { echo "Python 3.11+ with sqlite3 is required."; exit 1; }
+[[ -n "$PYTHON" ]] || { echo "Python 3.9+ with sqlite3 is required."; exit 1; }
 command -v git >/dev/null
 command -v flock >/dev/null
 id gongsi >/dev/null 2>&1 || useradd --system --home-dir /var/lib/gongsi --shell /usr/sbin/nologin gongsi
