@@ -212,11 +212,27 @@ class Tests(unittest.TestCase):
         self.select('assets', 'major', 'buyback', 'capital_up', 'securities')
         before = self.store.settings()
         _, markup = self.bot.menu()
-        self.assertEqual(len(markup['inline_keyboard']), 10)
+        self.assertEqual(len(markup['inline_keyboard']), len(GROUPS)+1)
         keys = [key for _, _, group in GROUPS for key in group]
         self.assertEqual(len(keys), len(set(keys)))
         self.assertEqual(set(keys), {x.key for x in CATALOG})
         self.assertEqual(before, self.store.settings())
 
-if __name__ == "__main__":
+    def test_all_audited_reports_have_explicit_filters_without_fallback(self):
+        import json
+        fixture = Path(__file__).parent / 'fixtures/disclosure_titles_20261020_26.json'
+        rows = json.loads(fixture.read_text(encoding='utf-8'))
+        keys = [r.key for r in CATALOG if r.key != 'unclassified']
+        self.assertEqual(sum(r['count'] for r in rows), 2307)
+        for row in rows:
+            with self.subTest(title=row['title']):
+                self.assertTrue(matches(row['title'], keys))
+
+    def test_new_unknown_titles_only_match_explicit_fallback(self):
+        self.assertTrue(matches('새로운미확인공시제목', ['unclassified']))
+        self.assertFalse(matches('신규시설투자등', ['unclassified']))
+        self.assertTrue(matches('신규시설투자등', ['facilities']))
+        self.assertTrue(matches('유형자산투자결정', ['facilities']))
+
+if __name__ == '__main__':
     unittest.main()
