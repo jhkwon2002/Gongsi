@@ -20,7 +20,10 @@ def process_requests(bot,store,stop,requests=None):
         if not re.fullmatch('[a-zA-Z0-9_-]{1,64}',identifier) or request.get('date') != today:
             continue
         count=request.get('count')
-        if not isinstance(count,int) or isinstance(count,bool) or not 1 <= count <= 5:
+        if not isinstance(count,int) or isinstance(count,bool) or not 1 <= count <= 10:
+            continue
+        distinct=request.get('distinct_companies',True)
+        if not isinstance(distinct,bool):
             continue
         target=request.get('company')
         if target is not None and (not isinstance(target,str) or not target.strip() or len(target)>80):
@@ -37,7 +40,7 @@ def process_requests(bot,store,stop,requests=None):
                 for row in store.db.execute('SELECT data FROM reports ORDER BY receipt DESC'):
                     report=json.loads(row[0])
                     company=report.get('corp_code') or report.get('corp_name')
-                    if (report.get('rcept_dt')==today.replace('-','') and company not in companies
+                    if (report.get('rcept_dt')==today.replace('-','') and (not distinct or company not in companies)
                             and ((target is not None and report.get('corp_name')==target)
                                  or (target is None and matches(report.get('report_nm',''),selected)))):
                         reports.append(report)

@@ -49,8 +49,8 @@ class ReplayTests(unittest.TestCase):
         process_requests(self.bot,self.store,Stop(),self.request)
         self.assertFalse(self.bot.calls)
 
-    def test_request_cannot_exceed_five_or_use_another_owner(self):
-        self.request[0]['count']=6
+    def test_request_cannot_exceed_ten_or_use_another_owner(self):
+        self.request[0]['count']=11
         process_requests(self.bot,self.store,Stop(),self.request)
         self.request[0]['count']=5;self.bot.owner_id=1
         process_requests(self.bot,self.store,Stop(),self.request)
@@ -71,3 +71,18 @@ class ReplayTests(unittest.TestCase):
             self.request[0]['company']=target
             process_requests(self.bot,self.store,Stop(),self.request)
         self.assertFalse(self.bot.calls)
+
+    def test_ten_reports_allow_same_company_and_checkpoint_completion(self):
+        import json
+        for index in range(7,12):
+            report={'rcept_no':f'20261026{index:06d}','corp_name':'Same company','corp_code':'same','report_nm':'투자판단관련주요경영사항','rcept_dt':'20261026'}
+            self.store.db.execute('INSERT INTO reports VALUES (?,?)',(report['rcept_no'],json.dumps(report)))
+        self.store.db.commit()
+        self.request[0].update(count=10,distinct_companies=False)
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),10)
+        self.assertIn('Same company',self.bot.calls[0][0])
+        self.assertIn('Same company',self.bot.calls[4][0])
+        process_requests(self.bot,self.store,Stop(),self.request)
+        self.assertEqual(len(self.bot.calls),10)
+        self.assertEqual(self.store.get('test_replay_last')['sent'],10)
