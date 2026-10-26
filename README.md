@@ -121,4 +121,17 @@ SETUP SUCCESS 후 텔레그램 /start와 /status로 실제 메뉴·조회 성공
 
 ### 추가 패키지 없는 Oracle 배포
 
-서버의 Python 3.9.25 및 sqlite3/ssl/fcntl은 확인됐고 Git은 없는 상태다. Windows에서 deploy/setup-oracle.ps1 -NoInstall을 실행하면 기존 Python으로 GitHub의 정확한 커밋 압축파일을 받아 배포한다. Python·Git·pip 설치와 스왑 변경은 실행하지 않는다. API 키 입력과 실제 봇 서비스 가동은 아직 확인되지 않았다. 상세 절차는 docs/DEPLOYMENT.md를 따른다.
+서버의 Python 3.9.25 및 sqlite3/ssl/fcntl은 확인됐고 Git은 없는 상태다. Windows에서 deploy/setup-oracle.ps1 -NoInstall을 실행하면 기존 Python으로 GitHub의 정확한 커밋 압축파일을 받아 배포한다. Python·Git·pip 설치와 스왑 변경은 실행하지 않는다. API 키 입력과 실제 봇 서비스 가동은 아래 배포 확인 기록에서 확인했다. 상세 절차는 docs/DEPLOYMENT.md를 따른다.
+
+
+### Oracle 배포 확인 (2026-10-26)
+
+사용자가 제공한 배포 결과 화면에서 아래 항목을 확인했다.
+
+- 운영 커밋: e19ccf849da85000703686f4df5c8ddab35bcaa7.
+- Python 3.9.25 및 기존 시스템 도구를 사용하는 압축파일 배포 성공. 새 Python·Git·pip 설치와 스왑 변경 없이 진행했다.
+- API 자격정보 검증 및 서버 전용 환경파일 저장 단계를 통과했다. 자격정보 값은 저장소에 기록하지 않는다.
+- 서버에서 47개 검사를 통과했다.
+- gongsi.service가 active이고 systemd 자동 시작이 등록됐다. 메뉴 준비 신호 및 배포 후 서비스 확인도 통과했다.
+- 남은 확인: Telegram /start에서 보고서 선택, /status에서 첫 DART 조회 성공 확인, 실제 신규 공시 알림 수신 확인.
+- GitHub Actions의 Oracle 자동 배포 연결은 아직 설정되지 않았다. 코드 반영과 서버 자동 반영 완료는 구분한다.
