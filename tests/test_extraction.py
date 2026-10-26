@@ -147,3 +147,16 @@ class ExtractionTests(unittest.TestCase):
         preferred=[v for k,v in fields if '[항목2]' in k]
         self.assertEqual(common,['보통주','100'])
         self.assertEqual(preferred,['우선주','200'])
+
+    def test_exchange_asset_title_variants_try_official_schema_first(self):
+        self.assertEqual(schema_for('유형자산취득결정')['endpoint'],'tgastInhDecsn')
+        self.assertEqual(schema_for('타법인주식및출자증권처분결정')['endpoint'],'otcprStkInvscrTrfDecsn')
+        fields=raw_fields('<table><tr><td>양수내역</td><td>양수금액(원)</td><td>100</td></tr></table>',['취득내역(취득금액(원))'])
+        self.assertEqual(len(fields),1)
+
+    def test_asset_transaction_amount_precedes_routine_company_metadata(self):
+        schema=schema_for('타법인주식및출자증권양수결정')
+        row={field['key']:'가상값' for field in schema['fields']}
+        row['rcept_no']=RECEIPT
+        result=structured_fields({'list':[row]},RECEIPT,schema)
+        self.assertTrue(any('양수금액' in label or '양수가액' in label for label,value in result))

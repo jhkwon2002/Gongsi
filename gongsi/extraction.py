@@ -61,7 +61,8 @@ def schema_for(title):
     for schema in SCHEMAS:
         kind = schema.get('kind')
         term = normalize(schema['title'])
-        hit = term in name
+        variants = (term,term.replace('양수','취득').replace('양도','처분'))
+        hit = any(variant in name for variant in variants)
         if kind == 'securities':
             hit = '증권신고서' in name and term in name
         elif kind == 'insider':
@@ -92,10 +93,25 @@ def exact_rows(payload, receipt):
     return rows
 
 
+def field_priority(label):
+    name=normalize(label)
+    if any(word in name for word in ('독립이사','독립(사외)이사','감사위원','참석여부','면제받은','신고서제출대상','신고대상여부','외부평가')):
+        return 30
+    groups=(('양수금액','양도금액','양수가액','양도가액','권면','모집(매출)총액','부도금액','영업정지금액','계약금액'),
+            ('자산명','양수영업','양도영업','발행회사(회사명)','사채권발행회사(회사명)','대상법인(회사명)','합병상대회사(회사명)'),
+            ('목적','사유','사건의명칭','신청인','관리기관','영업정지분야','상장거래소','청구내용','관할법원'),
+            ('주식수','보유비율','지분비율','자기자본대비','자산총액대비','합병비율','분할비율','형태','방법'),
+            ('예정일','기준일','시작일','종료일','만기','관리기간','상장일','결정일'))
+    for index,words in enumerate(groups):
+        if any(word in name for word in words):
+            return index
+    return 20
+
+
 def structured_fields(payload, receipt, schema):
     rows = exact_rows(payload, receipt)
     labels = {f['key']:f['label'] for f in reversed(schema['fields'])}
-    keys = list(dict.fromkeys(PREFERRED.get(schema['endpoint'], ()) + tuple(labels)))
+    keys = list(dict.fromkeys(PREFERRED.get(schema['endpoint'], ()) + tuple(sorted(labels,key=lambda key:field_priority(labels[key])))))
     result = []
     seen = set()
     data_rows = [row for row in rows if any(key in row for key in labels)]
@@ -117,6 +133,7 @@ def structured_fields(payload, receipt, schema):
 
 
 def label_key(value):
+    value = value.replace('양수','취득').replace('양도','처분')
     value = re.sub(r'\((?:원|백만원|천원|억원|%|주|명|USD|KRW)\)', '', value, flags=re.I)
     return re.sub(r'[\s\d.,:()（）ㆍ·\-]', '', value)
 
