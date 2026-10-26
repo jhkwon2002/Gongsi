@@ -14,6 +14,7 @@ from .storage import Store
 from .extraction import Extractor, format_notification
 from .test_replay import process_requests
 from .runtime_reports import Publisher,send_recorded
+from .api_diagnostics import run_probe
 
 LOG = logging.getLogger("gongsi")
 
@@ -77,6 +78,10 @@ def worker(dart, bot, store, stop, interval):
                 LOG.error("Delivery failed: %s", safe)
                 delay = max(5, exc.retry_after) if isinstance(exc, ApiError) else 5
             next_delivery = time.monotonic() + delay
+        try:
+            run_probe(bot,store)
+        except Exception as exc:
+            LOG.warning('API diagnostic deferred: %s',type(exc).__name__)
         publisher.tick()
         stop.wait(1)
 
