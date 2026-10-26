@@ -214,3 +214,8 @@ bootstrap.sh --archive는 /etc/gongsi/source-mode를 archive로 설정한다. /u
 ## 서버에서 GitHub 자동 반영 (2026-10-26)
 
 Windows PowerShell에서 deploy/setup-autodeploy.ps1 -SendTest를 실행한다. 기존 API 키를 유지하고 추가 패키지는 설치하지 않는다. 서버에 gongsi-update.timer를 등록해 약 3분 간격으로 main을 확인한다. 정확한 커밋의 push 검사 워크플로 성공을 확인한 뒤 기존 배포 도우미로 반영한다. 실패·진행 중 검사, 메모리 부족은 보류한다. 서비스 준비 실패 시 기존 코드 복구 절차를 사용한다. CPU와 메모리 사용량을 제한한다. -SendTest는 서비스 상태와 DART 연결을 확인하고 소유자에게 수신 확인 메시지를 한 번 보낸다. SSH 비밀키를 GitHub에 등록할 필요는 없다. 기존 Actions SSH 배포 변수는 켜지 않는다. 현재는 코드 준비 단계이며 실제 타이머 등록과 메시지 수신은 사용자 실행 결과로 확인해야 한다.
+
+
+## 자동 배포 및 실제 수신 점검 확인 (2026-10-26 11:18 KST)
+
+사용자 실행 결과에서 gongsi-update.timer 등록과 AUTO DEPLOY ENABLED를 확인했다. GitHub 검사에 통과한 901f4f2487b39db975424e5725c5b8fb308e7651 커밋이 자동 반영됐으며 current와 target이 일치하고 result=deployed였다. 서비스 active, 조회 주기 300초, 일시정지 해제, 보고서 5개 선택, 최근 DART 조회 성공(11:18:11+09:00), 최근 오류 없음, DART API 정상, Telegram 봇 확인 및 테스트 메시지 발송 성공, health_ok=true, monitoring_ready=true, HEALTH TEST PASS를 확인했다. 실제 신규 공시 이벤트를 통한 전체 알림 흐름은 테스트 메시지와 구분한다. 이 문서 기록 커밋은 위 서버 확인 커밋과 별개이며 이후 타이머가 검사 통과 후 반영한다.
