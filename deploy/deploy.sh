@@ -10,20 +10,29 @@ flock -n 9 || { echo "Another deployment is active."; exit 1; }
 REPO=/opt/gongsi/repository
 PYTHON=/opt/gongsi/python3
 [[ -x "$PYTHON" ]] || { echo "Run the updated bootstrap first."; exit 1; }
-[[ -d "$REPO/.git" && -f /etc/gongsi/gongsi.env ]] || { echo "Complete bootstrap first."; exit 1; }
-if [[ -f /etc/gongsi/github_deploy_key ]]; then
-  export GIT_SSH_COMMAND="ssh -i /etc/gongsi/github_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/etc/gongsi/github_known_hosts"
-fi
-git -C "$REPO" fetch --prune origin main
-git -C "$REPO" merge-base --is-ancestor "$SHA" origin/main || { echo "Commit is not on origin/main."; exit 1; }
+[[ -f /etc/gongsi/gongsi.env ]] || { echo "Complete bootstrap first."; exit 1; }
+SOURCE_MODE=git
+if [[ -f /etc/gongsi/source-mode ]]; then SOURCE_MODE="$(cat /etc/gongsi/source-mode)"; fi
 RELEASE="/opt/gongsi/releases/$SHA"
-if [[ ! -d "$RELEASE" ]]; then
-  STAGE="$(mktemp -d /opt/gongsi/releases/stage.XXXXXXXX)"
-  chmod 0755 "$STAGE"
-  git -C "$REPO" archive "$SHA" | tar -x -C "$STAGE"
-  printf '%s\n' "$SHA" > "$STAGE/RELEASE"
-  chmod -R a+rX "$STAGE"
-  mv "$STAGE" "$RELEASE"
+if [[ "$SOURCE_MODE" == archive ]]; then
+  "$PYTHON" /usr/local/libexec/gongsi-fetch-release.py "$SHA"
+elif [[ "$SOURCE_MODE" == git ]]; then
+  [[ -d "$REPO/.git" ]] || { echo "Complete git bootstrap first."; exit 1; }
+  if [[ -f /etc/gongsi/github_deploy_key ]]; then
+    export GIT_SSH_COMMAND="ssh -i /etc/gongsi/github_deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=/etc/gongsi/github_known_hosts"
+  fi
+  git -C "$REPO" fetch --prune origin main
+  git -C "$REPO" merge-base --is-ancestor "$SHA" origin/main || { echo "Commit is not on origin/main."; exit 1; }
+  if [[ ! -d "$RELEASE" ]]; then
+    STAGE="$(mktemp -d /opt/gongsi/releases/stage.XXXXXXXX)"
+    chmod 0755 "$STAGE"
+    git -C "$REPO" archive "$SHA" | tar -x -C "$STAGE"
+    printf '%s\n' "$SHA" > "$STAGE/RELEASE"
+    chmod -R a+rX "$STAGE"
+    mv "$STAGE" "$RELEASE"
+  fi
+else
+  echo "Unknown source mode; review /etc/gongsi/source-mode."; exit 1
 fi
 runuser -u gongsi -- env PYTHONDONTWRITEBYTECODE=1 bash -c 'cd "$1"; "$2" -m unittest discover -s tests -v' bash "$RELEASE" "$PYTHON"
 PREVIOUS="$(readlink -f /opt/gongsi/current || true)"

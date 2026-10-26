@@ -117,3 +117,8 @@ Python 3.9 이상이며 외부 패키지가 필요하지 않다. 현재 서버�
 
 SETUP SUCCESS 후 텔레그램 /start와 /status로 실제 메뉴·조회 성공을 확인한다. GitHub에서 Oracle로 자동 배포하는 연결은 이후 별도 설정한다.
 
+
+
+### 추가 패키지 없는 Oracle 배포
+
+서버의 Python 3.9.25 및 sqlite3/ssl/fcntl은 확인됐고 Git은 없는 상태다. Windows에서 deploy/setup-oracle.ps1 -NoInstall을 실행하면 기존 Python으로 GitHub의 정확한 커밋 압축파일을 받아 배포한다. Python·Git·pip 설치와 스왑 변경은 실행하지 않는다. API 키 입력과 실제 봇 서비스 가동은 아직 확인되지 않았다. 상세 절차는 docs/DEPLOYMENT.md를 따른다.

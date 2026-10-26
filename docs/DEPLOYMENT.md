@@ -186,12 +186,19 @@ MEMORY PREPARATION SUCCESS를 확인한 다음 옵션 없이 설치를 실행한
 
 ## 새 패키지 없이 배포하기 (2026-10-26)
 
-Oracle Linux 9의 기본 python3는 3.9 계열이다. 이 프로젝트는 외부 Python 패키지를 사용하지 않는다. 기존 Python 3.9 이상과 sqlite3/ssl/fcntl 및 git이 있으면 Windows PowerShell에서 다음과 같이 실행한다.
+Oracle Linux 9의 기본 python3는 3.9 계열이다. 이 프로젝트는 외부 Python 패키지를 사용하지 않는다. 기존 Python 3.9 이상과 sqlite3/ssl/fcntl이 있으면 Windows PowerShell에서 다음과 같이 실행한다.
 
 ~~~powershell
 & .\deploy\setup-oracle.ps1 -NoInstall
 ~~~
 
-이 옵션은 dnf/apt, Python 설치, pip, 메모리 준비 및 스왑 변경을 실행하지 않는다. 필요한 실행 환경이 없으면 NO-INSTALL STOP으로 중단한다. SSH 연결 확인 뒤 기존 도구로 소스를 내려받고 봇 전용 계정과 환경파일, systemd 서비스를 설정하므로 서버에 봇 파일은 배치된다. API 키는 SSH 터미널에서 숨김 입력한다. 실제 서버의 Python 및 git 존재 여부와 봇 가동은 아직 확인되지 않았다.
+이 옵션은 dnf/apt, Python 설치, pip, 메모리 준비 및 스왑 변경을 실행하지 않는다. 필요한 실행 환경이 없으면 NO-INSTALL STOP으로 중단한다. SSH 연결 확인 뒤 기존 Python으로 GitHub 커밋 압축파일을 내려받고 봇 전용 계정과 환경파일, systemd 서비스를 설정하므로 서버에 봇 파일은 배치된다. API 키는 SSH 터미널에서 숨김 입력한다. 서버의 Python 3.9.25 및 필요한 모듈은 확인됐고 Git은 없는 것으로 확인됐다. 봇 가동은 아직 확인되지 않았다.
 
 GitHub 검사는 Python 3.9와 3.11에서 실행한다. 운영체제가 제공하는 Python을 유지하며 기본 Python 경로를 바꾸지 않는다.
+
+
+### Git 없는 서버의 소스 관리
+
+-NoInstall은 Git을 요구하지 않는다. 로컬 deploy/fetch-release.py를 SSH 표준입력으로 전송하여 서버의 기존 python3로 실행한다. GitHub API로 main의 정확한 커밋을 확인하고 해당 커밋의 압축파일만 받아 /opt/gongsi/releases에 배치한다. 전송/압축 해제 크기를 제한하고 경로 이탈, 링크, 특수 파일, 중복 경로를 거부한다. 기존 릴리스는 덮어쓰지 않는다.
+
+bootstrap.sh --archive는 /etc/gongsi/source-mode를 archive로 설정한다. /usr/local/sbin/deploy-gongsi는 이 모드에서 Git 대신 Python 도우미를 사용하며, 배포 요청 SHA가 현재 main의 이력에 포함되는지 API로 확인한다. 서비스 전환·상태검사·실패 시 이전 코드 복구·DB 백업 절차는 공통이다. 기존 Git 방식도 유지한다. GitHub Actions SSH 연결 설정은 여전히 별도로 필요하다. 비공개 저장소 인증은 압축파일 방식에서 지원하지 않는다.

@@ -63,9 +63,6 @@ for candidate in python3 python3.9 python3.11 python3.12 python3.13; do
 done
 if command -v git >/dev/null && [[ "$PYTHON_READY" == 1 ]]; then
   echo "[server] Existing packages are sufficient; skipping package manager"
-elif [[ "${GONGSI_NO_INSTALL:-0}" == 1 ]]; then
-  echo "NO-INSTALL STOP: git and Python 3.9+ (sqlite3, ssl, fcntl) must already exist. No packages were installed."
-  exit 1
 else
   case "$ID" in
     ol)
@@ -111,12 +108,21 @@ try {
         }
         Write-Host '[3/5] Memory prepared. Checking server packages.'
     }
-    $remoteBootstrap = "tr -d '\r' | bash -s"
-    if ($NoInstall) { $remoteBootstrap = "tr -d '\r' | GONGSI_NO_INSTALL=1 bash -s" }
-    $bootstrap | & ssh @sshArgs -T $destination $remoteBootstrap
+    if ($NoInstall) {
+        $fetchScript = Join-Path $PSScriptRoot 'fetch-release.py'
+        if (!(Test-Path -LiteralPath $fetchScript -PathType Leaf)) { throw 'Missing deploy/fetch-release.py. No packages were installed.' }
+        Write-Host '[3/5] Using the existing python3 to download GitHub source directly. Git is not required.'
+        $fetchSource = Get-Content -LiteralPath $fetchScript -Raw -Encoding UTF8
+        $fetchSource | & ssh @sshArgs -T $destination "tr -d '\r' | sudo -n python3 - --bootstrap"
+    } else {
+        $bootstrap | & ssh @sshArgs -T $destination "tr -d '\r' | bash -s"
+    }
     if ($LASTEXITCODE -ne 0) { throw 'Server bootstrap failed. Credentials were not requested.' }
     Write-Host '[4/5] Enter the two API credentials in the SSH terminal. Input will be hidden.'
     $configure = 'sudo -n /opt/gongsi/python3 /opt/gongsi/repository/deploy/configure.py && TARGET=$(sudo -n git -C /opt/gongsi/repository rev-parse HEAD) && sudo -n /usr/local/sbin/deploy-gongsi "$TARGET"'
+    if ($NoInstall) {
+        $configure = 'set -eu; TARGET=$(sudo -n cat /opt/gongsi/bootstrap-release); [[ "$TARGET" =~ ^[0-9a-f]{40}$ ]]; sudo -n /opt/gongsi/python3 "/opt/gongsi/releases/$TARGET/deploy/configure.py" && sudo -n /usr/local/sbin/deploy-gongsi "$TARGET"'
+    }
     & ssh @sshArgs -t $destination $configure
     if ($LASTEXITCODE -ne 0) { throw 'Configuration or deployment failed. Review the safe error above.' }
     Write-Host '[5/5] Verifying deployed service.'
