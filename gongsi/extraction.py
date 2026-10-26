@@ -167,20 +167,31 @@ class Tables(HTMLParser):
         if tag == 'table':
             if len(self.stack) >= 20:
                 raise ValueError('Table nesting exceeds memory budget')
-            self.stack.append({'rows':[], 'origins':[], 'row':None, 'cell':None, 'pending':{}, 'context':' '.join(self.context[-8:])})
+            if self.stack:
+                self.stack[-1]['invalid'] = True
+            self.stack.append({'rows':[], 'origins':[], 'row':None, 'cell':None, 'pending':{}, 'invalid':False, 'context':' '.join(self.context[-8:])})
+            self.context = []
         elif self.stack:
             frame = self.stack[-1]
             if tag == 'tr':
                 self.row_count += 1
                 if self.row_count > 4000:
                     raise ValueError('Table row budget exceeded')
+                if frame['row'] is not None:
+                    frame['invalid'] = True
                 frame['row'] = []
             elif tag in ('td','th','te','tu') and frame['row'] is not None:
                 def span(name):
                     try:
-                        return min(50,max(1,int(attrs.get(name,1))))
-                    except ValueError:
+                        value = int(attrs.get(name,1))
+                        if not 1 <= value <= 50:
+                            raise ValueError('Unsupported table span')
+                        return value
+                    except (ValueError,TypeError):
+                        frame['invalid'] = True
                         return 1
+                if frame['cell'] is not None:
+                    frame['invalid'] = True
                 frame['cell'] = {'parts':[], 'rowspan':span('rowspan'), 'colspan':span('colspan'), 'header':tag=='th'}
             elif tag in ('br','p') and frame['cell']:
                 frame['cell']['parts'].append(' ')
@@ -217,19 +228,30 @@ class Tables(HTMLParser):
                     column += 1
                 for position in range(column,column+colspan):
                     if position in grid:
+                        frame['invalid'] = True
                         continue
                     grid[position],headers[position] = value,is_header
                     origins[position] = origin
                     if rowspan > 1:
                         following[position] = (rowspan-1,value,is_header,origin)
                 column += colspan
+                if column > 256:
+                    raise ValueError('Table width exceeds extraction budget')
             if grid:
                 frame['rows'].append(([grid.get(i,'') for i in range(max(grid)+1)],headers))
                 frame['origins'].append(origins)
             frame['pending'] = following
             frame['row'] = None
         elif tag == 'table':
+            if frame['row'] is not None or frame['cell'] is not None:
+                frame['invalid'] = True
             self.tables.append(self.stack.pop())
+
+
+class RawFields(list):
+    def __init__(self):
+        super().__init__()
+        self.withheld = 0
 
 
 def raw_fields(document, aliases):
@@ -237,28 +259,41 @@ def raw_fields(document, aliases):
         raise ValueError('Entity declarations are unsupported')
     parser = Tables()
     parser.feed(document)
-    result = []
+    parser.close()
+    if parser.stack:
+        raise ValueError('Unclosed table cannot be interpreted safely')
+    result = RawFields()
     seen = set()
     for table_index, table in enumerate(parser.tables,1):
+        if table['invalid']:
+            result.withheld += 1
+            continue
         unit = ''
         context = table['context']
         matches_unit = re.findall(r'단위\s*[:：]\s*[^)）\n]{1,80}',context)
         if matches_unit:
             unit = matches_unit[-1]
         headings = []
+        last_was_header = False
         for row_index,(cells, header_flags) in enumerate(table['rows']):
             origins = table['origins'][row_index]
             joined = ' '.join(cells)
             if '단위' in joined:
                 unit = text(joined,100)
-            if (any(header_flags.values()) and sum(bool(v) for v in header_flags.values()) >= len(cells)-1) or (len(cells)>1 and label_key(cells[0]) in ('구분','항목') and any(any(word in c for word in ('당기','전기','당해','전년','직전')) for c in cells[1:])):
-                headings = cells
+            if (all(header_flags.values()) and header_flags) or (len(cells)>1 and label_key(cells[0]) in ('구분','항목') and any(any(word in c for word in ('당기','전기','당해','전년','직전')) for c in cells[1:])):
+                if last_was_header and len(headings)==len(cells):
+                    headings = [' / '.join(dict.fromkeys(v for v in (a,b) if v)) for a,b in zip(headings,cells)]
+                else:
+                    headings = cells
+                last_was_header = True
+                continue
+            last_was_header = False
             used_labels = set()
             for index, cell in enumerate(cells[:-1]):
                 if origins.get(index) in used_labels:
                     continue
                 prefix = label_key(' '.join(cells[:index+1]))
-                found = [alias for alias in aliases if label_key(alias) and (label_key(cell)==label_key(alias) or prefix.endswith(label_key(alias)))]
+                found = [alias for alias in aliases if label_key(cell) and label_key(alias) and (label_key(cell)==label_key(alias) or prefix.endswith(label_key(alias)))]
                 if not found:
                     continue
                 used_labels.add(origins.get(index))
@@ -276,18 +311,27 @@ def raw_fields(document, aliases):
                     continue
                 label = max(found,key=len)
                 if len(values)>1:
+                    names = [headings[pos] if pos<len(headings) else '' for pos,v in values]
+                    if not all(names) or len(set(names)) != len(names):
+                        result.withheld += 1
+                        continue
                     value = ' | '.join((headings[position]+': ' if position<len(headings) and headings[position] else f'열{position-index}: ')+v for position,v in values)
                 else:
                     value = values[0][1]
                 explicit_unit = re.search(r'\((원|백만원|천원|억원|%|주|명|USD|KRW)\)',cell,re.I)
                 used_unit = explicit_unit.group(1) if explicit_unit else unit
+                if not explicit_unit and any(w in label for w in ('비율','대비','이율','수익률')):
+                    used_unit = ''
                 if used_unit:
                     value += ' ['+used_unit+']'
                 pair = (label+' [표'+str(table_index)+']',text(value))
                 if pair not in seen:
                     result.append(pair)
                     seen.add(pair)
-    return result[:100]
+    if len(result)>100:
+        result.withheld += len(result)-100
+        del result[100:]
+    return result
 
 
 def document_text(data, receipt):
@@ -346,7 +390,7 @@ class Extractor:
         return document_text(data,receipt)
     def extract(self, report):
         receipt = report['rcept_no']
-        cache_key = 'extract_v3:'+receipt
+        cache_key = 'extract_v4:'+receipt
         cached = self.store.get(cache_key)
         if cached:
             return cached
@@ -396,6 +440,8 @@ class Extractor:
             except Exception:
                 fields = []
             result = {'source':'원문 표' if fields else '추출 불가 · 원문 확인','fields':fields}
+            if getattr(fields,'withheld',0):
+                result['withheld'] = fields.withheld
         if result['fields']:
             self.store.set(cache_key,result)
         return result
@@ -417,6 +463,8 @@ def format_notification(report, summary=None, html=False):
             if '접수번호' in label:
                 continue
             lines.append('• '+encode(text(label,90))+': '+encode(text(value,230)))
+        if summary.get('withheld'):
+            lines.append('일부 표·항목은 구조가 불명확하여 추출을 보류했습니다. 원문을 확인해 주세요.')
         lines.append('전체 내용·조건·정정 여부는 원문에서 확인하세요.')
     url = 'https://dart.fss.or.kr/dsaf001/main.do?'+urlencode({'rcpNo':report['rcept_no']})
     lines.append('<a href="'+escape(url,quote=True)+'">📄 원문 보기</a>' if html else url)

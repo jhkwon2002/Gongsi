@@ -27,7 +27,7 @@ class TableRegressionTests(unittest.TestCase):
         fields=raw_fields(doc,['매출액'])
         self.assertIn('당기: 100',fields[0][1])
         self.assertIn('전기: 100',fields[0][1])
-    def test_different_unknown_columns_not_silently_deduplicated(self):
+    def test_different_unknown_columns_are_withheld(self):
         fields=raw_fields('<table><tr><td>금액</td><td>100</td><td>100</td></tr></table>',['금액'])
-        self.assertIn('열1: 100',fields[0][1])
-        self.assertIn('열2: 100',fields[0][1])
+        self.assertEqual(fields,[])
+        self.assertEqual(fields.withheld,1)
