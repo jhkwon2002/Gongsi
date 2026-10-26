@@ -44,6 +44,8 @@ _RAW_EXTRA = {
     '임원·주요주주 거래계획': ('보고자','거래수량','거래목적','예정거래기간','거래기간','거래금액'),
 }
 RAW_PROFILES=tuple((name,terms,_RAW_EXTRA.get(name,aliases)) for name,terms,aliases in RAW_PROFILES)
+CLINICAL_FIELDS = ('임상시험명칭','임상시험단계','임상시험승인기관','임상시험실시국가','임상시험실시기관','대상질환','신청일','승인일','임상시험목적','임상시험방법','임상시험기간','목표 시험대상자 수')
+RAW_PROFILES=tuple((n,t,a+CLINICAL_FIELDS if n=='투자판단·기타경영사항' else a) for n,t,a in RAW_PROFILES)
 PREFERRED = {
  'piicDecsn': ('nstk_ostk_cnt','ic_mthn','fdpp_fclt','fdpp_op','fdpp_dtrp','fdpp_ocsa'),
  'fricDecsn': ('nstk_ostk_cnt','nstk_ascnt_ps_ostk','nstk_asstd','nstk_lstprd'),
@@ -165,7 +167,7 @@ class Tables(HTMLParser):
         if tag == 'table':
             if len(self.stack) >= 20:
                 raise ValueError('Table nesting exceeds memory budget')
-            self.stack.append({'rows':[], 'row':None, 'cell':None, 'pending':{}, 'context':' '.join(self.context[-8:])})
+            self.stack.append({'rows':[], 'origins':[], 'row':None, 'cell':None, 'pending':{}, 'context':' '.join(self.context[-8:])})
         elif self.stack:
             frame = self.stack[-1]
             if tag == 'tr':
@@ -201,24 +203,29 @@ class Tables(HTMLParser):
             old = frame['pending']
             grid = {}
             headers = {}
+            origins = {}
             following = {}
-            for column,(remaining,value,is_header) in old.items():
+            for column,(remaining,value,is_header,origin) in old.items():
                 grid[column],headers[column] = value,is_header
+                origins[column] = origin
                 if remaining > 1:
-                    following[column] = (remaining-1,value,is_header)
+                    following[column] = (remaining-1,value,is_header,origin)
             column = 0
-            for value,rowspan,colspan,is_header in frame['row']:
+            for cell_index,(value,rowspan,colspan,is_header) in enumerate(frame['row']):
+                origin = (self.row_count,cell_index)
                 while column in grid:
                     column += 1
                 for position in range(column,column+colspan):
                     if position in grid:
                         continue
                     grid[position],headers[position] = value,is_header
+                    origins[position] = origin
                     if rowspan > 1:
-                        following[position] = (rowspan-1,value,is_header)
+                        following[position] = (rowspan-1,value,is_header,origin)
                 column += colspan
             if grid:
                 frame['rows'].append(([grid.get(i,'') for i in range(max(grid)+1)],headers))
+                frame['origins'].append(origins)
             frame['pending'] = following
             frame['row'] = None
         elif tag == 'table':
@@ -239,18 +246,32 @@ def raw_fields(document, aliases):
         if matches_unit:
             unit = matches_unit[-1]
         headings = []
-        for cells, header_flags in table['rows']:
+        for row_index,(cells, header_flags) in enumerate(table['rows']):
+            origins = table['origins'][row_index]
             joined = ' '.join(cells)
             if '단위' in joined:
                 unit = text(joined,100)
             if (any(header_flags.values()) and sum(bool(v) for v in header_flags.values()) >= len(cells)-1) or (len(cells)>1 and label_key(cells[0]) in ('구분','항목') and any(any(word in c for word in ('당기','전기','당해','전년','직전')) for c in cells[1:])):
                 headings = cells
+            used_labels = set()
             for index, cell in enumerate(cells[:-1]):
+                if origins.get(index) in used_labels:
+                    continue
                 prefix = label_key(' '.join(cells[:index+1]))
                 found = [alias for alias in aliases if label_key(alias) and (label_key(cell)==label_key(alias) or prefix.endswith(label_key(alias)))]
                 if not found:
                     continue
-                values = [(position,value) for position,value in enumerate(cells[index+1:],index+1) if value and value != cell]
+                used_labels.add(origins.get(index))
+                # Prefer a known child label over a broad parent (e.g. 주요내용).
+                if any(origins.get(j)!=origins.get(index) and label_key(v)==label_key(a) for j,v in enumerate(cells[index+1:-1],index+1) for a in aliases):
+                    continue
+                values = []
+                used_values = set()
+                for position,value in enumerate(cells[index+1:],index+1):
+                    origin = origins.get(position)
+                    if value and value != cell and origin not in used_values:
+                        values.append((position,value))
+                        used_values.add(origin)
                 if not values:
                     continue
                 label = max(found,key=len)
@@ -325,7 +346,7 @@ class Extractor:
         return document_text(data,receipt)
     def extract(self, report):
         receipt = report['rcept_no']
-        cache_key = 'extract_v2:'+receipt
+        cache_key = 'extract_v3:'+receipt
         cached = self.store.get(cache_key)
         if cached:
             return cached
