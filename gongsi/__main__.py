@@ -13,6 +13,7 @@ from .catalog import matches
 from .storage import Store
 from .extraction import Extractor, format_notification
 from .test_replay import process_requests
+from .runtime_reports import Publisher,send_recorded
 
 LOG = logging.getLogger("gongsi")
 
@@ -46,13 +47,14 @@ def deliver(bot, store, stop):
                 summary = extractor.extract(report)
             except Exception:
                 summary = {'source':'추출 불가 · 원문 확인','fields':[]}
-        bot.send(format_notification(report, summary, html=True), parse_mode="HTML")
+        send_recorded(bot,store,report,summary,format_notification(report, summary, html=True),"notification")
         # Telegram has no sendMessage idempotency key: a crash before this commit can repeat a message.
         store.acknowledge(report["rcept_no"])
         if stop.wait(1.1):
             return
 
 def worker(dart, bot, store, stop, interval):
+    publisher = Publisher(store)
     next_scan = 0.0
     next_delivery = 0.0
     while not stop.is_set():
@@ -75,6 +77,7 @@ def worker(dart, bot, store, stop, interval):
                 LOG.error("Delivery failed: %s", safe)
                 delay = max(5, exc.retry_after) if isinstance(exc, ApiError) else 5
             next_delivery = time.monotonic() + delay
+        publisher.tick()
         stop.wait(1)
 
 def acquire_lock(state_dir):

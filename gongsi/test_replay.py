@@ -5,6 +5,7 @@ import re
 from .api import now_kst
 from .catalog import matches
 from .extraction import format_notification
+from .runtime_reports import send_recorded
 
 REQUESTS=Path(__file__).with_name('test_requests.json')
 
@@ -65,7 +66,7 @@ def process_requests(bot,store,stop,requests=None):
                     summary={'source':'추출 불가 · 원문 확인','fields':[]}
             message=f'[테스트 재전송 {index+1}/{len(state["reports"])}]\\n'
             message=message.replace('\\n','\n')+format_notification(report,summary,html=True)
-            response=bot.send(message,parse_mode='HTML')
+            response=send_recorded(bot,store,report,summary,message,'test_replay')
             state['next']=index+1
             state['message_ids'].append(response.get('message_id'))
             state['done']=state['next']==len(state['reports'])
