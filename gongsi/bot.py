@@ -77,11 +77,13 @@ class Bot:
         last = self.store.get("last_scan_success", "아직 없음")
         error = self.store.get("last_scan_error", "")
         release = self.store.get("release", "local")[:12]
+        test = self.store.get('test_replay_last')
+        test_status = (f"\n테스트 재전송: {test['sent']}/{test['requested']} · {test['status']}" if test else '')
         return ("전체 기업 DART 알림\n"
                 f"감시: {'일시정지' if prefs['paused'] else '켜짐'}"
                 f"\n선택: {', '.join(names) if names else '없음 — 메뉴에서 선택해주세요'}\n"
                 f"조회 주기: {self.store.get('poll_seconds', 300)}초\n버전: {release}\n마지막 성공: {last}"
-                + (f"\n최근 오류: {error}" if error else ""))
+                + (f"\n최근 오류: {error}" if error else "") + test_status)
 
     def handle(self, update):
         callback = update.get("callback_query")

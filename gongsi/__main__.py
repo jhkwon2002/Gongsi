@@ -12,6 +12,7 @@ from .bot import Bot
 from .catalog import matches
 from .storage import Store
 from .extraction import Extractor, format_notification
+from .test_replay import process_requests
 
 LOG = logging.getLogger("gongsi")
 
@@ -67,6 +68,7 @@ def worker(dart, bot, store, stop, interval):
             delay = 5
             try:
                 deliver(bot, store, stop)
+                process_requests(bot, store, stop)
             except Exception as exc:
                 # Never log raw network exceptions: their URLs may contain tokens.
                 safe = str(exc) if isinstance(exc, ApiError) else type(exc).__name__
