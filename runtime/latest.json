@@ -7027,7 +7027,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T17:03:56+09:00",
+  "last_scan_success": "2026-10-27T17:04:43+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
@@ -7078,12 +7078,272 @@
     "retry_after": 1793080463.369498,
     "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              "
   },
-  "release": "b95f4fb919b0468a63b4ede6e375969cc670a245",
+  "release": "2a56cf52c47bc0e4048751c33ee1bd6c80d3550f",
   "replay_progress": {
     "id": "owner-mobileappliance-20261027-v1",
     "requested": 1,
     "sent": 1,
     "status": "completed"
   },
-  "schema_version": 1
+  "schema_version": 1,
+  "structure_diagnostics": {
+    "checked_at": "2026-10-27T17:04:43.287226+09:00",
+    "release": "2a56cf52c47bc0e4048751c33ee1bd6c80d3550f",
+    "results": [
+      {
+        "length": 34557,
+        "links": [
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800573",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800573",
+            "tag": "option"
+          }
+        ],
+        "literals": [
+          "viewDoc(original.rcpNo, original.dcmNo, original.eleId, original.offset, original.length, original.dtd, original.tocNo)",
+          "viewDoc(\"20261027800573\", \"11629144\", \"0\", \"0\", \"0\", \"HTML\", \"\")",
+          "viewDoc(rcpNo, dcmNo, eleId, offset, length, dtd, tocNo) {\r",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "openViewer('20261027800573','en')",
+          "openViewer(rcpNo, lang){\r"
+        ],
+        "nodes": [],
+        "receipt": "20261027800573",
+        "related": [],
+        "viewer_error": {
+          "error_type": "OriginalSourceError",
+          "reason": "viewer_not_found",
+          "stage": "html_document_selection"
+        }
+      },
+      {
+        "length": 34564,
+        "links": [
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800571",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800571",
+            "tag": "option"
+          }
+        ],
+        "literals": [
+          "viewDoc(original.rcpNo, original.dcmNo, original.eleId, original.offset, original.length, original.dtd, original.tocNo)",
+          "viewDoc(\"20261027800571\", \"11629225\", \"0\", \"0\", \"0\", \"HTML\", \"\")",
+          "viewDoc(rcpNo, dcmNo, eleId, offset, length, dtd, tocNo) {\r",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "openViewer('20261027800571','en')",
+          "openViewer(rcpNo, lang){\r"
+        ],
+        "nodes": [],
+        "receipt": "20261027800571",
+        "related": [],
+        "viewer_error": {
+          "error_type": "OriginalSourceError",
+          "reason": "viewer_not_found",
+          "stage": "html_document_selection"
+        }
+      },
+      {
+        "length": 34532,
+        "links": [
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800546",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027800546",
+            "tag": "option"
+          }
+        ],
+        "literals": [
+          "viewDoc(original.rcpNo, original.dcmNo, original.eleId, original.offset, original.length, original.dtd, original.tocNo)",
+          "viewDoc(\"20261027800546\", \"11629219\", \"0\", \"0\", \"0\", \"HTML\", \"\")",
+          "viewDoc(rcpNo, dcmNo, eleId, offset, length, dtd, tocNo) {\r",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "openViewer('20261027800546','en')",
+          "openViewer(rcpNo, lang){\r"
+        ],
+        "nodes": [],
+        "receipt": "20261027800546",
+        "related": [],
+        "viewer_error": {
+          "error_type": "OriginalSourceError",
+          "reason": "viewer_not_found",
+          "stage": "html_document_selection"
+        }
+      },
+      {
+        "body_links": [],
+        "body_related": [
+          "\uc815\uc815\ud6c4",
+          "\uc815\uc815\uc804",
+          "(\uc8fc)\uc544\uc774\uc708_(\uc8fc)\uc544\uc774\uc708\uc624\ud1a0 \uc18c\uaddc\ubaa8 \ud569\ubcd1 \uacc4\uc57d\uc11c 261026-\uc774\ubbf8\uc9c0-0",
+          "(\uc8fc)\uc544\uc774\uc708_(\uc8fc)\uc544\uc774\uc708\uc624\ud1a0 \uc18c\uaddc\ubaa8 \ud569\ubcd1 \uacc4\uc57d\uc11c 261026-\uc774\ubbf8\uc9c0-1",
+          "(\uc8fc)\uc544\uc774\uc708_(\uc8fc)\uc544\uc774\uc708\uc624\ud1a0 \uc18c\uaddc\ubaa8 \ud569\ubcd1 \uacc4\uc57d\uc11c 261026-\uc774\ubbf8\uc9c0-2",
+          "(\uc8fc)\uc544\uc774\uc708_(\uc8fc)\uc544\uc774\uc708\uc624\ud1a0 \uc18c\uaddc\ubaa8 \ud569\ubcd1 \uacc4\uc57d\uc11c 261026-\uc774\ubbf8\uc9c0-3",
+          "(\uc8fc)\uc544\uc774\uc708_(\uc8fc)\uc544\uc774\uc708\uc624\ud1a0 \uc18c\uaddc\ubaa8 \ud569\ubcd1 \uacc4\uc57d\uc11c 261026-\uc774\ubbf8\uc9c0-4"
+        ],
+        "length": 38445,
+        "links": [
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027000306&dcmNo=11629251",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627890",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627892",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627887",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627888",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627891",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627889",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261027000306&dcmNo=11629251",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627890",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627892",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627887",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627888",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627891",
+            "tag": "option"
+          },
+          {
+            "host": null,
+            "params": {},
+            "path": "rcpNo=20261026000365&dcmNo=11627889",
+            "tag": "option"
+          }
+        ],
+        "literals": [
+          "viewDoc(original.rcpNo, original.dcmNo, original.eleId, original.offset, original.length, original.dtd, original.tocNo)",
+          "viewDoc(\"20261027000306\", \"11629251\", \"0\", \"0\", \"0\", \"dart4.xsd\", \"\")",
+          "viewDoc(rcpNo, dcmNo, eleId, offset, length, dtd, tocNo) {\r",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "viewDoc(currentDocValues.rcpNo, currentDocValues.dcmNo, currentDocValues.eleId, currentDocValues.offset, currentDocValues.length, currentDocValues.dtd)",
+          "openViewer('20261027000306','en')",
+          "openViewer(rcpNo, lang){\r"
+        ],
+        "nodes": [
+          "node1['text'] = \"\uc815 \uc815 \uc2e0 \uace0 (\ubcf4\uace0)\"",
+          "node1['rcpNo'] = \"20261027000306\"",
+          "node1['dcmNo'] = \"11629251\"",
+          "node1['eleId'] = \"1\"",
+          "node1['offset'] = \"617\"",
+          "node1['length'] = \"2965\"",
+          "node1['dtd'] = \"dart4.xsd\"",
+          "node1['text'] = \"\uacc4\uc57d\uc11c(\uacc4\ud68d\uc11c)\"",
+          "node1['rcpNo'] = \"20261027000306\"",
+          "node1['dcmNo'] = \"11629251\"",
+          "node1['eleId'] = \"2\"",
+          "node1['offset'] = \"3612\"",
+          "node1['length'] = \"2271\"",
+          "node1['dtd'] = \"dart4.xsd\""
+        ],
+        "receipt": "20261027000306",
+        "related": [
+          "\uc544\uc774\uc708/\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)/2026.10.27",
+          "2026.10.26\u00a0\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)",
+          "2026.10.27\u00a0\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t[\uc815\uc815]\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\uacc4\uc57d\uc11c(\uacc4\ud68d\uc11c)",
+          "2026.10.26\u00a0\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)",
+          "2026.10.27\u00a0\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\t[\uc815\uc815]\r\n\t\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\t\t\t\uacc4\uc57d\uc11c(\uacc4\ud68d\uc11c)"
+        ],
+        "viewer": {
+          "dcmNo": "11629251",
+          "dtd": "dart4.xsd",
+          "eleId": "2",
+          "length": "2271",
+          "offset": "3612",
+          "rcpNo": "20261027000306"
+        }
+      }
+    ]
+  }
 }
