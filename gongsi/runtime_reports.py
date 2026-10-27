@@ -18,7 +18,7 @@ API='https://api.github.com/repos/'+REPO
 
 def record(store, report, summary, status, context):
     source=str((summary or {}).get('source',''))
-    method=('structured_api_with_original' if '원문 표 보완' in source else 'structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
+    method=('reference_original' if (summary or {}).get('reference_receipt') else 'structured_api_with_original' if '원문 표 보완' in source else 'structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
     row={'receipt':report['rcept_no'],'company':str(report.get('corp_name',''))[:80],
          'title':str(report.get('report_nm',''))[:220], 'filing_date':report.get('rcept_dt',''),
          'method':method,'status':status,'context':context,
