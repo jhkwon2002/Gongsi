@@ -71,6 +71,7 @@ def snapshot(store):
             'last_scan_success':store.get('last_scan_success'),
             'delivery_history':history,'historical_replays':legacy[:100],
             'replay_progress':store.get('test_replay_last'),
+            'routing_recheck':store.get('routing_recheck_v1'),
             'structure_diagnostics':store.get('structure_probe_20261027_v1'),
             'original_diagnostics':store.get('original_probe_20261027_v1'),
             'api_diagnostics':store.get('api_probe_20261026_v2',store.get('api_probe_20261026_v1')),
