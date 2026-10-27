@@ -336,6 +336,10 @@ def raw_fields(document, aliases):
 
 def document_text(data, receipt):
     if not zipfile.is_zipfile(io.BytesIO(data)):
+        from .original_source import OriginalSourceError
+        status = re.search(br'<status>\s*([0-9]{3})\s*</status>', data[:4096])
+        if status:
+            raise OriginalSourceError('document_api', 'api_status_' + status.group(1).decode('ascii'))
         raise ValueError('DART original document unavailable')
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
         names = [info for info in archive.infolist() if not info.is_dir() and info.filename.lower().endswith(('.xml','.html','.htm'))]

@@ -19,6 +19,8 @@ class ExtractionTests(unittest.TestCase):
         self.store=Store(Path(self.tmp.name)/'state.db')
         self.addCleanup(self.store.close)
         self.extractor=Extractor('FAKE_SECRET',self.store)
+        offline=patch('gongsi.original_source.html_document',side_effect=OSError('offline test'))
+        offline.start();self.addCleanup(offline.stop)
 
     def test_every_official_schema_routes_to_its_endpoint(self):
         self.assertEqual(len(SCHEMAS),44)

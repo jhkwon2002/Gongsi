@@ -119,7 +119,8 @@ def acquire(extractor,report):
             aliases+=['매출액','영업이익','당기순이익','자산총계','부채총계','자본총계']
         if not aliases: aliases=['제목','주요내용','발생일자','결정내용','금액','기간']
         try:
-            original=raw_fields(extractor.original(report['rcept_no']),aliases)
+            from .original_source import original_fields
+            original=original_fields(extractor,report['rcept_no'],aliases,evidence)
             evidence['original_field_count']=len(original)
             raw_withheld=getattr(original,'withheld',0)
             if api:
