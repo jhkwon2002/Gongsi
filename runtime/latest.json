@@ -8213,7 +8213,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-28T06:59:58+09:00",
+  "last_scan_success": "2026-10-28T08:18:53+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
