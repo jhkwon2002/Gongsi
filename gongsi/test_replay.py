@@ -16,7 +16,7 @@ def process_requests(bot,store,stop,requests=None):
     if requests is None:
         requests=json.loads(REQUESTS.read_text(encoding='utf-8')) if REQUESTS.is_file() else []
     today=now_kst().date().isoformat()
-    for request in requests[:5]:
+    for request in requests[:10]:
         identifier=request.get('id','')
         if not re.fullmatch('[a-zA-Z0-9_-]{1,64}',identifier) or request.get('date') != today:
             continue
