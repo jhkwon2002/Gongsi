@@ -405,10 +405,13 @@ class Extractor:
 
 
 
-def format_notification(report, summary=None, html=False):
+def format_notification(report, summary=None, html=False, asset=None):
     company = text(report.get('corp_name',''),80)
     title = text(report['report_nm'],220)
     encode = escape if html else str
+    if asset is not None:
+        from .assets import heading_amount
+        company+=' (자산총액 '+heading_amount(asset['amount'])+')'
     heading = '🏢 <b>'+escape(company)+'</b>' if html else '🏢 '+company
     lines = [heading, '', encode(title), '접수일: '+encode(report['rcept_dt'])]
     if summary:
