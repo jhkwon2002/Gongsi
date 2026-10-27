@@ -72,8 +72,17 @@ def normalize(title):
 
 def matching_keys(title):
     name = normalize(title)
-    return {item.key for item in CATALOG if item.key != 'unclassified'
-            and any(name.startswith(term) or ('결정' in term or item.key == 'trust') and term in name for term in item.terms)}
+    found = {item.key for item in CATALOG if item.key != 'unclassified'
+             and any(name.startswith(term) or ('결정' in term or item.key == 'trust') and term in name for term in item.terms)}
+    if name.startswith('주요사항보고서'):
+        candidates=[]
+        for schema in MAJOR_SCHEMAS:
+            term=normalize(schema['title'])
+            if any(t in name for t in (term,term.replace('양수','취득').replace('양도','처분'))):
+                candidates.append((len(term),'major_'+schema['endpoint']))
+        if candidates:
+            found.add(max(candidates)[1])
+    return found
 
 
 def matches(title, selected):
@@ -149,3 +158,15 @@ CATALOG += (
 BY_KEY = {item.key: item for item in CATALOG}
 GROUPS = (('business', '경영·계약', ('investment', 'management', 'contracts', 'major')), ('financing', '자금조달·증권발행', ('capital_up', 'bonus', 'cb', 'bw', 'eb', 'conversion', 'securities', 'issue_result', 'issuance_result', 'prospectus', 'shelf', 'effective', 'small_offer', 'f_515cdf3447', 'f_79775cde4c', 'f_67557d4ca9', 'f_77dde2192a', 'f_a595fa0eb7', 'f_723de6c7d1', 'f_0a3ff29ed6', 'f_2ffacf67ba', 'f_ac6be70444')), ('assets', '자산·사업구조', ('assets', 'merger', 'merger_end', 'securitization', 'facilities', 'f_f884fd5a7a', 'f_b45da17a51')), ('treasury', '자기주식·주식구조', ('buyback', 'treasury_sale', 'trust', 'treasury_result', 'cancellation', 'stock_structure', 'f_112a901710', 'f_9c65a5fcb6', 'f_775bab76ba', 'f_b0fddfe0b3')), ('financial', '실적·재무보고', ('annual', 'half', 'quarter', 'audit', 'earnings', 'earnings_notice')), ('governance', '주주·지배구조', ('holdings', 'insider', 'trade_plan', 'owner_change', 'agm_notice', 'agm_result', 'record_date', 'proxy', 'options', 'directors', 'f_0abff1baf5', 'f_6c8b7ea93e', 'f_53042c6e56', 'f_fa9d548275', 'f_bc252aeda4', 'f_120372c65f', 'f_1e2694b315')), ('related', '보증·관계회사 거래', ('guarantee', 'collateral', 'related_funds', 'intragroup', 'f_efb4e35171', 'f_a4b5e0cec9', 'f_e08aa0c180', 'f_84707e9cf9', 'f_e636306e0e', 'f_4a845d489a', 'f_0c21e2d329', 'f_22a796db8a', 'f_5d969b99f6', 'f_69afc945d9', 'f_da49593c99', 'f_2ae8e21c1e', 'f_cedb92eb9d', 'f_287de781b4', 'f_fa62417a8a', 'f_bd30b48cdb', 'f_90902491d1', 'f_75208cc011', 'f_2e557b74eb', 'f_c6d7575389', 'f_aaed130fa3')), ('risk', '소송·시장조치', ('litigation', 'market', 'explanation', 'f_dddc0b1e3b', 'f_7528b1b409', 'f_2628e62839', 'f_a7c58f5f87', 'f_a621b9fa36', 'f_94b202dc88', 'f_0e4ef0bb69')), ('ir_value', 'IR·기업가치', ('ir', 'value_up')), ('other', '기타·미분류', ('f_5f87e19d5d', 'f_e30cd6cc57', 'f_cd3563584d', 'f_fc88ebd8bb', 'f_adca118ba5', 'f_c2067f850a', 'f_66a868d6cd', 'f_d0e574dc86', 'f_47093200a3', 'f_5819f2e4d7', 'unclassified')))
 GROUP_BY_KEY = {g[0]: g for g in GROUPS}
+
+
+# Nested major-report controls: stable API names identify persisted selections.
+import json as _json
+from pathlib import Path as _Path
+MAJOR_SCHEMAS=tuple(x for x in _json.loads(_Path(__file__).with_name('extraction_schemas.json').read_text(encoding='utf-8')) if not x.get('kind'))
+MAJOR_CHILDREN=tuple('major_'+x['endpoint'] for x in MAJOR_SCHEMAS)
+CATALOG += tuple(ReportType('major_'+x['endpoint'],x['title'],()) for x in MAJOR_SCHEMAS)
+BY_KEY={item.key:item for item in CATALOG}
+GROUPS += (('major_detail','주요사항보고서',('major',)+MAJOR_CHILDREN),)
+GROUP_BY_KEY={g[0]:g for g in GROUPS}
+MAJOR_PAGE=(len(GROUPS)-1)*100

@@ -1,5 +1,5 @@
 """Private Telegram command menu and paginated, persistent report buttons."""
-from .catalog import CATALOG, BY_KEY, GROUPS, GROUP_BY_KEY
+from .catalog import CATALOG, BY_KEY, GROUPS, GROUP_BY_KEY, MAJOR_CHILDREN, MAJOR_PAGE
 from .api import ApiError
 
 PAGE_SIZE = 6
@@ -29,8 +29,12 @@ class Bot:
         rev = prefs['revision']
         rows = []
         if page < 0:
-            for index, (_, label, keys) in enumerate(GROUPS):
+            for index, (group_key, label, keys) in enumerate(GROUPS):
+                if group_key=='major_detail':
+                    continue
                 count = len(selected.intersection(keys))
+                if 'major' in keys and 'major' not in selected and selected.intersection(MAJOR_CHILDREN):
+                    count += 1
                 rows.append([{'text': f'{label} — {count}/{len(keys)}개 선택', 'callback_data': f'p:{index * 100}'}])
             text = f"보고서 분류를 선택하세요\n총 {len(selected)}개 선택 · " + ('일시정지' if prefs['paused'] else '감시 켜짐')
         else:
@@ -42,7 +46,11 @@ class Bot:
             offset = min(offset, pages - 1)
             page = group_index * 100 + offset
             for key in keys[offset * PAGE_SIZE:(offset + 1) * PAGE_SIZE]:
-                checked = key in selected
+                if key=='major' and group_key!='major_detail':
+                    number=36 if 'major' in selected else len(selected.intersection(MAJOR_CHILDREN))
+                    rows.append([{'text':f'주요사항보고서 ▶ {number}/36종 선택','callback_data':f'p:{MAJOR_PAGE}'}])
+                    continue
+                checked = key in selected or (key in MAJOR_CHILDREN and 'major' in selected)
                 rows.append([{'text': ('☑ ' if checked else '☐ ') + BY_KEY[key].label,
                               'callback_data': f's:{key}:{0 if checked else 1}:{rev}:{page}'}])
             rows.append([{'text': '분류 전체 선택', 'callback_data': f'b:{group_key}:1:{rev}:{page}'},
@@ -56,6 +64,9 @@ class Bot:
                 rows.append(nav)
             rows.append([{'text': '↩ 전체 분류', 'callback_data': 'p:-1'}])
             text = f'{label} ({offset+1}/{pages})\n체크하면 바로 저장됩니다. 중복 공시는 한 번만 보냅니다.\n새 선택은 이후 새로 발견되는 공시부터 적용되며 과거 공시를 재발송하지 않습니다.'
+        if page>=MAJOR_PAGE:
+            rows.append([{'text':'◀ 경영·계약','callback_data':'p:0'}])
+            text+='\n전체 선택 시 모든 주요사항보고서를 받습니다. 전체 선택 상태에서 1종을 해제하면 나머지 35종 선택으로 전환됩니다. 다른 분류의 선택도 함께 적용됩니다.'
         rows.append([{'text': '전체 선택 해제', 'callback_data': f'c:{rev}:{page}'},
                      {'text': '현재 상태', 'callback_data': 'status'}])
         return text, {'inline_keyboard': rows}

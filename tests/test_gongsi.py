@@ -212,8 +212,8 @@ class Tests(unittest.TestCase):
         self.select('assets', 'major', 'buyback', 'capital_up', 'securities')
         before = self.store.settings()
         _, markup = self.bot.menu()
-        self.assertEqual(len(markup['inline_keyboard']), len(GROUPS)+1)
-        keys = [key for _, _, group in GROUPS for key in group]
+        self.assertEqual(len(markup['inline_keyboard']), len([g for g in GROUPS if g[0]!='major_detail'])+1)
+        keys = [key for name, _, group in GROUPS for key in group if not (name=='major_detail' and key=='major')]
         self.assertEqual(len(keys), len(set(keys)))
         self.assertEqual(set(keys), {x.key for x in CATALOG})
         self.assertEqual(before, self.store.settings())

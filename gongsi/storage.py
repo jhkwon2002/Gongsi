@@ -56,6 +56,12 @@ class Store:
                 return False
             if action == "set":
                 selected = set(prefs["selected"])
+                from .catalog import MAJOR_CHILDREN
+                if key == 'major':
+                    selected.difference_update(MAJOR_CHILDREN)
+                elif key in MAJOR_CHILDREN and 'major' in selected and not enabled:
+                    selected.discard('major')
+                    selected.update(MAJOR_CHILDREN)
                 if enabled:
                     selected.add(key)
                 else:
@@ -63,9 +69,14 @@ class Store:
                 prefs["selected"] = sorted(selected)
             elif action == "set_group":
                 from .catalog import GROUP_BY_KEY
+                from .catalog import MAJOR_CHILDREN
                 group_keys = set(GROUP_BY_KEY[key][2])
+                if 'major' in group_keys:
+                    group_keys.update(MAJOR_CHILDREN)
                 selected = set(prefs['selected'])
                 prefs['selected'] = sorted(selected | group_keys if enabled else selected - group_keys)
+                if enabled and 'major' in group_keys:
+                    prefs['selected'] = sorted(set(prefs['selected'])-set(MAJOR_CHILDREN))
             elif action == "clear":
                 prefs["selected"] = []
             elif action in ("pause", "resume"):
