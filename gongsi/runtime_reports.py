@@ -18,7 +18,7 @@ API='https://api.github.com/repos/'+REPO
 
 def record(store, report, summary, status, context):
     source=str((summary or {}).get('source',''))
-    method=('structured_api_with_original' if '원문 표 보완' in source else 'structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
+    method=('reference_original' if (summary or {}).get('reference_receipt') else 'structured_api_with_original' if '원문 표 보완' in source else 'structured_api' if 'OpenDART 구조화' in source else 'original_table' if source=='원문 표' else 'unavailable')
     row={'receipt':report['rcept_no'],'company':str(report.get('corp_name',''))[:80],
          'title':str(report.get('report_nm',''))[:220], 'filing_date':report.get('rcept_dt',''),
          'method':method,'status':status,'context':context,
@@ -71,6 +71,7 @@ def snapshot(store):
             'last_scan_success':store.get('last_scan_success'),
             'delivery_history':history,'historical_replays':legacy[:100],
             'replay_progress':store.get('test_replay_last'),
+            'routing_recheck':store.get('routing_recheck_v1'),
             'structure_diagnostics':store.get('structure_probe_20261027_v1'),
             'original_diagnostics':store.get('original_probe_20261027_v1'),
             'api_diagnostics':store.get('api_probe_20261026_v2',store.get('api_probe_20261026_v1')),

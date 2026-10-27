@@ -127,3 +127,24 @@ class OriginalFallbackTests(unittest.TestCase):
         self.assertTrue(self.store.get(ORIGINAL_KEY)['complete'])
         web.assert_called_once()
         bot.send.assert_not_called()
+
+
+    def test_seven_argument_current_dart_calls_are_supported(self):
+        for receipt,dcm in (('20261027800573','11629144'),('20261027800571','11629225')):
+            page='viewDoc("%s", "%s", "0", "0", "0", "HTML", "")'%(receipt,dcm)
+            p=viewer_params(page,receipt)
+            self.assertEqual(p['dcmNo'],dcm)
+            self.assertEqual(p['eleId'],'0')
+
+    def test_attachment_whole_document_beats_last_tree_section(self):
+        page='viewDoc("%s", "123", "0", "0", "0", "dart4.xsd", "");'%RECEIPT
+        page+="node1['rcpNo']='%s';node1['dcmNo']='123';node1['eleId']='2';node1['offset']='100';node1['length']='200';node1['dtd']='dart4.xsd';"%RECEIPT
+        self.assertEqual(viewer_params(page,RECEIPT)['eleId'],'0')
+
+    def test_reference_requires_unique_explicit_older_root(self):
+        from gongsi.original_source import parent_reference
+        page='<option value="rcpNo=20261026000365">본문</option><option value="rcpNo=20261026000365&amp;dcmNo=123">첨부</option>'
+        with patch('gongsi.original_source.read_html',return_value=page):
+            self.assertEqual(parent_reference(self.ex,'20261027000306'),'20261026000365')
+        with patch('gongsi.original_source.read_html',return_value=page+'<option value="rcpNo=20261026000001">다른본문</option>'):
+            self.assertIsNone(parent_reference(self.ex,'20261027000306'))

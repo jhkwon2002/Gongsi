@@ -122,6 +122,21 @@ def acquire(extractor,report):
             from .original_source import original_fields
             original=original_fields(extractor,report['rcept_no'],aliases,evidence)
             evidence['original_field_count']=len(original)
+            if not api and not original and report['report_nm'].lstrip().startswith('[첨부정정]'):
+                from .original_source import parent_reference
+                import json
+                parent=parent_reference(extractor,report['rcept_no'])
+                with extractor.store.lock:
+                    row=extractor.store.db.execute('SELECT data FROM reports WHERE receipt=?',(parent,)).fetchone() if parent else None
+                linked=json.loads(row[0]) if row else None
+                linked_schema=schema_for(linked['report_nm']) if linked else None
+                if (linked and linked.get('corp_code')==report.get('corp_code') and schema and linked_schema
+                        and linked_schema['endpoint']==schema['endpoint']):
+                    reference_evidence={}
+                    original=original_fields(extractor,parent,aliases,reference_evidence)
+                    if original:
+                        result['reference_receipt']=parent
+                        evidence['reference_evidence']=reference_evidence
             raw_withheld=getattr(original,'withheld',0)
             if api:
                 # Only missing fields in the same explicit contract may supplement an API record.
@@ -139,6 +154,9 @@ def acquire(extractor,report):
                 result['field_sources']=[{'label':l,'source':'original_table'} for l,v in original]
         except Exception as exc:
             evidence['original_error']=type(exc).__name__
+    if result.get('reference_receipt'):
+        result['source']='이전 본문 참고 · 첨부정정은 원문 확인'
+        result['field_sources']=[{'label':l,'source':'reference_original','receipt':result['reference_receipt']} for l,v in result['fields']]
     result['missing_contract_fields']=missing_core(schema,result['fields']) if schema and schema.get('kind')!='financial' else []
     # Evidence is durable even when extraction fails, but failure results are not cached.
     extractor.store.set('extraction_evidence:'+report['rcept_no'],result)

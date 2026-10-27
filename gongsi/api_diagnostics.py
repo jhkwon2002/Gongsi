@@ -10,6 +10,7 @@ KEY='api_probe_20261026_v2'
 def run_probe(bot,store):
     run_original_probe(bot,store,now_kst())
     run_structure_probe(bot,store,now_kst())
+    run_routing_recheck(bot,store,now_kst())
     if now_kst().date().isoformat()!='2026-10-26': return
     previous=store.get(KEY,{})
     if previous.get('complete') or previous.get('attempts',0)>=3: return
@@ -139,3 +140,24 @@ def run_structure_probe(bot,store,now):
         except Exception as exc: item['error']=failure(exc,'main')
         results.append(item)
     store.set(key,{'release':store.get('release'),'checked_at':now.isoformat(),'results':results})
+
+
+def run_routing_recheck(bot,store,now):
+    if now.date().isoformat()!='2026-10-27' or store.get('routing_recheck_v1'): return
+    from .acquisition import acquire
+    from .presentation import present
+    results=[]
+    for receipt in ('20261027800573','20261027800571','20261027800546','20261027000306'):
+        with store.lock:
+            row=store.db.execute('SELECT data FROM reports WHERE receipt=?',(receipt,)).fetchone()
+        if not row: continue
+        report=json.loads(row[0])
+        try:
+            summary=acquire(bot.extractor,report)
+            results.append({'receipt':receipt,'company':report.get('corp_name'),
+                'source':summary['source'],'reference_receipt':summary.get('reference_receipt'),
+                'fields':[{'label':l,'value':v} for l,v in present(report,summary)[:12]],
+                'evidence':summary['evidence']})
+        except Exception as exc:
+            results.append({'receipt':receipt,'error_type':type(exc).__name__})
+    store.set('routing_recheck_v1',{'checked_at':now.isoformat(),'release':store.get('release'),'results':results})

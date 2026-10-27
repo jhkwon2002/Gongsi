@@ -57,7 +57,8 @@ def viewer_params(page, receipt):
     for match in re.finditer(
             r'viewDoc\(\s*[\'\"](\d{14})[\'\"]\s*,\s*[\'\"](\d+)[\'\"]\s*,\s*'
             r'[\'\"](\d+)[\'\"]\s*,\s*[\'\"](\d+)[\'\"]\s*,\s*'
-            r'[\'\"](\d+)[\'\"]\s*,\s*[\'\"]([a-zA-Z0-9_.-]+)[\'\"]\s*\)', page):
+            r'[\'\"](\d+)[\'\"]\s*,\s*[\'\"]([a-zA-Z0-9_.-]+)[\'\"]'
+            r'(?:\s*,\s*[\'\"][a-zA-Z0-9_.-]*[\'\"])?\s*\)', page):
         rcp, dcm, element, offset, length, dtd = match.groups()
         if rcp == receipt:
             candidates.append((dcm, element, offset, length, dtd))
@@ -128,3 +129,19 @@ def original_fields(extractor, receipt, aliases, evidence):
     except Exception as exc:
         attempts.append(dict(source='dart_html', **failure(exc, 'html_download')))
         raise
+
+
+
+def parent_reference(extractor, receipt):
+    """Only a unique root report explicitly linked by the DART family selector."""
+    from html import unescape
+    from urllib.parse import parse_qs
+    extractor.store.reserve_dart_request(extractor.daily_limit)
+    page=read_html('https://dart.fss.or.kr/dsaf001/main.do?'+urlencode({'rcpNo':receipt}))
+    roots=set()
+    for value in re.findall(r'<option\b[^>]*\bvalue\s*=\s*[\'\"]([^\'\"]+)[\'\"]',page,re.I):
+        params=parse_qs(unescape(value))
+        candidate=params.get('rcpNo',[''])[0]
+        if set(params)=={'rcpNo'} and re.fullmatch(r'\d{14}',candidate) and candidate<receipt:
+            roots.add(candidate)
+    return roots.pop() if len(roots)==1 else None
