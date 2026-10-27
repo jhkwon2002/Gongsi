@@ -134,6 +134,56 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_attempts": [
+          {
+            "field_count": 5,
+            "reason": "fields_available",
+            "source": "document_api",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 5,
+        "original_reason": "no_structured_api",
+        "original_source": "document_api",
+        "reason": "no_structured_api"
+      },
+      "company": "HD\ud604\ub300\uc77c\ub809\ud2b8\ub9ad",
+      "context": "test_replay",
+      "field_sources": [
+        {
+          "label": "\ud22c\uc790\uae08\uc561 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc790\uae30\uc790\ubcf8\ub300\ube44 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ud22c\uc790\ubaa9\uc801 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc2dc\uc791\uc77c [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc885\ub8cc\uc77c [\ud45c1]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261027",
+      "method": "original_table",
+      "receipt": "20261027800235",
+      "recorded_at": "2026-10-27T15:06:09+09:00",
+      "release": "c36a701eaa670c6ac5528cd251cf542231c76341",
+      "status": "telegram_accepted",
+      "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261027",
@@ -4514,7 +4564,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T15:04:33+09:00",
+  "last_scan_success": "2026-10-27T15:06:07+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
@@ -4565,11 +4615,11 @@
     "retry_after": 1793080463.369498,
     "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              "
   },
-  "release": "f9da05147c4c1f5eeb45701c8258512776778486",
+  "release": "c36a701eaa670c6ac5528cd251cf542231c76341",
   "replay_progress": {
-    "id": "owner-today-all-20261026-v5-01",
-    "requested": 47,
-    "sent": 47,
+    "id": "owner-hd-facilities-20261027-v1",
+    "requested": 1,
+    "sent": 1,
     "status": "completed"
   },
   "schema_version": 1
