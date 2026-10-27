@@ -9,6 +9,7 @@ KEY='api_probe_20261026_v2'
 
 def run_probe(bot,store):
     run_original_probe(bot,store,now_kst())
+    run_structure_probe(bot,store,now_kst())
     if now_kst().date().isoformat()!='2026-10-26': return
     previous=store.get(KEY,{})
     if previous.get('complete') or previous.get('attempts',0)>=3: return
@@ -90,3 +91,51 @@ def run_original_probe(bot,store,now):
                   attempts=previous.get('attempts',0)+1,retry_after=now.timestamp()+300,
                   note='Read-only original extraction diagnosis; no Telegram replay.')
     store.set(ORIGINAL_KEY,result)
+
+
+def run_structure_probe(bot,store,now):
+    if now.date().isoformat()!='2026-10-27': return
+    key='structure_probe_20261027_v1'
+    if store.get(key): return
+    from .original_source import read_html,viewer_params,failure
+    import re
+    from html.parser import HTMLParser
+    class Page(HTMLParser):
+        def __init__(self):
+            super().__init__();self.links=[];self.words=[]
+        def handle_starttag(self,tag,attrs):
+            a=dict(attrs)
+            if tag in ('iframe','frame','a','option'):
+                for name in ('src','href','value'):
+                    value=a.get(name,'')
+                    if any(s in value for s in ('viewer','rcpNo','rcpno','dcmNo','disclsviewer')):
+                        from urllib.parse import urlsplit,parse_qsl
+                        u=urlsplit(value)
+                        if u.hostname and u.hostname not in ('dart.fss.or.kr','kind.krx.co.kr'): continue
+                        self.links.append({'tag':tag,'path':u.path,'host':u.hostname,
+                            'params':{k:v for k,v in parse_qsl(u.query) if k.lower() in ('rcpno','dcmno','eleid','offset','length','dtd','acptno','docno','method')}})
+        def handle_data(self,data):
+            s=data.strip()
+            if s and len(s)<500 and any(w in s for w in ('정정','합병','보고서','최초')): self.words.append(s[:200])
+    results=[]
+    for receipt in ('20261027800573','20261027800571','20261027800546','20261027000306'):
+        item={'receipt':receipt}
+        try:
+            bot.extractor.store.reserve_dart_request(bot.extractor.daily_limit)
+            page=read_html('https://dart.fss.or.kr/dsaf001/main.do?rcpNo='+receipt)
+            parser=Page();parser.feed(page)
+            item.update(length=len(page),links=parser.links[:20],
+                literals=re.findall(r'(?:viewDoc|openReport|openViewer)\([^\n;]{0,300}',page)[:10],
+                nodes=re.findall(r"node\d+\[['\"](?:text|rcpNo|rceptNo|dcmNo|eleId|offset|length|dtd)['\"]\]\s*=\s*[^;\n]{0,200}",page)[:40],
+                related=parser.words[:8])
+            try:
+                params=viewer_params(page,receipt);item['viewer']=params
+                from urllib.parse import urlencode
+                bot.extractor.store.reserve_dart_request(bot.extractor.daily_limit)
+                body=read_html('https://dart.fss.or.kr/report/viewer.do?'+urlencode(params))
+                p=Page();p.feed(body)
+                item['body_related']=p.words[:15];item['body_links']=p.links[:20]
+            except Exception as exc: item['viewer_error']=failure(exc,'viewer')
+        except Exception as exc: item['error']=failure(exc,'main')
+        results.append(item)
+    store.set(key,{'release':store.get('release'),'checked_at':now.isoformat(),'results':results})
