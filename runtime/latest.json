@@ -148,6 +148,192 @@
             "end_de": "20261027",
             "exact_receipt_rows": 0,
             "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
+        "endpoint": "tgastInhDecsn",
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "field_count": 33,
+            "reason": "fields_available",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_field_count": 33,
+        "original_reason": "no_data",
+        "original_source": "dart_html",
+        "reason": "no_data"
+      },
+      "company": "\ud734\uc628\uc2a4\uae00\ub85c\ubc8c",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\uc790\uc0b0\uad6c\ubd84 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc790\uc0b0\uba85 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uae08\uc561(\uc6d0)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561(\uc6d0)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uc0b0\ucd1d\uc561\ub300\ube44(%)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\ubaa9\uc801 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\uc601\ud5a5 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uacc4\uc57d\uccb4\uacb0\uc77c) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\uc591\uc218\uae30\uc900\uc77c) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\uc218\uc608\uc815\uc77c\uc790(\ub4f1\uae30\uc608\uc815\uc77c) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c)) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc8fc\ucd1d\ud68c \ud2b9\ubcc4\uacb0\uc758 \uc5ec\ubd80 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc8fc\ucd1d\ud68c \uc608\uc815\uc77c\uc790 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc694\uac74) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ub9e4\uc218\uc608\uc815\uac00\uaca9) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\ud589\uc0ac\uc808\ucc28, \ubc29\ubc95, \uae30\uac04, \uc7a5\uc18c) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc9c0\uae09\uc608\uc815\uc2dc\uae30, \uc9c0\uae09\ubc29\ubc95) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c \uc81c\ud55c \uad00\ub828 \ub0b4\uc6a9) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc8fc\uc2dd\ub9e4\uc218\uccad\uad6c\uad8c\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uacc4\uc57d\uc5d0 \ubbf8\uce58\ub294 \ud6a8\ub825) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c) [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80 [\ud45c2]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uacc4\uc57d\ub0b4\uc6a9 [\ud45c2]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261027",
+      "method": "original_table",
+      "receipt": "20261027000361",
+      "recorded_at": "2026-10-27T17:37:17+09:00",
+      "release": "60315e8fc3365c2899c18d2cec688c31a3b14766",
+      "status": "telegram_accepted",
+      "title": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\uc218\uacb0\uc815)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261027",
+            "end_de": "20261027",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260926",
+            "end_de": "20261027",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
             "reason": "receipt_not_returned",
             "status": "000"
           }
@@ -8027,7 +8213,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T17:32:10+09:00",
+  "last_scan_success": "2026-10-27T17:37:14+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
