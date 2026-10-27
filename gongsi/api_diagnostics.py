@@ -8,6 +8,7 @@ KEY='api_probe_20261026_v2'
 
 
 def run_probe(bot,store):
+    run_original_probe(bot,store,now_kst())
     if now_kst().date().isoformat()!='2026-10-26': return
     previous=store.get(KEY,{})
     if previous.get('complete') or previous.get('attempts',0)>=3: return
@@ -57,3 +58,35 @@ def run_probe(bot,store):
                    'attempts':previous.get('attempts',0)+1,'complete':not transient,
                    'retry_after':now.timestamp()+300,'results':results,
                    'note':'Read-only re-query; describes current API responses, not a recovered historical response. No Telegram replay.'})
+
+
+ORIGINAL_KEY='original_probe_20261027_v1'
+
+
+def run_original_probe(bot,store,now):
+    """Check the reported HD filing without sending or changing delivery state."""
+    if now.date().isoformat()!='2026-10-27': return
+    previous=store.get(ORIGINAL_KEY,{})
+    if previous.get('complete') or previous.get('attempts',0)>=3: return
+    if now.timestamp()<previous.get('retry_after',0): return
+    extractor=getattr(bot,'extractor',None)
+    if extractor is None: return
+    receipt='20261027800235'
+    with store.lock:
+        row=store.db.execute('SELECT data FROM reports WHERE receipt=?',(receipt,)).fetchone()
+    if not row: return
+    from .acquisition import acquire
+    from .presentation import present
+    report=json.loads(row[0])
+    try:
+        summary=acquire(extractor,report)
+        fields=present(report,summary)
+        result={'receipt':receipt,'company':report.get('corp_name','')[:80],
+                'title':report['report_nm'][:220],'fields':[{'label':l,'value':v} for l,v in fields[:10]],
+                'evidence':summary['evidence'],'complete':bool(fields)}
+    except Exception as exc:
+        result={'receipt':receipt,'complete':False,'error_type':type(exc).__name__}
+    result.update(checked_at=now.isoformat(timespec='seconds'),release=store.get('release','unknown'),
+                  attempts=previous.get('attempts',0)+1,retry_after=now.timestamp()+300,
+                  note='Read-only original extraction diagnosis; no Telegram replay.')
+    store.set(ORIGINAL_KEY,result)

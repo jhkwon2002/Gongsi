@@ -71,6 +71,7 @@ def snapshot(store):
             'last_scan_success':store.get('last_scan_success'),
             'delivery_history':history,'historical_replays':legacy[:100],
             'replay_progress':store.get('test_replay_last'),
+            'original_diagnostics':store.get('original_probe_20261027_v1'),
             'api_diagnostics':store.get('api_probe_20261026_v2',store.get('api_probe_20261026_v1')),
             'note':'telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.'}
 
