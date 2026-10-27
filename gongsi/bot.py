@@ -73,6 +73,21 @@ class Bot:
 
     def show_menu(self, page=-1, message_id=None):
         text, markup = self.menu(page)
+        return self._show(text, markup, message_id)
+
+    def show_clear_confirmation(self, page, message_id, revision):
+        if self.store.settings()['revision'] != revision:
+            return self.show_menu(page, message_id)
+        text = ('모든 분류의 선택을 해제할까요?\n'
+                '주요사항보고서 세부 36종을 포함한 모든 선택이 해제됩니다.\n'
+                '다시 항목을 선택할 때까지 일반 공시 알림을 받지 않습니다.')
+        markup = {'inline_keyboard': [[
+            {'text': '해제 확인', 'callback_data': f'cc:{revision}:{page}'},
+            {'text': '취소 · 선택 유지', 'callback_data': f'p:{page}'},
+        ]]}
+        return self._show(text, markup, message_id)
+
+    def _show(self, text, markup, message_id=None):
         if message_id is None:
             return self.send(text, reply_markup=markup)
         try:
@@ -121,6 +136,12 @@ class Bot:
                     page = int(parts[4])
                     changed = self.store.change_settings('set_group', parts[1], parts[2] == '1', int(parts[3]))
                 elif parts[0] == "c" and len(parts) == 3:
+                    page = int(parts[2])
+                    revision = int(parts[1])
+                    self.tg.call("answerCallbackQuery", callback_query_id=callback["id"])
+                    self.show_clear_confirmation(page, message["message_id"], revision)
+                    return
+                elif parts[0] == "cc" and len(parts) == 3:
                     page = int(parts[2])
                     changed = self.store.change_settings("clear", revision=int(parts[1]))
                 elif parts[0] == "p" and len(parts) == 2:
