@@ -83,11 +83,40 @@ def unit_for(label, field=''):
         return '%'
     return ''
 
+
+def has_value(value, label=''):
+    """Omit explicit absence markers and zero amounts/ratios, preserving real text."""
+    if value is None:
+        return False
+    raw=str(value).strip()
+    financial=re.fullmatch(r'.+?: (.*?) \[([A-Z]{3}|통화 미확인)\]; .*',raw)
+    if financial:
+        raw=financial.group(1)+' ['+financial.group(2)+']'
+    unit_match=re.search(r'\s*\[(?:단위\s*[:：]\s*)?(원|천원|백만원|억원|%|%p|주|명|USD|KRW)\]\s*$', raw)
+    source_unit=unit_match.group(1) if unit_match else ''
+    if unit_match:
+        raw=raw[:unit_match.start()].strip()
+    token=re.sub(r'[\s.()（）]', '', raw).casefold()
+    if token in ('', '-', '‐', '–', '—', '−', '―', '해당없음', '해당사항없음',
+                 '해당사항이없음', '없음', 'na', 'null', 'none'):
+        return False
+    zero=re.fullmatch(r'[+-]?0+(?:\.0+)?\s*(원|천원|백만원|억원|%p?|USD|KRW)?', raw.replace(',',''))
+    if zero and (zero.group(1) or source_unit in ('원','천원','백만원','억원','%','%p','USD','KRW')
+                 or re.search(r'금액|가액|총액|발행액|자금|자본금|비율|대비|이율|수익률|\((?:원|천원|백만원|억원|%)\)', label.replace(' ',''))):
+        return False
+    # Keep comparison associations; omit the row only if all named values are absent.
+    parts=raw.split(' | ')
+    if len(parts)>1:
+        values=[re.fullmatch(r'[^:|]{1,100}:\s*(.*)', part) for part in parts]
+        if all(values):
+            return any(has_value(match.group(1),label) for match in values)
+    return True
+
 def present(report, summary):
     # Lazy import avoids extraction/presentation circular imports.
     from .extraction import schema_for, SCHEMAS, RAW_PROFILES
     schema=schema_for(report['report_nm'])
-    fields=summary.get('fields',[])
+    fields=[(label,value) for label,value in summary.get('fields',[]) if has_value(value,label)]
     if schema and schema.get('kind')=='financial':
         # Values already contain basis, period and currency. Preserve them verbatim.
         output=[]

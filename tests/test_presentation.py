@@ -58,3 +58,38 @@ class PresentationTests(unittest.TestCase):
         report,summary,_=list(cases())[44]
         value=present(report,summary)[0]
         self.assertIn('연결',value[0]);self.assertIn('누적',value[1]);self.assertIn('100억원',value[1])
+
+    def test_empty_and_zero_amount_ratio_rows_are_omitted(self):
+        report={**REPORT,'report_nm':'신규시설투자등'}
+        summary={'source':'원문 표','fields':[
+            ('투자금액 [표1]','- [원]'),('투자목적 [표1]','해당 사항 없음'),
+            ('시작일 [표1]',None),('종료일 [표1]','—'),
+            ('자기자본대비 [표1]','0 [%]')]}
+        message=format_notification(report,summary,html=True)
+        self.assertFalse(any(line.startswith('• ') for line in message.splitlines()))
+        self.assertIn('원문 보기',message)
+        self.assertNotIn('핵심 항목을 확보하지 못',message)
+        report={**REPORT,'report_nm':'주요사항보고서(전환사채권발행결정)'}
+        summary={'source':'OpenDART 구조화 정보','fields':[
+            ('사채의 권면(전자등록)총액 (원)','0'),
+            ('사채의 이율(표면이자율 (%))','0'),
+            ('사채의 이율(만기이자율 (%))','-1.5')]}
+        values=[value for label,value in present(report,summary)]
+        self.assertEqual(values,['-1.5%'])
+
+    def test_comparisons_and_real_text_remain_and_financial_zero_is_hidden(self):
+        report={**REPORT,'report_nm':'신규시설투자등'}
+        fields=[('투자금액 [표1]','당기: - | 전기: -'),
+                ('투자목적 [표1]','해당 없음으로 처리하지 않고 사업 확대'),
+                ('자기자본대비 [표1]','당기: - | 전기: 5%')]
+        out=present(report,{'fields':fields})
+        self.assertFalse(any(label=='투자금액' for label,value in out))
+        self.assertIn(('자기자본 대비','당기: - | 전기: 5%'),out)
+        self.assertIn(('목적','해당 없음으로 처리하지 않고 사업 확대'),out)
+        report={**REPORT,'report_nm':'사업보고서 (2026.12)'}
+        fields=[('연결 손익계산서 매출액','당기: - [KRW]; 누적 여부는 원문 확인'),
+                ('연결 손익계산서 영업이익','당기: 0 [KRW]; 누적 여부는 원문 확인'),
+                ('연결 손익계산서 당기순이익','당기: -100000000 [KRW]; 누적 여부는 원문 확인')]
+        out=present(report,{'fields':fields})
+        self.assertEqual(len(out),1)
+        self.assertIn('-1억원',out[0][1])

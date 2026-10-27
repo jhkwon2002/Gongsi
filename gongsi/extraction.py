@@ -413,9 +413,9 @@ def format_notification(report, summary=None, html=False):
     lines = [heading, '', encode(title), '접수일: '+encode(report['rcept_dt'])]
     if summary:
         lines.append('주요항목 발췌 · '+encode(summary['source']))
-        from .presentation import present
+        from .presentation import present,has_value
         display_fields = present(report, summary)
-        if not display_fields:
+        if not display_fields and (not summary.get('fields') or any(has_value(value,label) for label,value in summary['fields'])):
             lines.append('핵심 항목을 확보하지 못했습니다. 원문을 확인해 주세요.')
         for label,value in display_fields:
             if '접수번호' in label:
