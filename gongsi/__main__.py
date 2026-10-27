@@ -41,6 +41,12 @@ def deliver(bot, store, stop):
         if not matches(report["report_nm"], prefs["selected"]):
             store.acknowledge(report["rcept_no"])
             continue
+        from .assets import check,config,money
+        allowed,asset=check(getattr(bot,'extractor',None),report,config(store))
+        if store.settings()['revision']!=prefs['revision']: continue
+        if not allowed:
+            store.acknowledge(report['rcept_no'])
+            continue
         summary = None
         extractor = getattr(bot, 'extractor', None)
         if extractor is not None:
@@ -48,7 +54,12 @@ def deliver(bot, store, stop):
                 summary = extractor.extract(report)
             except Exception:
                 summary = {'source':'추출 불가 · 원문 확인','fields':[]}
-        send_recorded(bot,store,report,summary,format_notification(report, summary, html=True),"notification")
+        if store.settings()['revision']!=prefs['revision']: continue
+        message=format_notification(report,summary,html=True)
+        if asset:
+            from html import escape
+            message='자산총액: '+money(asset['amount'])+' · '+('연결' if asset['basis']=='CFS' else '별도')+' · '+escape(asset['report'])+'\n'+message
+        send_recorded(bot,store,report,summary,message,"notification")
         # Telegram has no sendMessage idempotency key: a crash before this commit can repeat a message.
         store.acknowledge(report["rcept_no"])
         if stop.wait(1.1):

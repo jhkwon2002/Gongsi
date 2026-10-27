@@ -1,9 +1,11 @@
 """Private Telegram command menu and paginated, persistent report buttons."""
 from .catalog import CATALOG, BY_KEY, GROUPS, GROUP_BY_KEY, MAJOR_CHILDREN, MAJOR_PAGE
 from .api import ApiError
+from . import assets
 
 PAGE_SIZE = 6
 COMMANDS = [
+    {"command": "assets", "description": "자산총액 최소·최대 설정"},
     {"command": "reports", "description": "받을 보고서 선택"},
     {"command": "status", "description": "선택 목록과 감시 상태"},
     {"command": "pause", "description": "알림 일시정지"},
@@ -67,6 +69,7 @@ class Bot:
         if page>=MAJOR_PAGE:
             rows.append([{'text':'◀ 경영·계약','callback_data':'p:0'}])
             text+='\n전체 선택 시 모든 주요사항보고서를 받습니다. 전체 선택 상태에서 1종을 해제하면 나머지 35종 선택으로 전환됩니다. 다른 분류의 선택도 함께 적용됩니다.'
+        rows.append([{'text': assets.description(assets.config(self.store)), 'callback_data':'a:home'}])
         rows.append([{'text': '전체 선택 해제', 'callback_data': f'c:{rev}:{page}'},
                      {'text': '현재 상태', 'callback_data': 'status'}])
         return text, {'inline_keyboard': rows}
@@ -106,7 +109,8 @@ class Bot:
         sync = self.store.get('github_report_status',{}).get('status','not_checked')
         test = self.store.get('test_replay_last')
         test_status = (f"\n테스트 재전송: {test['sent']}/{test['requested']} · {test['status']}" if test else '')
-        return ("전체 기업 DART 알림\n"
+        return ("전체 기업 DART 알림\n"+
+                assets.description(assets.config(self.store))+"\n"+
                 f"감시: {'일시정지' if prefs['paused'] else '켜짐'}"
                 f"\n선택: {', '.join(names) if names else '없음 — 메뉴에서 선택해주세요'}\n"
                 f"조회 주기: {self.store.get('poll_seconds', 300)}초\n버전: {release}\n마지막 성공: {last}"
@@ -126,6 +130,25 @@ class Bot:
             if data == "status":
                 self.tg.call("answerCallbackQuery", callback_query_id=callback["id"])
                 self.send(self.status())
+                return
+            if data.startswith(('a:','av:')):
+                parts=data.split(':')
+                field=None
+                try:
+                    if parts[0]=='av' and len(parts)==4:
+                        value=None if parts[2]=='x' else int(parts[2])
+                        if parts[1] in ('min','max') and value is not None: value*=10**8
+                        if parts[1]=='unknown': value=bool(value)
+                        assets.change(self.store,parts[1],value,int(parts[3]))
+                    elif parts[0]=='a' and len(parts)==2:
+                        field=parts[1]
+                    else: return
+                except ValueError as exc:
+                    self.tg.call('answerCallbackQuery',callback_query_id=callback['id'],text=str(exc)[:100])
+                    return
+                self.tg.call('answerCallbackQuery',callback_query_id=callback['id'])
+                text,markup=assets.menu(self.store,field)
+                self._show(text,markup,message['message_id'])
                 return
             try:
                 parts = data.split(":")
@@ -157,7 +180,22 @@ class Bot:
             return
         command = message.get("text", "").split(maxsplit=1)[0] if message.get("text") else ""
         command = command.split("@")[0]
-        if command in ("/start", "/reports"):
+        if command=="/assets":
+            parts=message.get('text','').split()
+            if len(parts)>1:
+                try:
+                    if len(parts)!=3: raise ValueError('예: /assets 1000억 5조')
+                    low,high=[None if x=='-' else assets.amount(x) for x in parts[1:]]
+                    with self.store.lock:
+                        p=self.store.settings()
+                        if low is not None and high is not None and low>high: raise ValueError('최소 금액이 최대 금액보다 큽니다')
+                        p['assets']={**assets.config(self.store),'min':low,'max':high}
+                        p['revision']+=1;self.store.set('settings',p)
+                except ValueError as exc:
+                    self.send(str(exc));return
+            text,markup=assets.menu(self.store)
+            self._show(text,markup)
+        elif command in ("/start", "/reports"):
             self.show_menu()
         elif command == "/status":
             self.send(self.status())
