@@ -24,3 +24,13 @@ class AssetTests(unittest.TestCase):
             text,markup=menu(self.s,field)
             for row in markup['inline_keyboard']:
                 for button in row: self.assertLessEqual(len(button['callback_data'].encode()),64)
+
+    def test_heading_truncates_fractional_eok_without_rounding(self):
+        from gongsi.assets import heading_amount
+        from gongsi.extraction import format_notification
+        self.assertEqual(heading_amount(1234599999999),'1조 2,345억원')
+        self.assertEqual(heading_amount(999999999999),'9,999억원')
+        self.assertEqual(heading_amount(1000000000000),'1조 0억원')
+        r={'corp_name':'A & B','rcept_no':'20261027000001','report_nm':'공시','rcept_dt':'20261027'}
+        msg=format_notification(r,html=True,asset={'amount':1234599999999})
+        self.assertIn('A &amp; B (자산총액 1조 2,345억원)',msg)

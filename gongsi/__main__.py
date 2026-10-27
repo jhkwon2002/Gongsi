@@ -55,10 +55,14 @@ def deliver(bot, store, stop):
             except Exception:
                 summary = {'source':'추출 불가 · 원문 확인','fields':[]}
         if store.settings()['revision']!=prefs['revision']: continue
-        message=format_notification(report,summary,html=True)
-        if asset:
-            from html import escape
-            message='자산총액: '+money(asset['amount'])+' · '+('연결' if asset['basis']=='CFS' else '별도')+' · '+escape(asset['report'])+'\n'+message
+        if asset is None and getattr(bot,'extractor',None) is not None:
+            from .assets import lookup
+            try:
+                asset=lookup(bot.extractor,report.get('corp_code',''))
+            except Exception:
+                asset=None
+        if store.settings()['revision']!=prefs['revision']: continue
+        message=format_notification(report,summary,html=True,asset=asset)
         send_recorded(bot,store,report,summary,message,"notification")
         # Telegram has no sendMessage idempotency key: a crash before this commit can repeat a message.
         store.acknowledge(report["rcept_no"])

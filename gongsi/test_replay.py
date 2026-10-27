@@ -75,8 +75,15 @@ def process_requests(bot,store,stop,requests=None):
                     summary=extractor.extract(report)
                 except Exception:
                     summary={'source':'추출 불가 · 원문 확인','fields':[]}
+            asset=None
+            if extractor is not None:
+                from .assets import lookup
+                try:
+                    asset=lookup(extractor,report.get('corp_code',''))
+                except Exception:
+                    pass
             message=f'[테스트 재전송 {index+1}/{len(state["reports"])}]\\n'
-            message=message.replace('\\n','\n')+format_notification(report,summary,html=True)
+            message=message.replace('\\n','\n')+format_notification(report,summary,html=True,asset=asset)
             response=send_recorded(bot,store,report,summary,message,'test_replay')
             state['next']=index+1
             state['message_ids'].append(response.get('message_id'))

@@ -108,3 +108,10 @@ def menu(store,field=None):
               [{'text':'자산 제한 해제','callback_data':f'av:reset:x:{rev}'}],
               [{'text':'↩ 보고서 선택','callback_data':'p:-1'}]]
     return text,{'inline_keyboard':rows}
+
+
+def heading_amount(n):
+    """Truncate to whole eok won, then split into jo and eok."""
+    eok=int(n)//100000000
+    jo,eok=divmod(eok,10000)
+    return (str(jo)+'조 '+format(eok,',')+'억원') if jo else format(eok,',')+'억원'
