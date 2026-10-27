@@ -7027,7 +7027,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T16:50:59+09:00",
+  "last_scan_success": "2026-10-27T16:52:09+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
@@ -7078,7 +7078,7 @@
     "retry_after": 1793080463.369498,
     "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              "
   },
-  "release": "e9f68204fac800475c17c568267370241d6f11c1",
+  "release": "b95f4fb919b0468a63b4ede6e375969cc670a245",
   "replay_progress": {
     "id": "owner-mobileappliance-20261027-v1",
     "requested": 1,
