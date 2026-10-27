@@ -152,6 +152,91 @@
             "status": "013"
           }
         ],
+        "endpoint": "cmpMgDecsn",
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "viewer_not_found",
+            "source": "dart_html",
+            "stage": "html_document_selection"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_reason": "no_data",
+        "reason": "no_data"
+      },
+      "company": "AK\ud640\ub529\uc2a4",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261027",
+      "method": "unavailable",
+      "receipt": "20261027800561",
+      "recorded_at": "2026-10-27T17:09:53+09:00",
+      "release": "2a56cf52c47bc0e4048751c33ee1bd6c80d3550f",
+      "status": "telegram_accepted",
+      "title": "[\ucca8\ubd80\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)(\uc790\ud68c\uc0ac\uc758 \uc8fc\uc694\uacbd\uc601\uc0ac\ud56d)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "viewer_not_found",
+            "source": "dart_html",
+            "stage": "html_document_selection"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ucf00\uc774\ud2f0",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261027",
+      "method": "unavailable",
+      "receipt": "20261027800532",
+      "recorded_at": "2026-10-27T17:09:50+09:00",
+      "release": "2a56cf52c47bc0e4048751c33ee1bd6c80d3550f",
+      "status": "telegram_accepted",
+      "title": "\ubd88\uc131\uc2e4\uacf5\uc2dc\ubc95\uc778\uc9c0\uc815\uc608\uace0              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261027",
+            "end_de": "20261027",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260926",
+            "end_de": "20261027",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
         "endpoint": "piicDecsn",
         "original_attempts": [
           {
@@ -7027,7 +7112,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T17:04:43+09:00",
+  "last_scan_success": "2026-10-27T17:09:47+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
