@@ -4147,7 +4147,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-27T09:59:00+09:00",
+  "last_scan_success": "2026-10-27T10:27:56+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "release": "058b532cf56f56c802f10c710f6fa2bb35ad592d",
   "replay_progress": {
