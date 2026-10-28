@@ -152,6 +152,57 @@
             "status": "013"
           }
         ],
+        "endpoint": "cmpMgDecsn",
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "unsupported_encoding",
+            "source": "dart_html",
+            "stage": "html_decode"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_reason": "no_data",
+        "reason": "no_data"
+      },
+      "company": "SK",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261028",
+      "method": "unavailable",
+      "receipt": "20261028800466",
+      "recorded_at": "2026-10-28T15:59:11+09:00",
+      "release": "46bc3c67950be359f374d797c64539dc4c7e93a7",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ud569\ubcd1\uacb0\uc815)(\uc790\ud68c\uc0ac\uc758 \uc8fc\uc694\uacbd\uc601\uc0ac\ud56d)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261028",
+            "end_de": "20261028",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260927",
+            "end_de": "20261028",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
         "endpoint": "cmpDvDecsn",
         "original_attempts": [
           {
@@ -9163,7 +9214,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-28T15:54:04+09:00",
+  "last_scan_success": "2026-10-28T15:59:08+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
