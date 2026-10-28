@@ -1,58 +1,9 @@
 [
   {
-    "id": "owner-examples-20261027-v1-1",
-    "date": "2026-10-27",
+    "id": "owner-mobis-split-20261028-v1",
+    "date": "2026-10-28",
     "count": 1,
-    "company": "HD현대일렉트릭",
-    "receipt": "20261027800235"
-  },
-  {
-    "id": "owner-examples-20261027-v1-2",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "그린플러스",
-    "receipt": "20261027000191"
-  },
-  {
-    "id": "owner-examples-20261027-v1-3",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "모바일어플라이언스",
-    "receipt": "20261027000235"
-  },
-  {
-    "id": "owner-examples-20261027-v1-4",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "하이브",
-    "receipt": "20261027800573"
-  },
-  {
-    "id": "owner-examples-20261027-v1-5",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "하이브",
-    "receipt": "20261027800546"
-  },
-  {
-    "id": "owner-examples-20261027-v1-6",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "하이브",
-    "receipt": "20261027800539"
-  },
-  {
-    "id": "owner-examples-20261027-v1-7",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "LF",
-    "receipt": "20261027800571"
-  },
-  {
-    "id": "owner-examples-20261027-v1-8",
-    "date": "2026-10-27",
-    "count": 1,
-    "company": "아이윈",
-    "receipt": "20261027000306"
+    "company": "현대모비스",
+    "receipt": "20261028000138"
   }
 ]
