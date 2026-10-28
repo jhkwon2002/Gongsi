@@ -132,7 +132,7 @@ def compact_division(fields):
             rows.setdefault(name,[]).append(value)
         def joined(name):
             return ' / '.join(dict.fromkeys(rows.get(name,[])))
-        for name in ('분할방식','분할목적','존속회사','신설회사','분할비율','분할기일','상장 여부'):
+        for name in ('분할방식','분할목적','존속회사','신설회사','분할비율','신설회사 지분','분할기일','상장 여부'):
             if name=='신설회사':
                 value=' / '.join(part for part in (joined(name),
                                   '사업: '+joined('신설사업') if joined('신설사업') else '') if part)
@@ -223,6 +223,8 @@ def present(report, summary):
                     result.append(pair)
     if not spec:
         result=[(l,v) for l,v in fields if '접수번호' not in l]
+    from .concise import summarize
+    result=summarize(result,schema['endpoint'] if schema else None)
     if schema and schema['endpoint']=='cmpDvDecsn':
         return compact_division(result)
     return concise_fields(result)
