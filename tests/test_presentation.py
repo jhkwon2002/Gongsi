@@ -26,7 +26,7 @@ class PresentationTests(unittest.TestCase):
             with self.subTest(title=report['report_nm']):
                 fields=present(report,summary)
                 self.assertTrue(fields)
-                if expected:
+                if expected and '회사분할결정' not in report['report_nm'].replace(' ',''):
                     self.assertEqual([l for l,v in fields],expected)
                 message=format_notification(report,summary,html=True)
                 self.assertIn('가상기업 &amp; &lt;검증&gt;',message)
@@ -93,3 +93,32 @@ class PresentationTests(unittest.TestCase):
         out=present(report,{'fields':fields})
         self.assertEqual(len(out),1)
         self.assertIn('-1억원',out[0][1])
+
+    def test_division_seven_categories_and_explicit_excerpts(self):
+        report={**REPORT,'report_nm':'[기재정정]주요사항보고서(회사분할결정)'}
+        schema=next(s for s in SCHEMAS if s['endpoint']=='cmpDvDecsn')
+        row={'rcept_no':REPORT['rcept_no'],'dv_mth':'물적분할 '+('설명 '*100),
+             'dv_impef':'효율성 제고 '+('목적 '*100),'atdv_excmp_cmpnm':'존속법인',
+             'dvfcmp_cmpnm':'신설법인','dvfcmp_mbsn':'부품 제조','dv_rt':'1:0.2',
+             'dvdt':'2027-01-01','atdv_excmp_atdv_lstmn_atn':'유지',
+             'dvfcmp_rlst_atn':'미신청','popt_ctr_cn':'표시하지 않을 계약 전문'}
+        fields=structured_fields({'list':[row]},REPORT['rcept_no'],schema)
+        out=present(report,{'fields':fields})
+        self.assertEqual([label for label,value in out],
+                         ['분할방식','분할목적','존속회사','신설회사','분할비율','분할기일','상장 여부'])
+        self.assertIn('… [발췌]',out[0][1])
+        self.assertEqual(out[3][1],'신설법인 / 사업: 부품 제조')
+        self.assertIn('신설회사 재상장신청: 미신청',out[-1][1])
+        self.assertNotIn('계약 전문',str(out))
+
+    def test_division_original_records_and_missing_values(self):
+        report={**REPORT,'report_nm':'주요사항보고서(회사분할결정)'}
+        out=present(report,{'fields':[
+            ('분할설립회사(회사명) [표7]','신설A'),
+            ('분할설립회사(주요사업) [표7]','제조'),
+            ('분할비율 [표7]','0'),('분할기일 [표7]','-'),
+            ('분할설립회사(회사명) [표8]','신설B'),
+            ('분할설립회사(주요사업) [표8]','유통')]})
+        self.assertEqual(len(out),2)
+        self.assertEqual(out[0],('신설회사 [원문표7]','신설A / 사업: 제조'))
+        self.assertEqual(out[1],('신설회사 [원문표8]','신설B / 사업: 유통'))
