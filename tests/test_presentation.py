@@ -122,3 +122,34 @@ class PresentationTests(unittest.TestCase):
         self.assertEqual(len(out),2)
         self.assertEqual(out[0],('신설회사 [원문표7]','신설A / 사업: 제조'))
         self.assertEqual(out[1],('신설회사 [원문표8]','신설B / 사업: 유통'))
+
+    def test_long_narratives_are_excerpted_and_quantities_remain(self):
+        report={**REPORT,'report_nm':'주요사항보고서(회사합병결정)'}
+        schema=next(s for s in SCHEMAS if s['endpoint']=='cmpMgDecsn')
+        row={'rcept_no':REPORT['rcept_no'],'mgptncmp_cmpnm':'상대회사',
+             'mg_mth':'흡수합병 '+('설명 '*100),'mg_pp':'시너지 '+('목적 '*100),
+             'mg_rt':'1 : 1.2937468','mgsc_mgdt':'2027-01-01'}
+        out=present(report,{'fields':structured_fields({'list':[row]},REPORT['rcept_no'],schema)})
+        self.assertEqual([l for l,v in out],['상대회사','합병방식','합병목적','합병비율','합병기일'])
+        self.assertTrue(out[1][1].endswith('… [발췌]'))
+        self.assertLessEqual(len(out[1][1]),108)
+        self.assertEqual(out[-2][1],'1 : 1.2937468')
+        self.assertEqual(out[-1][1],'2027-01-01')
+
+    def test_raw_narrative_and_source_groups_are_excerpted(self):
+        report={**REPORT,'report_nm':'소송등의판결결정'}
+        out=present(report,{'fields':[
+            ('판결결정내용 [표1]','A'*300),('판결결정내용 [표2]','B'*300)]})
+        self.assertEqual(len(out),2)
+        self.assertEqual(out[0][0],'판결내용 [원문표1]')
+        self.assertEqual(out[0][1],'A'*100+'… [발췌]')
+        self.assertEqual(out[1][1],'B'*100+'… [발췌]')
+
+    def test_division_merger_includes_purpose_ratio_and_date(self):
+        report={**REPORT,'report_nm':'주요사항보고서(회사분할합병결정)'}
+        schema=next(s for s in SCHEMAS if s['endpoint']=='cmpDvmgDecsn')
+        row={'rcept_no':REPORT['rcept_no'],'dvmg_impef':'사업효율화',
+             'dvmg_rt':'1 : 0.1234567','dvmgsc_dvmgdt':'2027-02-01'}
+        out=present(report,{'fields':structured_fields({'list':[row]},REPORT['rcept_no'],schema)})
+        self.assertEqual(out,[('분할합병목적','사업효율화'),('분할합병비율','1 : 0.1234567'),
+                              ('분할합병기일','2027-02-01')])
