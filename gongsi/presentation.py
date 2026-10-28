@@ -38,9 +38,9 @@ CONTRACTS={
 'otcprStkInvscrTrfDecsn':'iscmp_cmpnm=대상회사|trfdtl_trfprc=양도금액|trfdtl_stkcnt=양도주식|trf_pp=목적',
 'stkrtbdInhDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|inhdtl_inhprc=양수금액|inh_pp=목적',
 'stkrtbdTrfDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|trfdtl_trfprc=양도금액|trf_pp=목적',
-'cmpMgDecsn':'mgptncmp_cmpnm=상대회사|mg_mth=방법|mg_rt=비율|mg_pp=목적',
+'cmpMgDecsn':'mgptncmp_cmpnm=상대회사|mg_mth=합병방식|mg_pp=합병목적|mg_rt=합병비율|mgsc_mgdt=합병기일',
 'cmpDvDecsn':'dv_mth=분할방식|dv_impef=분할목적|atdv_excmp_cmpnm=존속회사|dvfcmp_cmpnm=신설회사|dvfcmp_mbsn=신설사업|dv_rt=분할비율|dvdt=분할기일|atdv_excmp_atdv_lstmn_atn=존속회사 상장유지|dvfcmp_rlst_atn=신설회사 재상장신청',
-'cmpDvmgDecsn':'dvmg_mth=방법|dv_trfbsnprt_cn=이전사업|atdv_excmp_cmpnm=존속회사|mgptncmp_cmpnm=합병상대',
+'cmpDvmgDecsn':'dvmg_mth=분할합병방식|dvmg_impef=분할합병목적|dv_trfbsnprt_cn=이전사업|atdv_excmp_cmpnm=존속회사|mgptncmp_cmpnm=합병상대|dvmg_rt=분할합병비율|dvmgsc_dvmgdt=분할합병기일',
 'stkExtrDecsn':'extr_sen=구분|extr_tgcmp_cmpnm=대상법인|extr_stn=형태|extr_rt=교환비율|extr_pp=목적',
 'estkRs':'stksen=증권종류|stkcnt=수량|slprc=모집가액|slta=모집총액|sbd=청약기일|pymd=납입기일',
 'bdRs':'bdnmn=증권종류|slta=모집총액|sbd=청약기일|pymd=납입기일|dpcrn=표시통화',
@@ -145,6 +145,28 @@ def compact_division(fields):
                 output.append((name+group,value))
     return output
 
+
+# Exact display labels only. Amounts, ratios, dates and financial context stay intact.
+NARRATIVE_LABELS=frozenset((
+    '보고사유','사유','대상','방식','방법','목적','해지목적','청구내용','폐지사유',
+    '향후대책','자산','교환대상','이전사업','형태','관련 일정',
+    '합병방식','합병목적','분할합병방식','분할합병목적',
+    '계약명','계약조건','담보재산','근거·방법','안건','결의내용','재무제표승인',
+    '주요내용','목표','시험명','판결내용','거래목적',
+))
+
+def concise_fields(fields):
+    """Bound narrative excerpts without interpreting or rewriting source facts."""
+    output=[]
+    for label,value in fields:
+        bare=re.sub(r' \[(?:증권·항목|원문표)\d+\]$','',label)
+        if bare in NARRATIVE_LABELS:
+            value=re.sub(r'\s+',' ',str(value)).strip()
+            if len(value)>100:
+                value=value[:100]+'… [발췌]'
+        output.append((label,value))
+    return output
+
 def present(report, summary):
     # Lazy import avoids extraction/presentation circular imports.
     from .extraction import schema_for, SCHEMAS, RAW_PROFILES
@@ -203,7 +225,7 @@ def present(report, summary):
         result=[(l,v) for l,v in fields if '접수번호' not in l]
     if schema and schema['endpoint']=='cmpDvDecsn':
         return compact_division(result)
-    return result
+    return concise_fields(result)
 
 RAW_NAMES={'투자구분':'투자구분','투자금액':'투자금액','자기자본대비':'자기자본 대비','투자목적':'목적','시작일':'기간 시작','종료일':'기간 종료','체결계약명':'계약명','계약금액':'계약금액','매출액대비':'매출 대비','계약상대':'상대방','계약상대방':'상대방','판매공급지역':'공급지역','주요계약조건':'계약조건','현금배당':'주당배당금','1주당배당금':'주당배당금','배당금총액':'배당총액','배당기준일':'기준일','소각할주식의종류와수':'소각주식','소각예정금액':'예정금액','소각예정일':'예정일','소각할주식의취득방법':'취득방법','채무보증금액':'보증금액','채무보증기간':'기간','담보설정금액':'설정금액','담보제공재산':'담보재산','조정전가액':'조정 전','조정후가액':'조정 후','조정사유':'사유','조정근거및방법':'근거·방법','조정가액적용일':'적용일','의안주요내용':'안건','주주총회구분':'구분','주주총회일자':'개최일','주주총회일시':'개최일시','취득주식수':'취득수량','처분주식수':'처분수량','취득가액총액':'취득총액','처분가액총액':'처분총액','개최목적':'목적','주요설명회내용':'주요내용','거래수량':'예정수량','거래목적':'목적','예정거래기간':'예정기간','사건명칭':'사건명','판결결정내용':'판결내용','판결결정일자':'판결일'}
 RAW_NAMES.update({'임상시험명칭':'시험명','임상시험단계':'단계','임상시험승인기관':'승인기관','임상시험실시국가':'실시국가','임상시험실시기관':'실시기관','대상질환':'대상질환','신청일':'신청일','승인일':'승인일','임상시험목적':'목적','임상시험방법':'방법','임상시험기간':'기간','목표 시험대상자 수':'목표 대상자'})
