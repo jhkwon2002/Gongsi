@@ -414,9 +414,11 @@ def format_notification(report, summary=None, html=False, asset=None):
         company+=' (자산총액 '+heading_amount(asset['amount'])+')'
     heading = '🏢 <b>'+escape(company)+'</b>' if html else '🏢 '+company
     lines = [heading, '', encode(title), '접수일: '+encode(report['rcept_dt'])]
+    body=[]
+    tail=[]
     if summary:
         lines.append('주요항목 발췌 · '+encode(summary['source']))
-        from .presentation import present,has_value
+        from .presentation import present,has_value,notification_groups
         display_fields = present(report, summary)
         if summary.get('reference_receipt'):
             lines.append('아래 값은 이전 본문 참고 정보입니다. 이번 정정 첨부를 반영한 최신 조건으로 확인된 값이 아닙니다.')
@@ -424,15 +426,25 @@ def format_notification(report, summary=None, html=False, asset=None):
             lines.append('<a href="'+reference_url+'">이전 본문 보기</a>' if html else reference_url)
         if not display_fields and (not summary.get('fields') or any(has_value(value,label) for label,value in summary['fields'])):
             lines.append('핵심 항목을 확보하지 못했습니다. 원문을 확인해 주세요.')
-        for label,value in display_fields:
-            if '접수번호' in label:
+        for group_title,rows in notification_groups(display_fields):
+            visible=[(label,value) for label,value in rows if '접수번호' not in label]
+            if not visible:
                 continue
-            lines.append('• '+encode(text(label,90))+': '+encode(text(value,230)))
+            if group_title:
+                title_line=encode(group_title)
+                body.append((True,'\n<b>'+title_line+'</b>' if html else '\n'+title_line))
+            for label,value in visible:
+                body.append((False,'• '+encode(text(label,90))+': '+encode(text(value,230))))
         if summary.get('withheld'):
-            lines.append('일부 표·항목은 구조가 불명확하여 추출을 보류했습니다. 원문을 확인해 주세요.')
-        lines.append('전체 내용·조건·정정 여부는 원문에서 확인하세요.')
+            tail.append('일부 표·항목은 구조가 불명확하여 추출을 보류했습니다. 원문을 확인해 주세요.')
+        tail.append('전체 내용·조건·정정 여부는 원문에서 확인하세요.')
     url = 'https://dart.fss.or.kr/dsaf001/main.do?'+urlencode({'rcpNo':report['rcept_no']})
-    lines.append('<a href="'+escape(url,quote=True)+'">📄 원문 보기</a>' if html else url)
-    while len('\n'.join(lines).encode('utf-16-le'))//2 > 3800 and len(lines)>5:
-        lines.pop(-3)
-    return '\n'.join(lines)
+    tail.append('<a href="'+escape(url,quote=True)+'">📄 원문 보기</a>' if html else url)
+    def message():
+        return '\n'.join(lines+[line for is_heading,line in body]+tail)
+    while len(message().encode('utf-16-le'))//2 > 3800 and body:
+        body.pop()
+        # A group heading must never remain without any of its own fields.
+        while body and body[-1][0]:
+            body.pop()
+    return message()

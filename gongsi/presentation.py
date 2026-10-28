@@ -231,3 +231,35 @@ def present(report, summary):
 
 RAW_NAMES={'투자구분':'투자구분','투자금액':'투자금액','자기자본대비':'자기자본 대비','투자목적':'목적','시작일':'기간 시작','종료일':'기간 종료','체결계약명':'계약명','계약금액':'계약금액','매출액대비':'매출 대비','계약상대':'상대방','계약상대방':'상대방','판매공급지역':'공급지역','주요계약조건':'계약조건','현금배당':'주당배당금','1주당배당금':'주당배당금','배당금총액':'배당총액','배당기준일':'기준일','소각할주식의종류와수':'소각주식','소각예정금액':'예정금액','소각예정일':'예정일','소각할주식의취득방법':'취득방법','채무보증금액':'보증금액','채무보증기간':'기간','담보설정금액':'설정금액','담보제공재산':'담보재산','조정전가액':'조정 전','조정후가액':'조정 후','조정사유':'사유','조정근거및방법':'근거·방법','조정가액적용일':'적용일','의안주요내용':'안건','주주총회구분':'구분','주주총회일자':'개최일','주주총회일시':'개최일시','취득주식수':'취득수량','처분주식수':'처분수량','취득가액총액':'취득총액','처분가액총액':'처분총액','개최목적':'목적','주요설명회내용':'주요내용','거래수량':'예정수량','거래목적':'목적','예정거래기간':'예정기간','사건명칭':'사건명','판결결정내용':'판결내용','판결결정일자':'판결일'}
 RAW_NAMES.update({'임상시험명칭':'시험명','임상시험단계':'단계','임상시험승인기관':'승인기관','임상시험실시국가':'실시국가','임상시험실시기관':'실시기관','대상질환':'대상질환','신청일':'신청일','승인일':'승인일','임상시험목적':'목적','임상시험방법':'방법','임상시험기간':'기간','목표 시험대상자 수':'목표 대상자'})
+
+
+def notification_groups(fields):
+    """Hide source IDs only at rendering; never merge different source records."""
+    marker=re.compile(r' \[(?:원문표|증권·항목|표|항목)\d+\]$')
+    groups={}
+    for label,value in fields:
+        match=marker.search(label)
+        group=match.group(0) if match else ''
+        bare=label[:match.start()] if match else label
+        groups.setdefault(group,[]).append((bare,value))
+    if len(groups)<=1:
+        return [(None,rows) for rows in groups.values()]
+    candidates=[]
+    company_labels=('대상회사','상대회사','발행회사','대상법인','합병상대','존속회사','신설회사','보고자')
+    for rows in groups.values():
+        def identity(names):
+            # Ambiguous or excerpted identities cannot name a whole record.
+            values=list(dict.fromkeys(str(value).strip() for label,value in rows
+                                      if label in names and has_value(value,label)))
+            return values[0] if len(values)==1 and len(values[0])<=80 and '…' not in values[0] else ''
+        company=identity(company_labels)
+        security=identity(('증권종류','주식의종류','주식의 종류'))
+        candidates.append(' · '.join(value for value in (company,security) if value))
+    result=[]
+    for index,(rows,title) in enumerate(zip(groups.values(),candidates),1):
+        if not title:
+            title='별도 항목 '+str(index)
+        elif candidates.count(title)>1:
+            title+=' (구분 '+str(index)+')'
+        result.append((title,rows))
+    return result
