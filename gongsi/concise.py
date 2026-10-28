@@ -10,7 +10,8 @@ DATES=frozenset(('분할기일','합병기일','분할합병기일','기간 시�
                  '확인일자','배당금지급예정일자','개최일'))
 # Refuse interpretation of alternatives, negation, amendments or conditional plans.
 RISK=re.compile(r'아니|아닌|아닙|아님|않|불가|검토|비교|예시|가정|가능|경우|조건|철회|취소|'
-                r'정정\s*전|정정\s*후|변경\s*전|변경\s*후|대신')
+                r'정정\s*전|정정\s*후|변경\s*전|변경\s*후|대신|다만|단,|제외|유보|'
+                r'승인.{0,15}시|동의.{0,15}시|충족.{0,15}시')
 METHODS={
     ('cmpDvDecsn','분할방식'):('물적분할','인적분할'),
     ('cmpMgDecsn','합병방식'):('흡수합병','신설합병'),

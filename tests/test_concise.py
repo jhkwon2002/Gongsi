@@ -31,7 +31,9 @@ class ConciseTests(unittest.TestCase):
         for value in ('물적분할이 아닙니다','물적분할을 검토 중입니다',
                       '물적분할 방식으로 진행하지 않습니다','물적분할 또는 인적분할',
                       '정정 전: 물적분할, 정정 후: 인적분할',
-                      '물적분할 방식으로 진행하는 경우'):
+                      '물적분할 방식으로 진행하는 경우',
+                      '물적분할 방식으로 진행합니다. 다만 승인을 받으면 시행합니다.',
+                      '물적분할 방식으로 진행합니다. 주주총회 승인 시 시행합니다.'):
             with self.subTest(value=value):
                 self.assertIsNone(compact_method(value,terms))
 
