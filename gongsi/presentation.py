@@ -39,7 +39,7 @@ CONTRACTS={
 'stkrtbdInhDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|inhdtl_inhprc=양수금액|inh_pp=목적',
 'stkrtbdTrfDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|trfdtl_trfprc=양도금액|trf_pp=목적',
 'cmpMgDecsn':'mgptncmp_cmpnm=상대회사|mg_mth=방법|mg_rt=비율|mg_pp=목적',
-'cmpDvDecsn':'dv_mth=방법|dv_rt=분할비율|dv_trfbsnprt_cn=이전사업|atdv_excmp_cmpnm=존속회사',
+'cmpDvDecsn':'dv_mth=분할방식|dv_impef=분할목적|atdv_excmp_cmpnm=존속회사|dvfcmp_cmpnm=신설회사|dvfcmp_mbsn=신설사업|dv_rt=분할비율|dvdt=분할기일|atdv_excmp_atdv_lstmn_atn=존속회사 상장유지|dvfcmp_rlst_atn=신설회사 재상장신청',
 'cmpDvmgDecsn':'dvmg_mth=방법|dv_trfbsnprt_cn=이전사업|atdv_excmp_cmpnm=존속회사|mgptncmp_cmpnm=합병상대',
 'stkExtrDecsn':'extr_sen=구분|extr_tgcmp_cmpnm=대상법인|extr_stn=형태|extr_rt=교환비율|extr_pp=목적',
 'estkRs':'stksen=증권종류|stkcnt=수량|slprc=모집가액|slta=모집총액|sbd=청약기일|pymd=납입기일',
@@ -112,6 +112,39 @@ def has_value(value, label=''):
             return any(has_value(match.group(1),label) for match in values)
     return True
 
+
+def compact_division(fields):
+    """Seven display categories; keep separate source records and mark excerpts."""
+    output=[]
+    def suffix(label):
+        match=re.search(r' \[.*\]$',label)
+        return match.group(0) if match else ''
+    groups=list(dict.fromkeys(suffix(label) for label,value in fields))
+    for group in groups:
+        rows={}
+        for label,value in fields:
+            if suffix(label)!=group:
+                continue
+            name=label[:-len(group)] if group else label
+            value=re.sub(r'\s+',' ',str(value)).strip()
+            limit=100 if name in ('분할방식','분할목적') else 80
+            value=value[:limit]+'… [발췌]' if len(value)>limit else value
+            rows.setdefault(name,[]).append(value)
+        def joined(name):
+            return ' / '.join(dict.fromkeys(rows.get(name,[])))
+        for name in ('분할방식','분할목적','존속회사','신설회사','분할비율','분할기일','상장 여부'):
+            if name=='신설회사':
+                value=' / '.join(part for part in (joined(name),
+                                  '사업: '+joined('신설사업') if joined('신설사업') else '') if part)
+            elif name=='상장 여부':
+                value=' / '.join(label+': '+joined(label) for label in
+                                  ('존속회사 상장유지','신설회사 재상장신청') if joined(label))
+            else:
+                value=joined(name)
+            if value:
+                output.append((name+group,value))
+    return output
+
 def present(report, summary):
     # Lazy import avoids extraction/presentation circular imports.
     from .extraction import schema_for, SCHEMAS, RAW_PROFILES
@@ -168,6 +201,8 @@ def present(report, summary):
                     result.append(pair)
     if not spec:
         result=[(l,v) for l,v in fields if '접수번호' not in l]
+    if schema and schema['endpoint']=='cmpDvDecsn':
+        return compact_division(result)
     return result
 
 RAW_NAMES={'투자구분':'투자구분','투자금액':'투자금액','자기자본대비':'자기자본 대비','투자목적':'목적','시작일':'기간 시작','종료일':'기간 종료','체결계약명':'계약명','계약금액':'계약금액','매출액대비':'매출 대비','계약상대':'상대방','계약상대방':'상대방','판매공급지역':'공급지역','주요계약조건':'계약조건','현금배당':'주당배당금','1주당배당금':'주당배당금','배당금총액':'배당총액','배당기준일':'기준일','소각할주식의종류와수':'소각주식','소각예정금액':'예정금액','소각예정일':'예정일','소각할주식의취득방법':'취득방법','채무보증금액':'보증금액','채무보증기간':'기간','담보설정금액':'설정금액','담보제공재산':'담보재산','조정전가액':'조정 전','조정후가액':'조정 후','조정사유':'사유','조정근거및방법':'근거·방법','조정가액적용일':'적용일','의안주요내용':'안건','주주총회구분':'구분','주주총회일자':'개최일','주주총회일시':'개최일시','취득주식수':'취득수량','처분주식수':'처분수량','취득가액총액':'취득총액','처분가액총액':'처분총액','개최목적':'목적','주요설명회내용':'주요내용','거래수량':'예정수량','거래목적':'목적','예정거래기간':'예정기간','사건명칭':'사건명','판결결정내용':'판결내용','판결결정일자':'판결일'}
