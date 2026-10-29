@@ -134,6 +134,57 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261029",
+            "end_de": "20261029",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20260928",
+            "end_de": "20261029",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
+        "endpoint": "otcprStkInvscrTrfDecsn",
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "unsupported_encoding",
+            "source": "dart_html",
+            "stage": "html_decode"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_reason": "no_data",
+        "reason": "no_data"
+      },
+      "company": "NHN",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261029",
+      "method": "unavailable",
+      "receipt": "20261029800841",
+      "recorded_at": "2026-10-29T17:39:26+09:00",
+      "release": "e967757a1079bce787d934c318d533d755a418fc",
+      "status": "telegram_accepted",
+      "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucc98\ubd84\uacb0\uc815              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [],
         "endpoint": null,
         "original_attempts": [
@@ -11612,7 +11663,7 @@
     }
   ],
   "historical_replays": [],
-  "last_scan_success": "2026-10-29T17:34:16+09:00",
+  "last_scan_success": "2026-10-29T17:39:22+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
