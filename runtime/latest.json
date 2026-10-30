@@ -134,6 +134,56 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_attempts": [
+          {
+            "field_count": 5,
+            "reason": "fields_available",
+            "source": "document_api",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 5,
+        "original_reason": "no_structured_api",
+        "original_source": "document_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ud2f0\uc528\ucf00\uc774",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\ud22c\uc790\uae08\uc561 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc790\uae30\uc790\ubcf8\ub300\ube44 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ud22c\uc790\ubaa9\uc801 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc2dc\uc791\uc77c [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc885\ub8cc\uc77c [\ud45c4]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261030",
+      "method": "original_table",
+      "receipt": "20261030900534",
+      "recorded_at": "2026-10-30T15:36:01+09:00",
+      "release": "e967757a1079bce787d934c318d533d755a418fc",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1(\uc790\uc728\uacf5\uc2dc)              ",
+      "withheld": true
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261030",
@@ -12268,8 +12318,46 @@
       "withheld": false
     }
   ],
+  "encoding_diagnostics": {
+    "attempts": 1,
+    "checked_at": "2026-10-30T15:36:31+09:00",
+    "company": "NHN",
+    "complete": true,
+    "evidence": {
+      "original_attempts": [
+        {
+          "field_count": 10,
+          "reason": "fields_available",
+          "source": "document_api",
+          "stage": "table"
+        }
+      ],
+      "original_source": "document_api"
+    },
+    "extracted_field_count": 10,
+    "fields": [
+      {
+        "label": "\ub300\uc0c1\ud68c\uc0ac",
+        "value": "\uc544\uc774\ud30c\ud0b9"
+      },
+      {
+        "label": "\uc591\ub3c4\uc8fc\uc2dd",
+        "value": "530.5591\ub9cc\uc8fc"
+      },
+      {
+        "label": "\ubaa9\uc801",
+        "value": "\uc0ac\uc5c5 \uad6c\uc870 \uc7ac\ud3b8\uc744 \ud1b5\ud55c \uacbd\uc601 \ud6a8\uc728\ud654 \ucd94\uc9c4"
+      }
+    ],
+    "note": "Read-only original recheck; no Telegram send or delivery-state change.",
+    "reason": "fields_available",
+    "receipt": "20261029800841",
+    "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
+    "retry_after": 1793342491.945494,
+    "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucc98\ubd84\uacb0\uc815              "
+  },
   "historical_replays": [],
-  "last_scan_success": "2026-10-30T15:35:31+09:00",
+  "last_scan_success": "2026-10-30T15:36:30+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
@@ -12320,7 +12408,7 @@
     "retry_after": 1793080463.369498,
     "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              "
   },
-  "release": "e967757a1079bce787d934c318d533d755a418fc",
+  "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
   "replay_progress": {
     "id": "owner-mobis-rules-20261028-v2",
     "requested": 1,
