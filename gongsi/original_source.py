@@ -1,5 +1,6 @@
 """Bounded same-filing HTML fallback; no JavaScript execution or guessed IDs."""
 import re
+import codecs
 from urllib.parse import urlencode, urlsplit
 from urllib.request import Request, urlopen
 
@@ -7,8 +8,9 @@ MAX_PAGE = 4 * 1024 * 1024
 
 
 class OriginalSourceError(ValueError):
-    def __init__(self, stage, reason):
+    def __init__(self, stage, reason, responses=None):
         self.stage, self.reason = stage, reason
+        self.html_responses = list(responses or [])[:2]
         super().__init__(reason)
 
 
@@ -30,25 +32,109 @@ def failure(exc, stage):
         stage, reason = exc.stage, exc.reason
     else:
         stage, reason = codes.get(str(exc), (stage, 'request_or_parse_error'))
-    return {'stage': stage, 'reason': reason, 'error_type': type(exc).__name__}
+    result = {'stage': stage, 'reason': reason, 'error_type': type(exc).__name__}
+    if isinstance(exc, OriginalSourceError) and exc.html_responses:
+        result['html_responses'] = exc.html_responses
+    return result
+
+
+class HtmlText(str):
+    def __new__(cls, value, responses):
+        result = super().__new__(cls, value)
+        result.html_responses = list(responses)[:2]
+        return result
+
+
+def charset_name(value):
+    """Resolve aliases only within the existing UTF-8/Korean encoding families."""
+    if not isinstance(value, str):
+        return None
+    value = value.strip().lower()
+    if not re.fullmatch(r'[a-z0-9][a-z0-9_.-]{0,79}', value):
+        return None
+    value = {'windows-949': 'cp949', 'x-windows-949': 'cp949'}.get(value, value)
+    try:
+        name = codecs.lookup(value).name
+    except LookupError:
+        return None
+    return name if name in ('utf-8', 'utf-8-sig', 'euc_kr', 'cp949') else None
+
+
+def charset_label(value):
+    if not value:
+        return 'absent'
+    if isinstance(value, str) and re.fullmatch(r'[a-zA-Z][a-zA-Z0-9_.-]{0,39}', value.strip()):
+        return value.strip().lower()
+    return 'invalid'
+
+
+def decode_html(data, header_charset=None, response_info=None):
+    """Compare declarations on the same bytes; never replace undecodable bytes."""
+    info = dict(response_info or {})
+    prefix = re.sub(br'<!--.*?-->', b'', data[:8192], flags=re.S)
+    declarations = []
+    for tag in re.findall(br'<meta\b[^>]{0,1024}>', prefix, re.I):
+        match = re.search(br'charset\s*=\s*[\x27\x22]?([a-zA-Z0-9_.-]{1,80})', tag, re.I)
+        if match:
+            declarations.append(match.group(1).decode('ascii'))
+    declarations = list(dict.fromkeys(declarations))[:4]
+    info.update(header_charset=charset_label(header_charset),
+                meta_charsets=[charset_label(value) for value in declarations])
+    header = charset_name(header_charset)
+    meta = list(dict.fromkeys(charset_name(value) for value in declarations if charset_name(value)))
+    names = list(dict.fromkeys(([header] if header else []) + meta))
+    info['declaration_conflict'] = len(names) > 1
+    def fail(reason):
+        raise OriginalSourceError('html_decode', reason, [info])
+    if data.startswith(b'\xef\xbb\xbf'):
+        candidates = [('utf-8-sig', 'bom')]
+    elif data.startswith((b'\xff\xfe', b'\xfe\xff')):
+        fail('unsupported_encoding')
+    elif names:
+        candidates = [(name, 'header' if name == header else 'meta') for name in names]
+    else:
+        # UTF-8 is the existing default; do not guess between legacy encodings.
+        candidates = [('utf-8', 'utf8_fallback' if header_charset or declarations else 'default')]
+    decoded = []
+    for name, origin in candidates:
+        try:
+            text = data.decode(name, errors='strict')
+        except UnicodeError:
+            continue
+        decoded.append((name, origin, text))
+    if not decoded:
+        fail('decode_error' if names or not (header_charset or declarations) else 'unsupported_encoding')
+    if len({text for name, origin, text in decoded}) != 1:
+        fail('ambiguous_encoding')
+    name, origin, text = decoded[0]
+    if not re.search(r'<(?:!doctype\s+html|html\b|head\b|body\b|meta\b|table\b)', text[:65536], re.I):
+        fail('not_html')
+    info.update(selected_encoding=name, encoding_source=origin)
+    return HtmlText(text, [info])
 
 
 def read_html(url):
     request = Request(url, headers={'User-Agent': 'GongsiBot/1.0'})
+    page = {'/dsaf001/main.do': 'main', '/report/viewer.do': 'viewer'}.get(urlsplit(url).path, 'other')
+    info = {'page': page}
     with urlopen(request, timeout=8) as response:
         target = urlsplit(response.geturl())
         if target.scheme != 'https' or target.hostname != 'dart.fss.or.kr':
-            raise OriginalSourceError('html_download', 'unexpected_redirect')
+            raise OriginalSourceError('html_download', 'unexpected_redirect', [info])
         data = response.read(MAX_PAGE + 1)
         encoding = response.headers.get_content_charset()
+        content_type = response.headers.get_content_type()
+        info['content_type'] = (content_type if content_type in (
+            'text/html', 'application/xhtml+xml', 'text/plain', 'application/octet-stream') else 'other')
+        status = response.getcode()
+        if isinstance(status, int) and not isinstance(status, bool) and 100 <= status <= 599:
+            info['http_status'] = status
     if len(data) > MAX_PAGE:
-        raise OriginalSourceError('html_download', 'size_limit')
-    if not encoding:
-        match = re.search(br'charset\s*=\s*[\'\"]?([a-zA-Z0-9_.-]+)', data[:4096], re.I)
-        encoding = match.group(1).decode('ascii') if match else 'utf-8'
-    if encoding.lower() not in ('utf-8', 'utf8', 'euc-kr', 'cp949', 'ks_c_5601-1987'):
-        raise OriginalSourceError('html_decode', 'unsupported_encoding')
-    return data.decode(encoding, errors='strict')
+        raise OriginalSourceError('html_download', 'size_limit', [info])
+    info['bytes'] = len(data)
+    if info['content_type'] == 'other':
+        raise OriginalSourceError('html_download', 'unexpected_content_type', [info])
+    return decode_html(data, encoding, info)
 
 
 def viewer_params(page, receipt):
@@ -94,9 +180,15 @@ def html_document(extractor, receipt):
         raise OriginalSourceError('html_document_selection', 'invalid_receipt')
     extractor.store.reserve_dart_request(extractor.daily_limit)
     page = read_html('https://dart.fss.or.kr/dsaf001/main.do?' + urlencode({'rcpNo': receipt}))
-    params = viewer_params(page, receipt)
-    extractor.store.reserve_dart_request(extractor.daily_limit)
-    return read_html('https://dart.fss.or.kr/report/viewer.do?' + urlencode(params))
+    try:
+        params = viewer_params(page, receipt)
+        extractor.store.reserve_dart_request(extractor.daily_limit)
+        body = read_html('https://dart.fss.or.kr/report/viewer.do?' + urlencode(params))
+    except OriginalSourceError as exc:
+        exc.html_responses = (list(getattr(page, 'html_responses', [])) + exc.html_responses)[:2]
+        raise
+    return HtmlText(body, list(getattr(page, 'html_responses', [])) +
+                    list(getattr(body, 'html_responses', [])))
 
 
 def original_fields(extractor, receipt, aliases, evidence):
@@ -119,7 +211,10 @@ def original_fields(extractor, receipt, aliases, evidence):
                 'api_status_010', 'api_status_011', 'api_status_012', 'api_status_020'):
             raise
     try:
-        fields = raw_fields(html_document(extractor, receipt), aliases)
+        body = html_document(extractor, receipt)
+        if getattr(body, 'html_responses', None):
+            evidence['html_responses'] = body.html_responses
+        fields = raw_fields(body, aliases)
         attempts.append({'source': 'dart_html', 'stage': 'table',
                          'reason': 'fields_available' if fields else 'no_matching_fields',
                          'field_count': len(fields)})

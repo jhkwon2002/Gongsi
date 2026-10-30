@@ -8,6 +8,7 @@ KEY='api_probe_20261026_v2'
 
 
 def run_probe(bot,store):
+    run_encoding_probe(bot,store,now_kst())
     run_original_probe(bot,store,now_kst())
     run_structure_probe(bot,store,now_kst())
     run_routing_recheck(bot,store,now_kst())
@@ -161,3 +162,50 @@ def run_routing_recheck(bot,store,now):
         except Exception as exc:
             results.append({'receipt':receipt,'error_type':type(exc).__name__})
     store.set('routing_recheck_v1',{'checked_at':now.isoformat(),'release':store.get('release'),'results':results})
+
+
+ENCODING_KEY='encoding_probe_nhn_20261030_v1'
+
+
+def run_encoding_probe(bot,store,now):
+    """Three bounded read-only attempts on the requested NHN filing; no replay."""
+    if not '2026-10-30' <= now.date().isoformat() <= '2026-11-01':
+        return
+    previous=store.get(ENCODING_KEY,{})
+    if previous.get('complete') or previous.get('attempts',0)>=3:
+        return
+    if now.timestamp()<previous.get('retry_after',0):
+        return
+    extractor=getattr(bot,'extractor',None)
+    if extractor is None:
+        return
+    receipt='20261029800841'
+    result={'receipt':receipt,'checked_at':now.isoformat(timespec='seconds'),
+            'release':store.get('release','unknown'),'attempts':previous.get('attempts',0)+1,
+            'retry_after':now.timestamp()+300,'complete':False,
+            'note':'Read-only original recheck; no Telegram send or delivery-state change.'}
+    with store.lock:
+        row=store.db.execute('SELECT data FROM reports WHERE receipt=?',(receipt,)).fetchone()
+    if not row:
+        result['reason']='report_not_in_database'
+        store.set(ENCODING_KEY,result)
+        return
+    report=json.loads(row[0])
+    schema=schema_for(report['report_nm'])
+    if report.get('corp_name')!='NHN' or not schema or schema['endpoint']!='otcprStkInvscrTrfDecsn':
+        result['reason']='report_identity_mismatch'
+        store.set(ENCODING_KEY,result)
+        return
+    from .original_source import original_fields,failure
+    from .presentation import present
+    evidence={}
+    result.update(company='NHN',title=report['report_nm'][:220],evidence=evidence)
+    try:
+        fields=original_fields(extractor,receipt,[f['label'] for f in schema['fields']],evidence)
+        display=present(report,{'source':'원문 표','fields':fields})
+        result.update(extracted_field_count=len(fields),
+                      fields=[{'label':label,'value':value} for label,value in display[:12]],
+                      complete=bool(display),reason='fields_available' if display else 'no_display_fields')
+    except Exception as exc:
+        result.update(reason='original_failed',error=failure(exc,'original_recheck'))
+    store.set(ENCODING_KEY,result)
