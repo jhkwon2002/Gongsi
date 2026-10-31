@@ -13302,7 +13302,7 @@
     "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucc98\ubd84\uacb0\uc815              "
   },
   "historical_replays": [],
-  "last_scan_success": "2026-10-31T11:17:22+09:00",
+  "last_scan_success": "2026-10-31T11:22:26+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
