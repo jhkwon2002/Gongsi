@@ -136,6 +136,40 @@
       "api_evidence": {
         "attempts": [],
         "endpoint": null,
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "error_type": "URLError",
+            "reason": "request_or_parse_error",
+            "source": "dart_html",
+            "stage": "html_download"
+          }
+        ],
+        "original_error": "URLError",
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ucf54\uc2a4\ub9e5\uc2a4\ube44\ud2f0\uc544\uc774",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261102",
+      "method": "unavailable",
+      "receipt": "20261102800575",
+      "recorded_at": "2026-11-02T15:59:38+09:00",
+      "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1(\uc790\ud68c\uc0ac\uc758 \uc8fc\uc694\uacbd\uc601\uc0ac\ud56d)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
         "html_responses": [
           {
             "bytes": 36947,
@@ -13463,43 +13497,6 @@
       "status": "telegram_accepted",
       "title": "[\uae30\uc7ac\uc815\uc815]\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              ",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261026",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20260925",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "cmpDvDecsn",
-        "original_error": "ValueError",
-        "original_reason": "no_data",
-        "reason": "no_data"
-      },
-      "company": "\ud558\ub9bc\uc0b0\uc5c5",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261026",
-      "method": "unavailable",
-      "receipt": "20261026000366",
-      "recorded_at": "2026-10-26T17:41:40+09:00",
-      "release": "40930d478163419b6d8f40acdb80729d7eb08931",
-      "status": "telegram_accepted",
-      "title": "\ud68c\uc0ac\ubd84\ud560\uacb0\uc815",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -13541,7 +13538,7 @@
     "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucc98\ubd84\uacb0\uc815              "
   },
   "historical_replays": [],
-  "last_scan_success": "2026-11-02T15:54:32+09:00",
+  "last_scan_success": "2026-11-02T15:59:33+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
