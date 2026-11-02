@@ -13874,7 +13874,7 @@
       "title": "\ud22c\uc790\ud310\ub2e8\uad00\ub828\uc8fc\uc694\uacbd\uc601\uc0ac\ud56d              (\"\ud0dc\ubc31\uc120 \uc678 1\uac1c\ub178\uc120 \ucca0\ub3c4\ud1b5\ud569\ubb34\uc120\ub9dd(LTE-R) \uac1c\ub7c9 \uae30\ud0c0\uacf5\uc0ac\" \ub099\ucc30)"
     }
   ],
-  "last_scan_success": "2026-11-02T17:49:22+09:00",
+  "last_scan_success": "2026-11-02T17:54:25+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
