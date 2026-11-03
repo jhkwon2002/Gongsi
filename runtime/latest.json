@@ -14641,7 +14641,7 @@
       "title": "\uc601\uc5c5\uc591\uc218\uacb0\uc815(\uc885\uc18d\ud68c\uc0ac\uc758\uc8fc\uc694\uacbd\uc601\uc0ac\ud56d)              "
     }
   ],
-  "last_scan_success": "2026-11-03T21:52:45+09:00",
+  "last_scan_success": "2026-11-03T21:57:50+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
