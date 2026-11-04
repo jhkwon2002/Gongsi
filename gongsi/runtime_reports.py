@@ -44,6 +44,51 @@ def send_recorded(bot,store,report,summary,message,context):
     return response
 
 
+
+def requested_filing_review(store):
+    """Expose only the explicitly requested filing's existing public extraction."""
+    receipt='20261104800428'
+    result={'receipt':receipt,'status':'report_not_in_database','fields':[]}
+    with store.lock:
+        row=store.db.execute('SELECT data FROM reports WHERE receipt=?',(receipt,)).fetchone()
+    if not row:
+        return result
+    report=json.loads(row[0])
+    if (report.get('rcept_no')!=receipt or report.get('corp_name')!='현대지에프홀딩스'
+            or report.get('rcept_dt')!='20261104'):
+        result['status']='report_identity_mismatch'
+        return result
+    result.update(company='현대지에프홀딩스',title=str(report.get('report_nm',''))[:220],
+                  filing_date='20261104')
+    cached=None
+    for key in ('extraction_evidence:'+receipt,'extract_v5:'+receipt):
+        candidate=store.get(key)
+        if isinstance(candidate,dict) and candidate.get('fields'):
+            cached=candidate
+            break
+    if not cached:
+        result['status']='extraction_cache_missing'
+        return result
+    fields=cached.get('fields')
+    if not isinstance(fields,list) or len(fields)>100:
+        result['status']='invalid_cached_fields'
+        return result
+    output=[]
+    for pair in fields:
+        if (not isinstance(pair,(list,tuple)) or len(pair)!=2 or
+                not all(isinstance(value,str) for value in pair) or
+                len(pair[0])>300 or len(pair[1])>2200):
+            result['status']='invalid_cached_fields'
+            return result
+        output.append({'label':pair[0],'value':pair[1]})
+    result.update(status='cached_public_fields',fields=output,field_count=len(output),
+                  withheld=bool(cached.get('withheld')),
+                  reference_receipt=cached.get('reference_receipt') if
+                  isinstance(cached.get('reference_receipt'),str) and
+                  len(cached['reference_receipt'])==14 and cached['reference_receipt'].isdigit() else None)
+    return result
+
+
 def snapshot(store):
     with store.lock:
         exists=store.db.execute("SELECT 1 FROM sqlite_master WHERE name='delivery_history'").fetchone()
@@ -71,6 +116,7 @@ def snapshot(store):
             'last_scan_success':store.get('last_scan_success'),
             'delivery_history':history,'historical_replays':legacy[:100],
             'replay_progress':store.get('test_replay_last'),
+            'requested_filing_review':requested_filing_review(store),
             'routing_recheck':store.get('routing_recheck_v1'),
             'encoding_diagnostics':store.get('encoding_probe_nhn_20261030_v1'),
             'structure_diagnostics':store.get('structure_probe_20261027_v1'),
