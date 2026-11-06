@@ -134,6 +134,68 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "html_responses": [
+          {
+            "bytes": 36356,
+            "content_type": "text/html",
+            "declaration_conflict": false,
+            "encoding_source": "header",
+            "header_charset": "utf-8",
+            "http_status": 200,
+            "meta_charsets": [
+              "utf-8"
+            ],
+            "page": "main",
+            "selected_encoding": "utf-8"
+          },
+          {
+            "bytes": 4187,
+            "content_type": "text/html",
+            "declaration_conflict": true,
+            "encoding_source": "header",
+            "header_charset": "ms949",
+            "http_status": 200,
+            "meta_charsets": [
+              "euc-kr"
+            ],
+            "page": "viewer",
+            "selected_encoding": "cp949"
+          }
+        ],
+        "original_attempts": [
+          {
+            "field_count": 0,
+            "reason": "no_matching_fields",
+            "source": "document_api",
+            "stage": "table"
+          },
+          {
+            "field_count": 0,
+            "reason": "no_matching_fields",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 0,
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\uc778\uc9c0\ub514\uc2a4\ud50c\ub808",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261106",
+      "method": "unavailable",
+      "receipt": "20261106900971",
+      "recorded_at": "2026-11-07T07:06:41+09:00",
+      "release": "6fe3781f8cc8994845d701034aff08dc816b8e44",
+      "status": "telegram_accepted",
+      "title": "\uae30\ud0c0\uc2dc\uc7a5\uc548\ub0b4              (\uc8fc\uac00 \ubbf8\ub2ec\uc5d0 \ub530\ub978 \uc0c1\uc7a5\ud3d0\uc9c0 \uc6b0\ub824 \uad00\ub828 \uc548\ub0b4)",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261106",
@@ -15771,43 +15833,6 @@
       "status": "telegram_accepted",
       "title": "\uae30\ud0c0\uc2dc\uc7a5\uc548\ub0b4              (\uc8fc\uac00 \ubbf8\ub2ec\uc5d0 \ub530\ub978 \uc0c1\uc7a5\ud3d0\uc9c0 \uc6b0\ub824 \uad00\ub828 \uc548\ub0b4)",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261026",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20260925",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "otcprStkInvscrInhDecsn",
-        "original_error": "ValueError",
-        "original_reason": "no_data",
-        "reason": "no_data"
-      },
-      "company": "\uc36c\ud14c\ud06c",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261026",
-      "method": "unavailable",
-      "receipt": "20261026600686",
-      "recorded_at": "2026-10-26T18:23:54+09:00",
-      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
-      "status": "telegram_accepted",
-      "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              ",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -16471,7 +16496,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\ub3c4\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-07T07:06:20+09:00",
+  "last_scan_success": "2026-11-07T07:11:23+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
