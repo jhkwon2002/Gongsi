@@ -134,6 +134,75 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "html_responses": [
+          {
+            "bytes": 36540,
+            "content_type": "text/html",
+            "declaration_conflict": false,
+            "encoding_source": "header",
+            "header_charset": "utf-8",
+            "http_status": 200,
+            "meta_charsets": [
+              "utf-8"
+            ],
+            "page": "main",
+            "selected_encoding": "utf-8"
+          },
+          {
+            "bytes": 11031,
+            "content_type": "text/html",
+            "declaration_conflict": true,
+            "encoding_source": "header",
+            "header_charset": "ms949",
+            "http_status": 200,
+            "meta_charsets": [
+              "euc-kr"
+            ],
+            "page": "viewer",
+            "selected_encoding": "cp949"
+          }
+        ],
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "field_count": 1,
+            "reason": "fields_available",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_field_count": 1,
+        "original_reason": "no_structured_api",
+        "original_source": "dart_html",
+        "reason": "no_structured_api"
+      },
+      "company": "\ud734\uc824",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\ubc1c\uc0dd\uc77c\uc790 [\ud45c2]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261106",
+      "method": "original_table",
+      "receipt": "20261106900847",
+      "recorded_at": "2026-11-06T17:04:54+09:00",
+      "release": "6fe3781f8cc8994845d701034aff08dc816b8e44",
+      "status": "telegram_accepted",
+      "title": "\ud48d\ubb38\ub610\ub294\ubcf4\ub3c4\uc5d0\ub300\ud55c\ud574\uba85(\ubbf8\ud655\uc815)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261106",
@@ -15620,43 +15689,6 @@
       "status": "telegram_accepted",
       "title": "\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261026",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20260925",
-            "end_de": "20261026",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "piicDecsn",
-        "original_error": "ValueError",
-        "original_reason": "no_data",
-        "reason": "no_data"
-      },
-      "company": "\uc81c\ub125\uc2e0",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261026",
-      "method": "unavailable",
-      "receipt": "20261026900740",
-      "recorded_at": "2026-10-26T17:58:47+09:00",
-      "release": "9c856b345e4bc13b74983b83cd90550062ac74f5",
-      "status": "telegram_accepted",
-      "title": "\uae30\ud0c0\uc8fc\uc694\uacbd\uc601\uc0ac\ud56d              (\uc720\uc0c1\uc99d\uc790\uacb0\uc815(\uc81c3\uc790\ubc30\uc815-\uc18c\uc561\uacf5\ubaa8) \ucca0\ud68c)",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -16320,7 +16352,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\ub3c4\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-06T16:59:47+09:00",
+  "last_scan_success": "2026-11-06T17:04:52+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
