@@ -1,7 +1,7 @@
 # Oracle와 GitHub 배포 절차
 
-2026-10-23. 대상: Oracle Linux 9 (현재 확인된 서버는 9.8), Ubuntu 24.04, Python 3.9 이상, systemd.
-저장소는 https://github.com/jhkwon2002/Gongsi 로 확정했다. 사용자 PC에서 SSH 접속 성공과 Oracle Linux Server 9.8을 확인했다. 프로그램 실제 설치·배포는 아직이다.
+2026-10-23 작성, 2026-11-10 갱신. 대상: Oracle Linux 9 (현재 확인된 서버는 9.8), Ubuntu 24.04, Python 3.9 이상, systemd.
+저장소는 https://github.com/jhkwon2002/Gongsi 로 확정했다. 현재 서버는 Oracle Linux Server 9.8이며, 2026-10-26부터 Git 없는 압축파일 방식으로 운영하고 서버 타이머로 자동 배포한다. 아래 1~3절은 최초 설치 절차이고, 실제 진행 기록은 문서 끝의 날짜별 절에 있다.
 
 ## 준비할 정보
 
@@ -16,8 +16,6 @@ Telegram long polling을 사용하므로 봇용 공개 웹 포트나 도메인�
 ## 1. GitHub 업로드와 서버 설치
 
 현재 파일을 대상 저장소에 올린다. .gitignore가 환경파일·개인키·DB·로그를 제외한다. 실제 비밀키나 운영 DB는 GitHub에 올리지 않는다.
-
-첫 업로드에서는 검사만 실행하도록 ORACLE_DEPLOY_ENABLED는 아직 켜지 않는다.
 
 Oracle에 SSH로 접속하고 실행한다.
 
@@ -92,28 +90,9 @@ sudo readlink -f /opt/gongsi/current
 
 ## 4. GitHub 자동 배포 연결
 
-Actions용 공개키를 Oracle 로그인 사용자의 authorized_keys에 등록하고 기존 접속을 유지한 채 테스트한다.
+서버의 gongsi-update.timer가 약 3분마다 GitHub main을 확인하고, 같은 커밋의 push 검사 워크플로가 성공한 경우에만 배포 도우미로 반영한다. 설정 방법은 아래 ‘서버에서 GitHub 자동 반영 (2026-10-26)’ 절을 따른다. GitHub에 SSH 키나 서버 접속 Secrets를 둘 필요가 없다.
 
-로그인 사용자가 ubuntu인 예시다. visudo에서 다음 권한을 설정한다.
-
-~~~text
-ubuntu ALL=(root) NOPASSWD: /usr/local/sbin/deploy-gongsi *
-~~~
-
-root 소유 도우미는 인수 1개와 SHA 형식을 검사하며 origin/main 이력만 배포한다. main의 코드를 수정할 수 있는 권한은 서버 실행 코드를 바꿀 수 있는 운영 권한이다.
-
-GitHub 저장소에 oracle Environment를 만들고 아래 Secrets를 설정한다.
-
-| Secret | 값 |
-|---|---|
-| ORACLE_HOST | 서버 IP 또는 DNS, SSH 기본 포트 22 |
-| ORACLE_USER | SSH 로그인 사용자 |
-| ORACLE_SSH_KEY | Actions 전용 SSH 개인키 |
-| ORACLE_KNOWN_HOSTS | 별도 경로로 검증한 Oracle 호스트키의 known_hosts 행 |
-
-저장소 Variables에 ORACLE_DEPLOY_ENABLED=true를 설정한다. DART 키·봇 토큰은 Actions에 필요하지 않다.
-
-이후 main 변경 → GitHub 검사 → 같은 SHA를 Oracle 배포 순서로 작동한다. 서버 소스를 직접 수정하는 양방향 동기화 방식은 사용하지 않는다. 코드 변경은 먼저 저장소에 반영한다.
+처음 설계한 GitHub Actions → SSH 배포 job은 한 번도 켜지 않았고 서버 타이머로 대체돼 2026-11-10 워크플로에서 제거했다. 저장소에 oracle Environment나 ORACLE_* Secrets·Variables가 남아 있다면 삭제해도 된다.
 
 ## 5. 운영·복구·검사
 
@@ -125,7 +104,7 @@ GitHub 저장소에 oracle Environment를 만들고 아래 Secrets를 설정한�
 sudo install -o root -g root -m 0755 /opt/gongsi/current/deploy/deploy.sh /usr/local/sbin/deploy-gongsi
 ~~~
 
-이전 버전으로 돌아가려면 origin/main 이력에 있는 이전 SHA를 도우미에 전달한다. DB 백업은 /var/backups/gongsi에 쌓인다. 외부 백업·보관 기간 자동화는 아직 없다.
+이전 버전으로 돌아가려면 origin/main 이력에 있는 이전 SHA를 도우미에 전달한다. DB 백업은 /var/backups/gongsi에 남는다. 배포가 성공하면 DB 백업은 최근 10개, 릴리스는 최근 5개와 현재·직전 릴리스만 남기고 정리한다. 정리된 릴리스로 되돌리면 도우미가 다시 받는다. 서버 밖 외부 백업은 없다.
 
 ~~~bash
 python3 -m unittest discover -s tests -v
@@ -133,9 +112,9 @@ bash -n deploy/bootstrap.sh
 bash -n deploy/deploy.sh
 ~~~
 
-이전 GitHub Linux 환경에서 Python 검사 23개가 통과했고 GitHub Linux 셸 문법 검사도 통과했다. 실제 Oracle의 서비스 기동·메뉴 표시·DART 조회·네트워크 검증은 아직이며 서버 접속 후 진행한다.
+GitHub CI는 Python 3.9·3.11에서 위 검사를 실행한다. 서버 실제 동작은 /status와 문서 끝의 날짜별 확인 기록으로 구분해 확인한다.
 
-한 서버·본인 개인 채팅 1개를 위한 초기 구현이다. 모든 DART 보고서 분류, 다중 사용자, 원문 추출·요약은 포함하지 않는다. 새 선택은 새로 발견한 공시부터 적용하며, 첫 실행에 과거 공시를 일괄 전송하지 않는다.
+한 서버·본인 개인 채팅 1개를 위한 구현이며 다중 사용자는 지원하지 않는다. 새 선택은 새로 발견한 공시부터 적용하며, 첫 실행에 과거 공시를 일괄 전송하지 않는다.
 
 수신 지연과 드문 중복이 발생할 수 있다. 전송 실패는 재시도하며, 전송 직후 DB 저장 전에 중단되면 반복 전송될 수 있다. 조회 범위를 겹쳐 확인하고 장기 중단 후 최대 31일씩 따라잡는다. 호출 예산 DART_DAILY_LIMIT는 본인 실제 할당량에 맞춘다. 접수 이력은 보관하므로 디스크 사용량도 확인한다.
 

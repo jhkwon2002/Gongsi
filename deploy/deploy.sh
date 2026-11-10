@@ -92,6 +92,15 @@ for ((attempt=0; attempt<30; attempt++)); do
     MAINPID="$(systemctl show -p MainPID --value gongsi.service)"
     if [[ "$(cat /run/gongsi/ready)" == "$MAINPID" ]]; then
       SUCCESS=1
+      # Bound disk use on small instances. Pruning never fails a deployment; a removed
+      # release is fetched again if it is redeployed.
+      ls -1t /var/backups/gongsi/store.*.db 2>/dev/null | tail -n +11 | xargs -r rm -f -- || true
+      ACTIVE="$(readlink -f /opt/gongsi/current || true)"
+      for old in $(ls -1td /opt/gongsi/releases/*/ 2>/dev/null | tail -n +6); do
+        old="${old%/}"
+        [[ "${old##*/}" =~ ^[0-9a-f]{40}$ && "$old" != "$ACTIVE" && "$old" != "$PREVIOUS" ]] || continue
+        rm -rf -- "$old" || true
+      done
       echo "DEPLOYED $SHA; menu ready. Check /status for DART scan health."
       exit 0
     fi

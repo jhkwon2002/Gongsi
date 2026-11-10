@@ -17,7 +17,6 @@ GitHub: https://github.com/jhkwon2002/Gongsi
 | 자산총액 필터 | 구현 (/assets) | gongsi/assets.py |
 | 주요 항목 추출·요약 | 구현 (API 우선, 원문 표·HTML 보완, 63종 발송 양식) | docs/API_FIRST_V5.md, docs/NOTIFICATION_CONTRACTS_63.md |
 | 실행 결과 GitHub 기록 | 코드 구현. 서버 쓰기 토큰 설정 전에는 업로드하지 않음 | docs/RUNTIME_REPORTS.md |
-| GitHub Actions SSH 배포 | 미사용 (ORACLE_DEPLOY_ENABLED 꺼짐). 서버 타이머 방식으로 대체 | .github/workflows/ci-deploy.yml |
 
 현재 서버에서 실행 중인 커밋은 텔레그램 /status의 버전으로 확인한다. 이 문서의 상태는 위 근거 문서의 기록이며, 문서 갱신만으로 서버 상태를 확인한 것으로 간주하지 않는다.
 
@@ -77,7 +76,7 @@ GitHub: https://github.com/jhkwon2002/Gongsi
 |---|---|
 | /etc/gongsi/gongsi.env (서버, root 600) | 봇 토큰, DART 키, 선택적 GitHub 결과 업로드 토큰 |
 | /var/lib/gongsi/store.db (서버) | 선택, 발송 대기열, 추출 캐시, 발송 이력. 배포해도 유지 |
-| /var/backups/gongsi (서버) | 배포 시 DB 백업. 보관 기간 자동 정리는 없음 |
+| /var/backups/gongsi (서버) | 배포 시 DB 백업. 배포 성공 후 최근 10개만 유지 |
 | .env.example (저장소) | 비밀값 없는 설정 예시 |
 
 비밀값은 GitHub와 대화에 올리지 않는다. 로그에는 원시 예외 대신 예외 종류나 고정 사유 코드만 남긴다.
@@ -98,7 +97,7 @@ GitHub: https://github.com/jhkwon2002/Gongsi
 | gongsi/runtime_reports.py, api_diagnostics.py | 발송 이력 GitHub 기록, 읽기 전용 진단 |
 | gongsi/test_replay.py, test_requests.json | 소유자가 요청한 날짜 한정 재전송 테스트 |
 | deploy/ | 서버 설치·배포·자동 배포·헬스체크 스크립트, systemd 유닛 |
-| .github/workflows/ci-deploy.yml | 검사(Python 3.9·3.11), 선택적 SSH 배포 |
+| .github/workflows/ci-deploy.yml | 검사(Python 3.9·3.11). 서버 타이머가 이 결과를 보고 배포 |
 | tests/ | 외부 호출 없는 자동 검사 |
 | docs/ | 설계·배포·검증 문서 |
 | dart_alert.ps1, docs/HISTORY_2026-10-23.md | 이전 Windows 실행본과 기록. 현재 운영 경로가 아님 |
@@ -115,6 +114,6 @@ GitHub CI는 Python 3.9·3.11 검사, 커밋 압축파일 검증, PowerShell·�
 
 ## 배포
 
-main에 반영 → GitHub CI 통과 → 서버 타이머가 같은 커밋을 /opt/gongsi/releases에 받아 검사 후 전환한다. 새 프로세스가 30초 안에 준비되지 않으면 이전 코드로 복귀를 시도한다. 서버에서 소스를 직접 수정하지 않는다.
+main에 반영 → GitHub CI 통과 → 서버 타이머가 같은 커밋을 /opt/gongsi/releases에 받아 검사 후 전환한다. 새 프로세스가 30초 안에 준비되지 않으면 이전 코드로 복귀를 시도한다. 성공하면 오래된 릴리스와 DB 백업을 정리한다. 서버에서 소스를 직접 수정하지 않는다.
 
 설치·복구·자동 배포 설정 절차는 docs/DEPLOYMENT.md, 실행 결과 기록은 docs/RUNTIME_REPORTS.md를 따른다.
