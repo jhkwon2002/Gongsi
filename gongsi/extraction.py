@@ -149,6 +149,9 @@ def structured_fields(payload, receipt, schema):
 
 def label_key(value):
     value = value.replace('양수','취득').replace('양도','처분')
+    # Schema labels carry calculation markers such as (A) or (A/C) that DART tables often omit;
+    # some forms also label the company cell 회사명(국적).
+    value = re.sub(r'\([A-Z](?:/[A-Z])?\)', '', value).replace('회사명(국적)', '회사명')
     value = re.sub(r'\((?:원|백만원|천원|억원|%|주|명|USD|KRW)\)', '', value, flags=re.I)
     return re.sub(r'[\s\d.,:()（）ㆍ·\-]', '', value)
 
@@ -248,6 +251,9 @@ class Tables(HTMLParser):
             self.tables.append(self.stack.pop())
 
 
+PAIRED_LABELS = {'대표이사','대표자','자본금','회사와관계','회사와의관계','발행주식총수','주요사업','국적','본점소재지'}
+
+
 class RawFields(list):
     def __init__(self):
         super().__init__()
@@ -307,6 +313,11 @@ def raw_fields(document, aliases):
                     if value and value != cell and origin not in used_values:
                         values.append((position,value))
                         used_values.add(origin)
+                # DART forms may put two label/value pairs in one row (회사명 | 값 | 대표이사 | 값).
+                # Keep only the first value when the next cell is a known sibling label.
+                if (len(values)>1 and values[0][0]==index+1 and values[1][0]==index+2
+                        and label_key(values[1][1]) in PAIRED_LABELS):
+                    values = values[:1]
                 if not values:
                     continue
                 label = max(found,key=len)

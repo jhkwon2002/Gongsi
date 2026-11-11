@@ -16,7 +16,7 @@ GitHub: https://github.com/jhkwon2002/Gongsi
 | 보고서 선택 메뉴 | 10개 분류, 주요사항보고서 36종 세부 선택, 미분류 항목 | gongsi/catalog.py |
 | 자산총액 필터 | 구현 (/assets) | gongsi/assets.py |
 | 주요 항목 추출·요약 | 구현 (API 우선, 원문 표·HTML 보완, 63종 발송 양식) | docs/API_FIRST_V5.md, docs/NOTIFICATION_CONTRACTS_63.md |
-| 실행 결과 GitHub 기록 | 코드 구현. 서버 쓰기 토큰 설정 전에는 업로드하지 않음 | docs/RUNTIME_REPORTS.md |
+| 실행 결과 GitHub 기록 | 동작 중. runtime-reports 브랜치의 runtime/latest.json을 약 5분마다 갱신 | docs/RUNTIME_REPORTS.md |
 
 현재 서버에서 실행 중인 커밋은 텔레그램 /status의 버전으로 확인한다. 이 문서의 상태는 위 근거 문서의 기록이며, 문서 갱신만으로 서버 상태를 확인한 것으로 간주하지 않는다.
 
