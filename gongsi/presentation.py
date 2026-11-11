@@ -34,7 +34,7 @@ CONTRACTS={
 'bsnTrfDecsn':'trf_bsn=대상|trf_prc=양도가액|trf_pp=목적|trf_prd_trf_std=양도기준일',
 'tgastInhDecsn':'ast_nm=자산|inhdtl_inhprc=양수금액|inhdtl_tast_vs=자산총액 대비|inh_pp=목적',
 'tgastTrfDecsn':'ast_nm=자산|trfdtl_trfprc=양도금액|trfdtl_tast_vs=자산총액 대비|trf_pp=목적',
-'otcprStkInvscrInhDecsn':'iscmp_cmpnm=대상회사|inhdtl_inhprc=양수금액|inhdtl_stkcnt=양수주식|inh_pp=목적',
+'otcprStkInvscrInhDecsn':'iscmp_cmpnm=대상회사|inhdtl_inhprc=양수금액|inhdtl_ecpt_vs=자기자본 대비|inhdtl_stkcnt=양수주식|atinh_eqrt=양수 후 지분율|inh_pp=목적|inh_prd=양수예정일',
 'otcprStkInvscrTrfDecsn':'iscmp_cmpnm=대상회사|trfdtl_trfprc=양도금액|trfdtl_stkcnt=양도주식|trf_pp=목적',
 'stkrtbdInhDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|inhdtl_inhprc=양수금액|inh_pp=목적',
 'stkrtbdTrfDecsn':'bdiscmp_cmpnm=발행회사|stkrtbd_kndn=증권종류|trfdtl_trfprc=양도금액|trf_pp=목적',
@@ -64,11 +64,21 @@ def number(value, unit):
     n=Decimal(m.group(1).replace(',',''))
     def fmt(n):
         return format(n,',f').rstrip('0').rstrip('.') if n%1 else format(int(n),',')
+    def grouped(n, exact):
+        # 836,190,337 -> 8억 3,619만 337 (exact) or 8억 3,619만 (amounts, below 만 omitted).
+        parts=[]
+        for size,name in ((10**12,'조'),(10**8,'억'),(10**4,'만')):
+            q,n=divmod(n,size)
+            if q: parts.append(format(q,',')+name)
+        if exact and n: parts.append(format(n,','))
+        return ' '.join(parts)
     if unit in ('원','천원','백만원','억원','KRW'):
         n*=Decimal({'원':1,'KRW':1,'천원':1000,'백만원':1000000,'억원':100000000}[unit])
-        return fmt(n/100000000)+'억원' if abs(n)>=100000000 else fmt(n)+'원'
-    if unit=='주' and abs(n)>=10000:
-        return fmt(n/10000)+'만주'
+        if abs(n)>=100000000:
+            return ('-' if n<0 else '')+grouped(int(abs(n)),False)+'원'
+        return fmt(n)+'원'
+    if unit=='주' and abs(n)>=10000 and n%1==0:
+        return ('-' if n<0 else '')+grouped(int(abs(n)),True)+'주'
     return ('+' if value.startswith('+') else '')+fmt(n)+unit
 
 def unit_for(label, field=''):

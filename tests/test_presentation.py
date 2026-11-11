@@ -35,7 +35,12 @@ class PresentationTests(unittest.TestCase):
                 self.assertLessEqual(len(message.encode('utf-16-le'))//2,3800)
     def test_only_explicit_units_converted(self):
         self.assertEqual(number('10000000000','원'),'100억원')
-        self.assertEqual(number('123450000','원'),'1.2345억원')
+        self.assertEqual(number('123450000','원'),'1억 2,345만원')
+        self.assertEqual(number('627142752900','원'),'6,271억 4,275만원')
+        self.assertEqual(number('1234567890123','원'),'1조 2,345억 6,789만원')
+        self.assertEqual(number('-5000000000','원'),'-50억원')
+        self.assertEqual(number('836190337','주'),'8억 3,619만 337주')
+        self.assertEqual(number('123456','주'),'12만 3,456주')
         self.assertEqual(number('1000000','주'),'100만주')
         self.assertEqual(number('10000000000','USD'),'10,000,000,000USD')
         self.assertEqual(number('500','백만원'),'5억원')
