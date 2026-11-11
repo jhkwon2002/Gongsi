@@ -134,6 +134,69 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "html_responses": [
+          {
+            "bytes": 36478,
+            "content_type": "text/html",
+            "declaration_conflict": false,
+            "encoding_source": "header",
+            "header_charset": "utf-8",
+            "http_status": 200,
+            "meta_charsets": [
+              "utf-8"
+            ],
+            "page": "main",
+            "selected_encoding": "utf-8"
+          },
+          {
+            "bytes": 6600,
+            "content_type": "text/html",
+            "declaration_conflict": true,
+            "encoding_source": "header",
+            "header_charset": "ms949",
+            "http_status": 200,
+            "meta_charsets": [
+              "euc-kr"
+            ],
+            "page": "viewer",
+            "selected_encoding": "cp949"
+          }
+        ],
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "field_count": 0,
+            "reason": "no_matching_fields",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_field_count": 0,
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\uc5d0\uc774\ud53c\uc54c",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261111",
+      "method": "unavailable",
+      "receipt": "20261111800505",
+      "recorded_at": "2026-11-11T15:52:05+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "\ubd88\uc131\uc2e4\uacf5\uc2dc\ubc95\uc778\uc9c0\uc815              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261111",
@@ -17323,58 +17386,6 @@
       "status": "telegram_accepted",
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261027",
-            "end_de": "20261027",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "receipt_not_returned",
-            "status": "000"
-          },
-          {
-            "bgn_de": "20260926",
-            "end_de": "20261027",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "receipt_not_returned",
-            "status": "000"
-          }
-        ],
-        "endpoint": "piicDecsn",
-        "original_attempts": [
-          {
-            "error_type": "OriginalSourceError",
-            "reason": "api_status_014",
-            "source": "document_api",
-            "stage": "document_api"
-          },
-          {
-            "field_count": 0,
-            "reason": "no_matching_fields",
-            "source": "dart_html",
-            "stage": "table"
-          }
-        ],
-        "original_error": "OriginalSourceError",
-        "original_field_count": 0,
-        "original_reason": "receipt_not_returned",
-        "reason": "receipt_not_returned"
-      },
-      "company": "\uc36c\ud14c\ud06c",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261027",
-      "method": "unavailable",
-      "receipt": "20261027000236",
-      "recorded_at": "2026-10-27T16:10:53+09:00",
-      "release": "c36a701eaa670c6ac5528cd251cf542231c76341",
-      "status": "telegram_accepted",
-      "title": "[\ucca8\ubd80\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -18038,7 +18049,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\ub3c4\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-11T15:46:59+09:00",
+  "last_scan_success": "2026-11-11T15:52:03+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
