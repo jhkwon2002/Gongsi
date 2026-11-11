@@ -60,8 +60,8 @@ class ShareAcquisitionFormTests(unittest.TestCase):
         self.assertEqual(values['양수내역(양수금액(원)(A)) [표1]'],'627,142,752,900 [원]')
         self.assertEqual(values['양수내역(자기자본대비(%)(A/C)) [표1]'],'24.8 [%]')
         message=format_notification(report,{'source':'원문 표','fields':fields})
-        for expected in ('대상회사: PT ECOPRO BNSI INVESTMENT','양수금액: 6,271억원','자기자본 대비: 24.8%',
-                         '양수주식: 8억 3,619만 337주','양수 후 지분율: 99.9%','양수예정일: 2027-06-30'):
+        for expected in ('대상회사: PT ECOPRO BNSI INVESTMENT','양수금액: 약 6,271억원','자기자본 대비: 24.8%',
+                         '양수주식: 약 8억 3,619만주','양수 후 지분율: 99.9%','양수예정일: 2027-06-30'):
             self.assertIn(expected,message)
         self.assertNotIn('이승환',message)
 

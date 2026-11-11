@@ -64,22 +64,25 @@ def number(value, unit):
     n=Decimal(m.group(1).replace(',',''))
     def fmt(n):
         return format(n,',f').rstrip('0').rstrip('.') if n%1 else format(int(n),',')
-    def grouped(n, exact):
-        # 836,190,337 -> 8억 3,619만 337 (exact share counts).
+    def grouped(n, smallest, suffix):
+        # Owner preference: truncate below the smallest unit (never round up) and
+        # mark the value 약 only when something was dropped. 836,190,337주 -> 약 8억 3,619만주.
+        whole=int(abs(n))
+        kept=whole//smallest*smallest
         parts=[]
         for size,name in ((10**12,'조'),(10**8,'억'),(10**4,'만')):
-            q,n=divmod(n,size)
+            if size<smallest: break
+            q,kept=divmod(kept,size)
             if q: parts.append(format(q,',')+name)
-        if exact and n: parts.append(format(n,','))
-        return ' '.join(parts)
+        approximate='약 ' if whole%smallest or n%1 else ''
+        return approximate+('-' if n<0 else '')+' '.join(parts)+suffix
     if unit in ('원','천원','백만원','억원','KRW'):
         n*=Decimal({'원':1,'KRW':1,'천원':1000,'백만원':1000000,'억원':100000000}[unit])
         if abs(n)>=100000000:
-            # Owner preference: amounts of 1억 or more drop everything below 억 (truncated).
-            return ('-' if n<0 else '')+grouped(int(abs(n))//10**8*10**8,False)+'원'
+            return grouped(n,10**8,'원')
         return fmt(n)+'원'
-    if unit=='주' and abs(n)>=10000 and n%1==0:
-        return ('-' if n<0 else '')+grouped(int(abs(n)),True)+'주'
+    if unit=='주' and abs(n)>=10000:
+        return grouped(n,10**4,'주')
     return ('+' if value.startswith('+') else '')+fmt(n)+unit
 
 def unit_for(label, field=''):
