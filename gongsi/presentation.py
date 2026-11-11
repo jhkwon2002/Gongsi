@@ -65,7 +65,7 @@ def number(value, unit):
     def fmt(n):
         return format(n,',f').rstrip('0').rstrip('.') if n%1 else format(int(n),',')
     def grouped(n, exact):
-        # 836,190,337 -> 8억 3,619만 337 (exact) or 8억 3,619만 (amounts, below 만 omitted).
+        # 836,190,337 -> 8억 3,619만 337 (exact share counts).
         parts=[]
         for size,name in ((10**12,'조'),(10**8,'억'),(10**4,'만')):
             q,n=divmod(n,size)
@@ -75,7 +75,8 @@ def number(value, unit):
     if unit in ('원','천원','백만원','억원','KRW'):
         n*=Decimal({'원':1,'KRW':1,'천원':1000,'백만원':1000000,'억원':100000000}[unit])
         if abs(n)>=100000000:
-            return ('-' if n<0 else '')+grouped(int(abs(n)),False)+'원'
+            # Owner preference: amounts of 1억 or more drop everything below 억 (truncated).
+            return ('-' if n<0 else '')+grouped(int(abs(n))//10**8*10**8,False)+'원'
         return fmt(n)+'원'
     if unit=='주' and abs(n)>=10000 and n%1==0:
         return ('-' if n<0 else '')+grouped(int(abs(n)),True)+'주'
