@@ -152,6 +152,144 @@
             "status": "013"
           }
         ],
+        "endpoint": "otcprStkInvscrTrfDecsn",
+        "html_responses": [
+          {
+            "bytes": 41462,
+            "content_type": "text/html",
+            "declaration_conflict": false,
+            "encoding_source": "header",
+            "header_charset": "utf-8",
+            "http_status": 200,
+            "meta_charsets": [
+              "utf-8"
+            ],
+            "page": "main",
+            "selected_encoding": "utf-8"
+          },
+          {
+            "bytes": 13885,
+            "content_type": "text/html",
+            "declaration_conflict": true,
+            "encoding_source": "header",
+            "header_charset": "ms949",
+            "http_status": 200,
+            "meta_charsets": [
+              "euc-kr"
+            ],
+            "page": "viewer",
+            "selected_encoding": "cp949"
+          }
+        ],
+        "original_attempts": [
+          {
+            "error_type": "OriginalSourceError",
+            "reason": "api_status_014",
+            "source": "document_api",
+            "stage": "document_api"
+          },
+          {
+            "field_count": 14,
+            "reason": "fields_available",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_error": "OriginalSourceError",
+        "original_field_count": 14,
+        "original_reason": "no_data",
+        "original_source": "dart_html",
+        "reason": "no_data"
+      },
+      "company": "\uc0c1\uc0c1\uc778",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ubc1c\ud589\ud68c\uc0ac(\uc790\ubcf8\uae08(\uc6d0)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ubc1c\ud589\ud68c\uc0ac(\ubc1c\ud589\uc8fc\uc2dd \ucd1d\uc218(\uc8fc)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uc8fc\uc2dd\uc218(\uc8fc)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc591\ub3c4\uae08\uc561(\uc6d0)(A)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc18c\uc720\uc8fc\uc2dd\uc218(\uc8fc)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc9c0\ubd84\ube44\uc728(%)) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\ubaa9\uc801 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc591\ub3c4\uc608\uc815\uc77c\uc790 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c) [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80 [\ud45c4]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uacc4\uc57d\ub0b4\uc6a9 [\ud45c4]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261113",
+      "method": "original_table",
+      "receipt": "20261113901138",
+      "recorded_at": "2026-11-13T15:40:13+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "[\uae30\uc7ac\uc815\uc815]\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucc98\ubd84\uacb0\uc815              ",
+      "withheld": true
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
+            "bgn_de": "20261113",
+            "end_de": "20261113",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20261013",
+            "end_de": "20261113",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
         "endpoint": "cmpMgDecsn",
         "original_attempts": [
           {
@@ -18052,58 +18190,6 @@
       "status": "telegram_accepted",
       "title": "\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\ucde8\ub4dd\uacb0\uc815              ",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261027",
-            "end_de": "20261027",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20260926",
-            "end_de": "20261027",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "piicDecsn",
-        "original_attempts": [
-          {
-            "error_type": "OriginalSourceError",
-            "reason": "api_status_014",
-            "source": "document_api",
-            "stage": "document_api"
-          },
-          {
-            "field_count": 0,
-            "reason": "no_matching_fields",
-            "source": "dart_html",
-            "stage": "table"
-          }
-        ],
-        "original_error": "OriginalSourceError",
-        "original_field_count": 0,
-        "original_reason": "no_data",
-        "reason": "no_data"
-      },
-      "company": "\uc544\uc774\uc5d0\uc774",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261027",
-      "method": "unavailable",
-      "receipt": "20261027000240",
-      "recorded_at": "2026-10-27T16:20:41+09:00",
-      "release": "e9f68204fac800475c17c568267370241d6f11c1",
-      "status": "telegram_accepted",
-      "title": "[\ucca8\ubd80\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -18767,7 +18853,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\ud615\uc790\uc0b0\uc591\ub3c4\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-13T15:34:53+09:00",
+  "last_scan_success": "2026-11-13T15:40:07+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
