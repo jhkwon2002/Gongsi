@@ -136,6 +136,73 @@
       "api_evidence": {
         "attempts": [
           {
+            "bgn_de": "20261123",
+            "end_de": "20261123",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          },
+          {
+            "bgn_de": "20261023",
+            "end_de": "20261123",
+            "exact_receipt_rows": 0,
+            "field_count": 0,
+            "reason": "no_data",
+            "status": "013"
+          }
+        ],
+        "endpoint": "lwstLg",
+        "original_attempts": [
+          {
+            "field_count": 5,
+            "reason": "fields_available",
+            "source": "document_api",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 5,
+        "original_reason": "no_data",
+        "original_source": "document_api",
+        "reason": "no_data"
+      },
+      "company": "\uce74\uce74\uc624",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\uc6d0\uace0\u318d\uc2e0\uccad\uc778 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uccad\uad6c\ub0b4\uc6a9 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\uad00\ud560\ubc95\uc6d0 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ud5a5\ud6c4\ub300\ucc45 [\ud45c1]",
+          "source": "original_table"
+        },
+        {
+          "label": "\ud655\uc778\uc77c\uc790 [\ud45c1]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261123",
+      "method": "original_table",
+      "receipt": "20261123800003",
+      "recorded_at": "2026-11-23T07:44:20+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "\uc18c\uc1a1\ub4f1\uc758\uc81c\uae30\u318d\uc2e0\uccad(\uc77c\uc815\uae08\uc561\uc774\uc0c1\uc758\uccad\uad6c)              ",
+      "withheld": true
+    },
+    {
+      "api_evidence": {
+        "attempts": [
+          {
             "bgn_de": "20261120",
             "end_de": "20261120",
             "exact_receipt_rows": 0,
@@ -18678,40 +18745,6 @@
       "status": "telegram_accepted",
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [],
-        "endpoint": null,
-        "original_attempts": [
-          {
-            "error_type": "OriginalSourceError",
-            "reason": "api_status_014",
-            "source": "document_api",
-            "stage": "document_api"
-          },
-          {
-            "error_type": "OriginalSourceError",
-            "reason": "unsupported_encoding",
-            "source": "dart_html",
-            "stage": "html_decode"
-          }
-        ],
-        "original_error": "OriginalSourceError",
-        "original_reason": "no_structured_api",
-        "reason": "no_structured_api"
-      },
-      "company": "\uace8\ud504\uc874\ud640\ub529\uc2a4",
-      "context": "notification",
-      "field_sources": [],
-      "filing_date": "20261029",
-      "method": "unavailable",
-      "receipt": "20261029900871",
-      "recorded_at": "2026-10-29T17:54:44+09:00",
-      "release": "e967757a1079bce787d934c318d533d755a418fc",
-      "status": "telegram_accepted",
-      "title": "[\uae30\uc7ac\uc815\uc815]\ud48d\ubb38\ub610\ub294\ubcf4\ub3c4\uc5d0\ub300\ud55c\ud574\uba85(\ubbf8\ud655\uc815)              ",
-      "withheld": false
     }
   ],
   "encoding_diagnostics": {
@@ -19492,7 +19525,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ubd84\ud560\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-23T07:39:15+09:00",
+  "last_scan_success": "2026-11-23T07:44:15+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
