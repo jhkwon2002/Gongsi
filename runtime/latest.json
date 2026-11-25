@@ -134,6 +134,136 @@
   "delivery_history": [
     {
       "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_attempts": [
+          {
+            "field_count": 1,
+            "reason": "fields_available",
+            "source": "document_api",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 1,
+        "original_reason": "no_structured_api",
+        "original_source": "document_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ud55c\ud654\uc624\uc158",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\ubc1c\uc0dd\uc77c\uc790 [\ud45c2]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261125",
+      "method": "original_table",
+      "receipt": "20261125800147",
+      "recorded_at": "2026-11-25T10:53:09+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "\ud48d\ubb38\ub610\ub294\ubcf4\ub3c4\uc5d0\ub300\ud55c\ud574\uba85              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "original_attempts": [
+          {
+            "field_count": 1,
+            "reason": "fields_available",
+            "source": "document_api",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 1,
+        "original_reason": "no_structured_api",
+        "original_source": "document_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ucf58\ud150\ud2b8\ub9ac\uc911\uc559",
+      "context": "notification",
+      "field_sources": [
+        {
+          "label": "\ubc1c\uc0dd\uc77c\uc790 [\ud45c2]",
+          "source": "original_table"
+        }
+      ],
+      "filing_date": "20261125",
+      "method": "original_table",
+      "receipt": "20261125800142",
+      "recorded_at": "2026-11-25T10:53:05+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "\ud48d\ubb38\ub610\ub294\ubcf4\ub3c4\uc5d0\ub300\ud55c\ud574\uba85(\ubbf8\ud655\uc815)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
+        "attempts": [],
+        "endpoint": null,
+        "html_responses": [
+          {
+            "bytes": 36672,
+            "content_type": "text/html",
+            "declaration_conflict": false,
+            "encoding_source": "header",
+            "header_charset": "utf-8",
+            "http_status": 200,
+            "meta_charsets": [
+              "utf-8"
+            ],
+            "page": "main",
+            "selected_encoding": "utf-8"
+          },
+          {
+            "bytes": 3625,
+            "content_type": "text/html",
+            "declaration_conflict": true,
+            "encoding_source": "header",
+            "header_charset": "ms949",
+            "http_status": 200,
+            "meta_charsets": [
+              "euc-kr"
+            ],
+            "page": "viewer",
+            "selected_encoding": "cp949"
+          }
+        ],
+        "original_attempts": [
+          {
+            "field_count": 0,
+            "reason": "no_matching_fields",
+            "source": "document_api",
+            "stage": "table"
+          },
+          {
+            "field_count": 0,
+            "reason": "no_matching_fields",
+            "source": "dart_html",
+            "stage": "table"
+          }
+        ],
+        "original_field_count": 0,
+        "original_reason": "no_structured_api",
+        "reason": "no_structured_api"
+      },
+      "company": "\ub2e4\uc62c\ud22c\uc790\uc99d\uad8c",
+      "context": "notification",
+      "field_sources": [],
+      "filing_date": "20261125",
+      "method": "unavailable",
+      "receipt": "20261125800077",
+      "recorded_at": "2026-11-25T10:52:59+09:00",
+      "release": "e34f1195138a9175c2da07656029f9078d9aa565",
+      "status": "telegram_accepted",
+      "title": "\uc870\ud68c\uacf5\uc2dc\uc694\uad6c(\ud48d\ubb38\ub610\ub294\ubcf4\ub3c4)              ",
+      "withheld": false
+    },
+    {
+      "api_evidence": {
         "attempts": [
           {
             "bgn_de": "20261124",
@@ -19870,326 +20000,6 @@
       "status": "telegram_accepted",
       "title": "\ud68c\uc0ac\ubd84\ud560\uacb0\uc815(\uc885\uc18d\ud68c\uc0ac\uc758\uc8fc\uc694\uacbd\uc601\uc0ac\ud56d)              ",
       "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [],
-        "endpoint": null,
-        "original_attempts": [
-          {
-            "field_count": 5,
-            "reason": "fields_available",
-            "source": "document_api",
-            "stage": "table"
-          }
-        ],
-        "original_field_count": 5,
-        "original_reason": "no_structured_api",
-        "original_source": "document_api",
-        "reason": "no_structured_api"
-      },
-      "company": "\uc544\uc2dc\uc544\ub098\ud56d\uacf5",
-      "context": "notification",
-      "field_sources": [
-        {
-          "label": "\ud22c\uc790\uae08\uc561 [\ud45c1]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae30\uc790\ubcf8\ub300\ube44 [\ud45c1]",
-          "source": "original_table"
-        },
-        {
-          "label": "\ud22c\uc790\ubaa9\uc801 [\ud45c1]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc2dc\uc791\uc77c [\ud45c1]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc885\ub8cc\uc77c [\ud45c1]",
-          "source": "original_table"
-        }
-      ],
-      "filing_date": "20261103",
-      "method": "original_table",
-      "receipt": "20261103800411",
-      "recorded_at": "2026-11-03T21:12:56+09:00",
-      "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
-      "status": "telegram_accepted",
-      "title": "\uc2e0\uaddc\uc2dc\uc124\ud22c\uc790\ub4f1              ",
-      "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261103",
-            "end_de": "20261103",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20261003",
-            "end_de": "20261103",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "piicDecsn",
-        "original_attempts": [
-          {
-            "field_count": 14,
-            "reason": "fields_available",
-            "source": "document_api",
-            "stage": "table"
-          }
-        ],
-        "original_field_count": 14,
-        "original_reason": "no_data",
-        "original_source": "document_api",
-        "reason": "no_data"
-      },
-      "company": "NAVER",
-      "context": "notification",
-      "field_sources": [
-        {
-          "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)) [\ud45c5]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0)) [\ud45c5]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc2e0\uc8fc\uc758 \uc885\ub958\uc640 \uc218(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "1\uc8fc\ub2f9 \uc561\uba74\uac00\uc561 (\uc6d0) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\ubcf4\ud1b5\uc8fc\uc2dd (\uc8fc)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc99d\uc790\uc804 \ubc1c\ud589\uc8fc\uc2dd\ucd1d\uc218 (\uc8fc)(\uae30\ud0c0\uc8fc\uc2dd (\uc8fc)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc2dc\uc124\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc601\uc5c5\uc591\uc218\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uc6b4\uc601\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ucc44\ubb34\uc0c1\ud658\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\ud0c0\ubc95\uc778 \uc99d\uad8c \ucde8\ub4dd\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc790\uae08\uc870\ub2ec\uc758 \ubaa9\uc801(\uae30\ud0c0\uc790\uae08 (\uc6d0)) [\ud45c19]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc99d\uc790\ubc29\uc2dd [\ud45c19]",
-          "source": "original_table"
-        }
-      ],
-      "filing_date": "20261103",
-      "method": "original_table",
-      "receipt": "20261103000311",
-      "recorded_at": "2026-11-03T21:12:35+09:00",
-      "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
-      "status": "telegram_accepted",
-      "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\uc720\uc0c1\uc99d\uc790\uacb0\uc815)",
-      "withheld": false
-    },
-    {
-      "api_evidence": {
-        "attempts": [
-          {
-            "bgn_de": "20261103",
-            "end_de": "20261103",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          },
-          {
-            "bgn_de": "20261003",
-            "end_de": "20261103",
-            "exact_receipt_rows": 0,
-            "field_count": 0,
-            "reason": "no_data",
-            "status": "013"
-          }
-        ],
-        "endpoint": "otcprStkInvscrInhDecsn",
-        "original_attempts": [
-          {
-            "field_count": 30,
-            "reason": "fields_available",
-            "source": "document_api",
-            "stage": "table"
-          }
-        ],
-        "original_field_count": 30,
-        "original_reason": "no_data",
-        "original_source": "document_api",
-        "reason": "no_data"
-      },
-      "company": "KG\uc2a4\ud2f8",
-      "context": "notification",
-      "field_sources": [
-        {
-          "label": "\ubc1c\ud589\ud68c\uc0ac(\ud68c\uc0ac\uba85) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\ucd5c\uadfc 6\uc6d4 \uc774\ub0b4 \uc81c3\uc790 \ubc30\uc815\uc5d0 \uc758\ud55c \uc2e0\uc8fc\ucde8\ub4dd \uc5ec\ubd80 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uc8fc\uc2dd\uc218(\uc8fc)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\uc591\uc218\uae08\uc561(\uc6d0)(A)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0(\uc6d0)(B)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\ucd1d\uc790\uc0b0\ub300\ube44(%)(A/B)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8(\uc6d0)(C)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ub0b4\uc5ed(\uc790\uae30\uc790\ubcf8\ub300\ube44(%)(A/C)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc18c\uc720\uc8fc\uc2dd\uc218(\uc8fc)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ud6c4 \uc18c\uc720\uc8fc\uc2dd\uc218 \ubc0f \uc9c0\ubd84\ube44\uc728(\uc9c0\ubd84\ube44\uc728(%)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\ubaa9\uc801 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc591\uc218\uc608\uc815\uc77c\uc790 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uba85(\uc131\uba85)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc790\ubcf8\uae08(\uc6d0)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\uc8fc\uc694\uc0ac\uc5c5) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ubcf8\uc810\uc18c\uc7ac\uc9c0(\uc8fc\uc18c)) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\uc0c1\ub300\ubc29(\ud68c\uc0ac\uc640\uc758 \uad00\uacc4) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uac70\ub798\ub300\uae08\uc9c0\uae09 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc5ec\ubd80) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uadfc\uac70 \ubc0f \uc0ac\uc720) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00\uae30\uad00\uc758 \uba85\uce6d) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uae30\uac04) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc678\ubd80\ud3c9\uac00\uc5d0 \uad00\ud55c \uc0ac\ud56d(\uc678\ubd80\ud3c9\uac00 \uc758\uacac) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc774\uc0ac\ud68c\uacb0\uc758\uc77c(\uacb0\uc815\uc77c) [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uc6b0\ud68c\uc0c1\uc7a5 \ud574\ub2f9 \uc5ec\ubd80 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\ud5a5\ud6c4 6\uc6d4\uc774\ub0b4 \uc81c3\uc790\ubc30\uc815 \uc99d\uc790 \ub4f1 \uacc4\ud68d [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\ubc1c\ud589\ud68c\uc0ac(\ud0c0\ubc95\uc778)\uc758 \uc6b0\ud68c\uc0c1\uc7a5 \uc694\uac74 \ucda9\uc871\uc5ec\ubd80 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uacf5\uc815\uac70\ub798\uc704\uc6d0\ud68c \uc2e0\uace0\ub300\uc0c1 \uc5ec\ubd80 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\ud48b\uc635\uc158 \ub4f1 \uacc4\uc57d \uccb4\uacb0\uc5ec\ubd80 [\ud45c7]",
-          "source": "original_table"
-        },
-        {
-          "label": "\uacc4\uc57d\ub0b4\uc6a9 [\ud45c7]",
-          "source": "original_table"
-        }
-      ],
-      "filing_date": "20261103",
-      "method": "original_table",
-      "receipt": "20261103000294",
-      "recorded_at": "2026-11-03T21:12:29+09:00",
-      "release": "775ba0e1282a9022db4c40b1f57ad27010401eaf",
-      "status": "telegram_accepted",
-      "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud0c0\ubc95\uc778\uc8fc\uc2dd\ubc0f\ucd9c\uc790\uc99d\uad8c\uc591\uc218\uacb0\uc815)",
-      "withheld": true
     }
   ],
   "encoding_diagnostics": {
@@ -20970,7 +20780,7 @@
       "title": "[\uae30\uc7ac\uc815\uc815]\uc8fc\uc694\uc0ac\ud56d\ubcf4\uace0\uc11c(\ud68c\uc0ac\ubd84\ud560\uacb0\uc815)"
     }
   ],
-  "last_scan_success": "2026-11-25T07:12:36+09:00",
+  "last_scan_success": "2026-11-25T10:52:51+09:00",
   "note": "telegram_accepted means Telegram API accepted; it does not prove the user read it. Historical cache does not prove the method of a past message.",
   "original_diagnostics": {
     "attempts": 1,
